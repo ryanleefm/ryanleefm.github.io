@@ -1,0 +1,1509 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="小蓝书III：热核的构造, Ryan&#39;s blog">
+    <meta name="description" content="本站只讨论数学，其他话题评论区见">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>小蓝书III：热核的构造 | Ryan&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ryan&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ryan&#39;s blog</div>
+        <div class="logo-desc">
+            
+            本站只讨论数学，其他话题评论区见
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">小蓝书III：热核的构造</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-01-08
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="section">3.1</h3>
+<ul>
+<li>假设存在 <span class="math inline">\(e(t, x, y) \in
+C^\infty(\mathbb{R}^+ \times M \times M)\)</span> 满足 <span style="color: green"><span class="math inline">\((\partial_t + \Delta_y)
+e(t, x, y) = 0,\)</span></span> 且 <span style="color: green"><span class="math inline">\(\lim_{t \to 0} \int_M e(t, x, y) f(y) \,
+\mathrm{dvol}_y = f(x),\)</span> <span class="math inline">\(\forall f
+\in L^2(M)\)</span></span>。
+<ul>
+<li><em>物理意义：第一个等式是说，热核也满足热方程，i.e.热核也是某初始热分布的时空响应；第二个等式是说，在初始时刻，热核的作用等效于<span class="math inline">\(\delta(y-x)\)</span>，i.e.相当于点热源。</em></li>
+</ul></li>
+<li>则我们有逐点收敛 <span style="color: #2E86C1"><span class="math inline">\(e(t, x, y) = \sum_i e^{-\lambda_i t} \phi_i(x)
+\phi_i(y).\)</span></span> 其中 <span class="math inline">\(\{\phi_i\}\)</span> 是 <span class="math inline">\(L^2(M)\)</span> 的一个正交归一基，满足 <span class="math inline">\(\Delta \phi_i = \lambda_i \phi_i\)</span>。</li>
+<li>此外，<strong><span class="math inline">\(e(t, x, y)\)</span>
+的确是热核</strong>（也就是说，绿色两条式子是判别热核的充分条件）。
+<ul>
+<li>只要热核存在，这个表达式就是有效的。</li>
+<li>物理过程：假设初始热分布为<span class="math inline">\(\phi_1(x)\)</span>，则由“热核”名字的由来 —— <span class="math inline">\(u(t,x)=\int_M e(t,x,y)u(0,y)dy\)</span>，则<span class="math inline">\(u(t,x)=\int \sum e^{\lambda_i
+t}\phi_i(x)\phi_i(y)\phi_1(y)dy=e^{\lambda_1 t}\phi_1(x)\)</span>。
+<ul>
+<li>以圆环上热扩散过程为例，这个<span class="math inline">\(\phi_i(x)=\sin(\sqrt{\lambda_i}x)\)</span>或<span class="math inline">\(\cos(\sqrt{\lambda_i}x)\)</span>。则初始温度分布为<span class="math inline">\(\sin(\sqrt{\lambda_1}x)\)</span>，后续温度就以这个样子，慢慢地、等比地、同步地向0靠拢，或可以说，代表了热衰减速度。</li>
+</ul></li>
+</ul></li>
+<li>推论：<span style="color: #2E86C1; font-size: 120%"><span class="math inline">\(\sum_i e^{-\lambda_i t} =:
+\operatorname{Tr}(e^{-t\Delta}) = \int_M e(t, x, x) \,
+dx.\)</span></span>
+<ul>
+<li>解读：</li>
+<li>左边，热核的迹（之所以称为“迹”，是因为它的确是在特征函数作基时，热核算子的矩阵表示的迹），为各特征函数对应的时间变化系数的加和。
+<ul>
+<li>或曰，各特征函数热衰减效果的加和，</li>
+<li>更直白地说，就是假设初始温度分布，是每个特征函数平等地叠加，且在某点处，各特征函数初始值都是<span class="math inline">\(1\)</span>，则热核的迹就是这个点后续的温度。</li>
+<li>之所以选取特征函数，是因为<span class="math inline">\(M\)</span>上任意函数都可以分解为这些特征函数的线性组合，且每个特征函数都是热核算子的特征函数
+—— 因为是 <span class="math inline">\(\Delta\)</span>
+的特征函数，因而在热过程中，保持形状大体不变。</li>
+<li>在这种意义下，它们衰减速度的叠加，可以视为<span class="math inline">\(M\)</span>总体热衰减速度的一种描述。</li>
+<li><span style="color: purple">一言以蔽之，就是综合了<b>不同频率特征函数</b>的热衰减速度。</span></li>
+</ul></li>
+<li>右边，当取 <span class="math inline">\(x=y\)</span>
+时，热核函数在全流形上的积分
+<ul>
+<li>就是，在复制<span class="math inline">\(vol(M)\)</span>份<span class="math inline">\(M\)</span>，在每一个复制上，不同位置放一个点热源，并将这些点后续的温度，数值地加起来，</li>
+<li>则显而易见，它也可以视为<span class="math inline">\(M\)</span>总体热衰减速度的一种描述。</li>
+<li><span style="color: purple">一言以蔽之，就是综合了<b>不同位置点热源</b>的热衰减速度。</span></li>
+</ul></li>
+<li>这一等式，在之后证明Gauss-Bonnet-Chern定理时起到大用处。</li>
+<li>物理意义：
+对比两个圆圈，一大一小，则大圆圈的热衰减速度比小圆圈上的要慢，用一个量来表示，便是大圆圈上热核的迹比小圆圈上的小。于是，<strong><span style="color: purple">热核的迹被用以描述<span class="math inline">\(M\)</span>上总体热衰减的速度。越小则总体衰减速度越慢。</span></strong></li>
+<li>注意：此处并未限制<span class="math inline">\(\lambda=\lambda_i\)</span>非<span class="math inline">\(0\)</span>，因此，<span class="math inline">\(\sum_i e^{-\lambda_i t}\)</span>是包含 <span class="math inline">\(0\)</span> 特征值项的，而<span class="math inline">\(e^{-0\cdot t}=1\)</span>
+对应的特征函数，在欧氏空间特例中，就是常值函数。在圆圈上，</li>
+</ul></li>
+</ul>
+<h3 id="section-1">3.2</h3>
+<ul>
+<li>接下来对于函数上拉普拉斯算子的，可以通过构造拟基本解的方法，进而得到其热核。</li>
+<li>具体步骤是，
+<ol type="1">
+<li>首先假设热方程的近似解以<span style="color: green">欧氏空间上热核形式</span>乘上<span style="color: #2E86C1">一个以位置为系数，关于时间的k次多项式</span>，<span class="math inline">\(S = S_k = S_k(t, x, y) =\)</span> <span style="color: green"><span class="math inline">\((4\pi t)^{-\frac{n}{2}}
+e^{-\frac{r^2(x, y)}{4t}}\)</span></span> <span style="color: #2E86C1"><span class="math inline">\(\left( u_0(x, y) +
+\ldots + u_k(x, y) t^k \right),\)</span></span></li>
+<li>通过<strong>强迫它被热算子作用后只保留最高次项 <span class="math inline">\((\partial_t + \Delta) S_k = (4\pi
+t)^{-\frac{n}{2}} e^{-\frac{r^2(x, y)}{4t}} t^k \Delta_y u_k(x,
+y)\)</span></strong> 而得到各阶系数的递推方程组。</li>
+<li>这样的近似解<span class="math inline">\(H_k(t,x,y)=\eta
+S_k\)</span>是一个拟基本解<span class="math inline">\(H(t,x,y)\)</span>的例子，其中<span class="math inline">\(\eta\)</span>只是一个bump函数。
+<ul>
+<li>首先，拟基本解<span class="math inline">\(H(t,x,y)\)</span>比起真基本解<span class="math inline">\(e(t,x,y)\)</span>，同样满足<span style="color: green"><span class="math inline">\(\lim_{t \to 0} \int_M
+H(t, x, y) f(y) \, \mathrm{dvol}_y = f(x),\)</span> <span class="math inline">\(\forall f \in L^2(M)\)</span></span>，只是将<span style="color: green"><span class="math inline">\((\partial_t + \Delta_y)
+e(t, x, y) = 0,\)</span></span> 放宽为<span style="color: green"><span class="math inline">\((\partial_t + \Delta_y) H(t, x,
+y)\)</span>连续</span>。
+<ul>
+<li>也就是说，系统由原来的绝热系统，变为非绝热系统，即允许外界时刻有热量输入输出。</li>
+</ul></li>
+<li>下标<span class="math inline">\(k\)</span>代表，放宽后<span style="color: green"><span class="math inline">\((\partial_t + \Delta_y)
+H(t, x, y)\)</span>不止连续，而且还是时间的<span class="math inline">\((k-\frac{n}{2})\)</span>阶单项式<span class="math inline">\(\times e^{-\frac{\text{系数}}{t}}\)</span></span>
+<ul>
+<li>也就是说，外界热量的输入，是有具体的函数形式的，就是上面绿色的这种。</li>
+</ul></li>
+</ul></li>
+</ol></li>
+<li><blockquote>
+<ul>
+<li>为了下面，先介绍Duhamel's foumula的各种形式。
+<ol type="1">
+<li><span class="math inline">\(e^{-t(X + Y)} = e^{-tX} - \int_0^t
+e^{-(t-s)(X + Y)} Y e^{-sX} \, ds.\)</span></li>
+<li>给定在希尔伯特空间上的算子 $ A(t), B(t) $，定义 <span class="math inline">\(A * B = \int_0^t A(t - s) B(s) \, ds.\)</span>
+例如，我们可以将杜哈梅尔公式重写为 <span class="math inline">\(e^{-t(X +
+Y)} = e^{-tX} - e^{-t(X + Y)} * (Y e^{-tX}).\)</span>
+<ul>
+<li>推论：<span class="math inline">\(e^{-t(X + Y)} = e^{-tX} +
+\sum_{j=1}^n (-1)^j b_j + (-1)^{n+1} r_{n+1},\)</span> 其中 <span class="math inline">\(b_n = e^{-tX} * (Y e^{-tX})^{*n}\)</span> 和 <span class="math inline">\(r_n = e^{-t(X + Y)} * (Y
+e^{-tX})^{*n}.\)</span></li>
+</ul></li>
+<li>有上面推论，<span style="color: orange">若有<span class="math inline">\(r_{n+1}\rightarrow 0\)</span></span>, 则Duhamel's
+foumula还可写为 <span class="math inline">\(e^{-t(X + Y)} = e^{-tX} +
+e^{-tX} * \sum_{\lambda=1}^{\infty} (-1)^{\lambda} (Y e^{-tX})^{*
+\lambda},\)</span></li>
+</ol></li>
+</ul>
+</blockquote></li>
+<li><strong>下面利用上面得到的parametrix和Duhamel's
+foumula，构造的k阶拟基本解得到真正的基本解</strong>，方法就是
+<ol type="1">
+<li>通过不断地对这个拟基本解进行热算子作用，得到与真基本解的“差”，</li>
+<li>然后将这些“差”代数卷积相乘，最后与该拟基本解卷积并加上该拟基本解。</li>
+</ol>
+<ul>
+<li>具体来说：
+<ol type="1">
+<li>取上面算出的<span class="math inline">\(H_k(t,x,y)\)</span>作为一个parametrix；</li>
+<li>取<span class="math inline">\(A(t)=\)</span>以<span class="math inline">\(H_k\)</span>为核的卷积算子；
+<ul>
+<li><span style="color: orange">假设它是一个类似热核算子的算子，即<span class="math inline">\(\exists X\)</span>，使得<span class="math inline">\(A(t)=e^{-tX}\)</span></span></li>
+</ul></li>
+<li>记<span class="math inline">\(X\)</span>满足<span class="math inline">\((\partial_t+X)A(t)=0\text{算子}\)</span>，我们心里知道，这是把<span class="math inline">\(X\)</span>对标<span class="math inline">\(\Delta\)</span>;（见下表）</li>
+</ol>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">模型场景</th>
+<th style="text-align: center;">物理定律</th>
+<th style="text-align: center;">热核（基本解函数）</th>
+<th style="text-align: center;">热核（算子形式）</th>
+<th style="text-align: center;">热核算子所满足的方程</th>
+<th style="text-align: center;">热核函数所满足的方程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">普通热扩散</td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+\Delta)u(t,x)=0\)</span></td>
+<td style="text-align: center;">在欧氏空间中为 <span class="math inline">\((4\pi t)^{-\frac{n}{2}} e^{-\frac{r^2(x,
+y)}{4t}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(e^{-t\Delta}\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+\Delta)e^{-t\Delta}=0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+\Delta_y)(4\pi t)^{-\frac{n}{2}}
+e^{-\frac{r^2(x, y)}{4t}}=0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">虚拟热扩散</td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+X)u(t,x)=0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(H_k(t,x,y)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A(t)=e^{-tX}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+X)A(t)=0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((\partial_t+X_y)H_k=0\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>记<span style="color: red"><span class="math inline">\(Y:=\Delta-X\)</span></span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，也就是“真假Laplacian之差”；</li>
+<li>将这个“差”作用于<span style="color: red"><span class="math inline">\(YH_k\)</span></span>，记为<span style="color: red"><span class="math inline">\(K\)</span></span>。当<span class="math inline">\(X\)</span>越接近<span class="math inline">\(\Delta\)</span>，结果应当越接近<span class="math inline">\(0\)</span>。同时，<span class="math inline">\(YH_k=(\partial_t+\Delta_y)H\)</span>，因此最后的结果<span style="color: red"><span class="math inline">\(K\)</span></span>又可解读为，虚拟热核带入真热方程中，产生的值。<strong>总之，<span style="color: red"><span class="math inline">\(K\)</span></span>衡量了虚拟热扩散中得到的基本解，与真正基本解的偏差。</strong></li>
+<li>将Duhamel's foumula第三形式中，<span class="math inline">\(Y\)</span>取为此处的<span class="math inline">\(\Delta-X\)</span>，公式变为 <span class="math display">\[e^{-t\Delta} = e^{-tX} + e^{-tX} *
+\sum_{\lambda=1}^{\infty} (-1)^{\lambda} ((\Delta-X) e^{-tX})^{*
+\lambda}.\]</span>
+可以看到，<strong>第一步是计算虚拟热核算子在真正热扩散方程中的偏差，<span style="color: red"><span class="math inline">\(YA(t)\)</span></span>
+<span class="math inline">\(=(\Delta-X)
+e^{-tX}=(\partial_t+\Delta_y)e^{-tX}\)</span>，（卷积上<span class="math inline">\(e^{-tX}\)</span>，便是虚拟热核算子<span class="math inline">\(e^{-tX}\)</span>与真正热核算子<span class="math inline">\(e^{-t\Delta}\)</span>之间的一阶偏差）；第二步便是减少这个真假热核算子之间偏差，因此需要计算二阶偏差，便需要计算
+<span style="color: red"><span class="math inline">\(YA(t)*YA(t)\)</span></span>……</strong></li>
+<li>将空间上函数空间拓展为时空上函数空间后，上式可以写成热核函数形式，其中<span style="color: red"><span class="math inline">\(YA(t)\)</span></span>自然就变成了<span style="color: red"><span class="math inline">\(YH_k=K\)</span></span>：<span class="math display">\[
+\begin{aligned}
+e(t, x, y) &amp;= H(t, x, y) + \left[ H * \sum_{\lambda=1}^{\infty}
+(-1)^{\lambda} ((\Delta - X) H)^{* \lambda} \right](t, x, y) \\
+&amp;= H(t, x, y) + \left[ H * \sum_{\lambda=1}^{\infty} (-1)^{\lambda}
+((\partial_t + \Delta) H)^{* \lambda} \right](t, x, y) \\
+&amp;= H(t, x, y) + \left[ H * \sum_{\lambda=1}^{\infty} (-1)^{\lambda}
+K^{* \lambda} \right](t, x, y).
+\end{aligned}
+\]</span></li>
+</ol></li>
+<li>对于这个构造，因为是基于Duhamel's foumula第三形式，而它又需要<span style="color: orange"><span class="math inline">\(r_{n+1}\rightarrow
+0\)</span></span>，因此需要证明这一点。</li>
+<li>此外由于上面<span style="color: orange">假设<span class="math inline">\(A(t)\)</span>是一个类似热核算子的算子</span>，因此上面这些构造也只能说是<strong>形式上的</strong>推导，因此还需要通过本文最顶端两条绿色式子，验证所构造的<span class="math inline">\(e(t,x,y)\)</span>的的确确是热核。</li>
+<li>对于形式上的拉普拉斯算子的热核，可以采用相同的方法。</li>
+</ul></li>
+</ul>
+<h3 id="关于热核渐近展开的性质">关于热核渐近展开的性质</h3>
+<ul>
+<li>在小时间且<span class="math inline">\(x=y\)</span>时，热核有关于时间<span class="math inline">\(t\)</span>的渐进展开，其系数依赖于拟基本解中时间的系数<span class="math inline">\(u_k\)</span>。
+<ul>
+<li><span style="color: #2E86C1"><span class="math inline">\(e(t, x, x)
+\sim (4\pi t)^{-n/2} \sum_{k=0}^{\infty} u_k(x, x)
+t^k.\)</span></span></li>
+</ul></li>
+<li>进一步地，<strong>热核的迹也有对应的时间t的渐近展开</strong>。
+<ul>
+<li><span style="color: #2E86C1"> <span class="math inline">\(\sum_i
+e^{-\lambda_i t} \sim (4\pi t)^{-n/2} \sum_{k=0}^{\infty} a_k
+t^k,\)</span> 其中 <span class="math inline">\(a_k = \int_M u_k(x, x) \,
+\mathrm{dvol}(x).\)</span></span></li>
+<li>这一结果可以告诉我们，若两紧黎曼流形isospectral,
+那么它们必有相同的维度和volume.
+<ul>
+<li>事实上，得到的更多：<span class="math inline">\(\int_M u_k^M(x, x)
+\, \mathrm{dvol}(x) = \int_N u_k^N(x, x) \, \mathrm{dvol}(x),\)</span>
+对于所有的 <span class="math inline">\(k\)</span>。特别地，由于 <span class="math inline">\(u_0(x, x) = 1\)</span>，我们得到 <span class="math inline">\(\mathrm{vol}(M) = \mathrm{vol}(N)\)</span>。</li>
+</ul></li>
+</ul></li>
+<li>事实上，isospectrum还可以告诉我们更多流形的几何信息，如compact
+isospectral surfaces are diffeomorphic。
+<ul>
+<li>上一条公式中<span class="math inline">\(u_k\)</span>取<span class="math inline">\(k=1\)</span>，然后由Gauss-Bonnet公式，可得欧拉数相同，于是它们（微分）同胚。</li>
+</ul></li>
+<li>又如对于3-流形，谱决定了流形是否具有constant sectional
+curvature.</li>
+<li><strong>这些好的结果依赖于热核渐进展开的系数——也就是拟基本解中的系数——是<span style="color: #2E86C1">仅依赖维度<span class="math inline">\(n\)</span>的</span>、关于点<span class="math inline">\(x\)</span>处的 curvature tensor<span class="math inline">\(R_x\)</span> 及其covariant derivatives <span class="math inline">\(\nabla R_x,\nabla^2 R_x, \ldots\)</span>
+的universal polynomials.</strong>
+<ul>
+<li><p><span class="math display">\[
+  \left\{\begin{aligned}
+  u_1(x, x) &amp;= P_1^n(R_x), \\
+  u_i(x, x) &amp;= P_i^n(R_x, \nabla R_x, \nabla^2 R_x, \ldots,
+\nabla^{2i-4} R_x), \quad i \geq 2,
+  \end{aligned}\right.
+  \]</span></p></li>
+<li><p>这其实并非不可理解的，因为<span class="math inline">\(u_i\)</span>的确定来自<span class="math inline">\((\partial_t + \Delta_y) S_k = (4\pi
+t)^{-\frac{n}{2}} e^{-\frac{r^2(x, y)}{4t}} t^k \Delta_y u_k(x,
+y)\)</span>，而<span class="math inline">\(\Delta\)</span>又有如下性质：当函数<span class="math inline">\(f\)</span>变量仅为测地距离<span class="math inline">\(r\)</span>时，<span class="math inline">\(\Delta
+f(r)\)</span>仅与<span class="math inline">\(r\)</span>和<span class="math inline">\(\det(d\exp_p)\)</span>相关，后者表示<span class="math inline">\(\exp\)</span>映射带来的微元体积大小的变化，幸而<span class="math inline">\(G=(4\pi t)^{-\frac{n}{2}} e^{-\frac{r^2(x,
+y)}{4t}}\)</span>便是这样的函数。因此在对齐<span class="math inline">\((\partial_t + \Delta_y) S_k\)</span>与<span class="math inline">\((4\pi t)^{-\frac{n}{2}} e^{-\frac{r^2(x, y)}{4t}}
+t^k \Delta_y u_k(x, y)\)</span>时，只会保留与 <span class="math inline">\(r, D=\det(d\exp_p), u_i, \Delta_y u_i\)</span>
+相关项。事实上，最后可得出<span class="math inline">\(u_i\)</span>相关于<span class="math inline">\(r,D,\Delta_y
+u_{i-1}\)</span>的递推公式。因此只需承认三件事，即可得到想要的结论:</p>
+<ol type="1">
+<li><span class="math inline">\(D=\det(d\exp_p)\)</span>也可以展成通用系数Taylor级数。</li>
+<li><span class="math inline">\(r=d(x,y)\)</span>作为测地距离，<span class="math inline">\(r^2(y)\)</span>等于<span class="math inline">\(g_{ij}y^iy^j\)</span>，因而也可以展成<span class="math inline">\(y\)</span>的通用系数Taylor级数</li>
+<li><span class="math inline">\(u_{i-1}\)</span>是通用系数的多项式。（因此有<span class="math inline">\(\Delta_y u_{i-1}\)</span>也通用系数。）</li>
+</ol></li>
+<li><p>这三件事都是对的，因为：</p>
+<ol type="1">
+<li><p>!!! Note 曲率决定了测度 度量 <span class="math inline">\(\exp_x^*
+g\)</span> 有泰勒展开式：<span class="math display">\[g_{ij}(y) =
+\text{Id} + {}^2A_{ijkl} y^k y^l + {}^3A_{ijklm} y^k y^l y^m +
+\ldots\]</span>其中 <span class="math inline">\({}^kA_{ij\ldots}\)</span> 是关于曲率张量 <span class="math inline">\(R_{ijkl} = R_{ijkl}(x)\)</span> 及其前 <span class="math inline">\(k-2\)</span> 阶协变导数 <span class="math inline">\(\nabla R, \nabla^2 R = \nabla\nabla R,
+\ldots\)</span> 的<strong>通用多项式</strong>。</p>
+<pre><code> &lt;span style=&quot;color: grey&quot;&gt;也就是说，知道了一点处附近的曲率张量，又知道了该点附近的径向测地（测地网格，normal chart），就唯一确定了该点附近的测度，也就确定了该点的几何，不需要其他信息！&lt;/span&gt;</code></pre></li>
+<li><p>同样道理；</p></li>
+<li><p>只需要证明<span class="math inline">\(u_0\)</span>是通用多项式，即可根据数学归纳法得到所有的。而<span class="math inline">\(u_0(x,y)=\det^{-1/2}g(y)\)</span>，由上面a.中道理，的确是通用多项式。</p></li>
+</ol></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">不同名字Laplacian辨析</th>
+<th style="text-align: center;">Bochner Laplacian（rough
+Laplacian）</th>
+<th style="text-align: center;">Hodge Laplacian</th>
+<th style="text-align: center;">subLaplacian</th>
+<th style="text-align: center;">Kohn Laplacian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">符号</td>
+<td style="text-align: center;"><span class="math inline">\(\nabla^*\nabla\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta=\delta d+d\delta\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta_b:=-\frac{1}{4}\sum Y_kY_k\)</span>，</td>
+<td style="text-align: center;"><span class="math inline">\(D_\alpha:=\Delta_b+i\alpha\cdot\partial_s\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">备注</td>
+<td style="text-align: center;"><span class="math inline">\(\nabla^*\)</span>是<span class="math inline">\(\nabla\)</span>的形式共轭。</td>
+<td style="text-align: center;">Weitzeinbock分解<span class="math inline">\(\Delta=\nabla^*\nabla+R\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(Y_k:=\partial_{y_k}+2B_{jk}^\beta
+y_j\partial_{t_\beta}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">退化到函数上</td>
+<td style="text-align: center;">对于<span class="math inline">\(1\)</span>-形式，<span class="math inline">\(\nabla^*=-\operatorname{div}\alpha^{-1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(R(f)\equiv0\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">退化到<span class="math inline">\(1\)</span>-形式上</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(R(\omega)=Ric(\omega):=R_{il}a^*_ia_l(\omega):=R^m_{ilm}a^*_ia_l(\omega)\)</span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table></li>
+<li>下表为黎曼流形函数上的 Laplacian： |定义| <span class="math inline">\(\Delta=-\mathrm{div}\circ\nabla\)</span> |<span class="math inline">\(\Delta f=\frac{1}{\sqrt{\vert
+g\vert}}\partial_i(\sqrt{\vert g\vert}g^{ij}\partial_j f)\)</span>
+|<span class="math inline">\(\Delta=\delta d\)</span>|<span class="math inline">\(\Delta=-*d*d\)</span>||
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|关系|拥有最直观物理意义|Laplace-Beltrami：前者在局部坐标中的表示|<span class="math inline">\(\delta df=(-\mathrm{div}\alpha^{-1})(\alpha\nabla
+f)=-\mathrm{div}\circ\nabla
+f\)</span>；此外在局部坐标系中还与前列相等|因为<span class="math inline">\(\delta=\delta^1=-*d*\)</span>，所以此定义与前列定义相等||
+|备注|<span class="math inline">\(\langle-\operatorname{div}X,f\rangle=\langle
+X,\nabla f\rangle\)</span>，即<span class="math inline">\(-\operatorname{div}\)</span>是<span class="math inline">\(\nabla\)</span>的形式共轭|Laplace-Beltrami|其中<span class="math inline">\(\alpha:TM\rightarrow
+T^*M\)</span>是类似升调记号的操作。具体说，<span class="math inline">\(\alpha_g(v)=v^*\)</span> || |注意|此处<span class="math inline">\(\nabla:C^(M)\rightarrow
+TM\)</span>是gradient，而非熟悉的联络||<span class="math inline">\(\nabla\)</span>此处是gradient||</li>
+<li>与热核的构建相同，热核的渐近展开也可以由函数上推广到 forms 上。
+<ul>
+<li><p>计算 p-形式上的热核的渐近行为。对于函数，可以证明 <span class="math display">\[e^p(t, x, y) = \sum e^{-\lambda_i t} \phi_i(x)
+\otimes \phi_i(y),\]</span> 其中 <span class="math inline">\(\{\phi_i\}\)</span> 是 <span class="math inline">\(L^2 \Lambda^k T^*M\)</span> 的正交归一基，满足
+<span class="math inline">\(\Delta^k \phi_i = \lambda_i
+\phi_i\)</span>。与之前一样，<span style="color: #2E86C1; font-size: 120%"><span class="math display">\[\sum_i e^{-\lambda_i t} = \operatorname{Tr}(e^{-t
+\Delta^p}) = \int_M \operatorname{tr} e^p(t, x, x) \,
+dx,\]</span></span> 其中 <span class="math inline">\(\operatorname{tr} =
+\operatorname{tr}_x\)</span> 表示在 <span class="math inline">\(\Lambda^k T_x^*M \otimes \Lambda^k T_x^*M\)</span>
+上逐点的迹，由度量给出。 <span style="color: purple">这儿的迹，作为本章最开始热核迹的高阶形式版本，当然也可以作为一个对于<span class="math inline">\(M\)</span>上总体热衰减速率的描述</span>。</p></li>
+<li><p>Patodi 的热核构造用于形式（forms）的热核，得到了双形式（double
+forms）的渐近展开： <span class="math display">\[e^p(t, x, x) \sim
+\frac{1}{(4\pi t)^{n/2}} \sum_{k=0}^\infty u_k^p(x, x) t^k.\]</span>
+因此， <span style="color: #2E86C1"><span class="math display">\[\sum_i
+e^{-\lambda_i t} \sim \frac{1}{(4\pi t)^{n/2}} \sum_k \left( \int_M
+\operatorname{tr} u_k^p \right) t^k,\]</span></span>
+这与之前一样，意味着在 <span class="math inline">\(p\)</span>-形式上的拉普拉斯算子是等谱（isospectral）的流形对于所有
+<span class="math inline">\(k\)</span> 都有相同的 <span class="math inline">\(\int \operatorname{tr}(u_k^p)\)</span> 值。
+然而，仿照上面对函数的缩放论证（ <em>Lemma 3.27：对于 <span class="math inline">\(\lambda \in \mathbb{R}\)</span>, <span class="math inline">\(u_k^{\lambda^2 g}(x, x) = \lambda^{-2k} u_k^g(x,
+x)\)</span>. 刚才没提，但确实重要的工具，可用于判断到底在<span class="math inline">\(u_i(x,x)\)</span>中，哪些曲率项出现了</em>
+），却得到 <span class="math inline">\(\operatorname{tr}(u_k^p)\)</span>
+包含与 <span class="math inline">\(u_k^0\)</span>
+相同的曲率项（可能有不同的系数）。因此，在这些渐近展开中没有新的拓扑信息，新的几何信息也没有帮助。
+尽管如此，在下一章中我们将展示这些渐近系数的不同组合 <span class="math inline">\(\operatorname{tr} u_k^p\)</span> 对于不同的 <span class="math inline">\(p\)</span> 包含非常重要的几何和拓扑信息。</p></li>
+</ul></li>
+</ul>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>热核算子写成<span style="color: #2E86C1">时间<span class="math inline">\(t\)</span>乘<span class="math inline">\(\Delta\)</span>的负指数形式</span>的原因有三。 1.
+热核算子的作用，构成一个时间半群，这点与指数形式相同。 2.
+当被作用函数，也就是初始温度分布，为<span class="math inline">\(\Delta\)</span>的特征函数<span class="math inline">\(\phi_{\lambda_i}(x)\)</span>，即<span class="math inline">\(\Delta\phi_{\lambda_i}(x)=\lambda_i\phi_{\lambda_i}(x)\)</span>时，热核算子作用其上，退化为<span class="math inline">\(e^{-t\lambda_i}\phi_{\lambda_i}(x)\)</span>。即乘上一个<span style="color: #2E86C1">时间<span class="math inline">\(t\)</span>乘<span class="math inline">\(\Delta\)</span>特征值的负指数形式</span>。 *
+或者说，类比于<span class="math inline">\(\lambda_i\)</span>是<span class="math inline">\(\Delta\)</span>的特征值，<span class="math inline">\(e^{-t\lambda_i}\)</span>是热算子的特征值。 3.
+时间<span class="math inline">\(t\)</span>的负指数形式也符合物理上的（对于特征函数初始分布）的（负）指数衰减的热衰减过程。
+4. 这样写，也满足<span class="math inline">\((\partial_t+\Delta_x)(\mathrm{热核算子}(u(0,x)=f(x))=0\)</span>的要求，因为<span class="math inline">\((\partial_t+\Delta_x)e^{-t\Delta}f\xlongequal{\text{formally}}-\Delta
+e^{-t\Delta}f+\Delta_xe^{-t\Delta}f=0\)</span>! 5.
+<strong>对热方程进行部分傅里叶变换（仅对空间变换），可快速解得<span class="math inline">\(\hat{u}(t,\xi)=e^{-t|\xi|^2}\hat{u}(0,\xi)\)</span>，转换回来后，即为热核算子作用到<span class="math inline">\(u(0,x)\)</span>上的结果，因此，可以形式相似地（即保持<span style="color: #2E86C1">时间<span class="math inline">\(t\)</span>乘一个什么的负指数形式</span>）写作<span class="math inline">\(u(t,x)=e^{-t\Delta}u(0,x)\)</span>。</strong><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span style="color: red"><span class="math inline">\(Y,YH_k,K,YA(t)\)</span></span>等红色表示虚拟与真实之间的偏差。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>首先我们观察到，对于函数（<span class="math inline">\(0\)</span>-形式），<span class="math inline">\(\Delta f = \nabla^*\nabla f\)</span>；对于<span class="math inline">\(1\)</span>-形式<span class="math inline">\(\omega\)</span>，<span class="math inline">\(\Delta \omega = \nabla^* \nabla \omega +
+R_{jk}a_j^*a_k\omega = \nabla^* \nabla \omega +
+{R_{ijk}}^ia_j^*a_k\omega \xlongequal{\text{取}\omega=dx^m}\nabla^*
+\nabla dx^m + {R_{ijk}}^ia_j^*a_k dx^m\xlongequal{\text{取 O.N.B}}
+\nabla^*\nabla dx^m + {R_{ijm}}^idx^j\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>在球面 <span class="math inline">\(S^n\)</span>
+上，$R_{jk}:={R_{ijk}}^i=R(e_i,e_j)e_k,e_i <span class="math inline">\(，作为一种特殊的Riemann张量的components，满足\)</span>R_{}=_{il}<span class="math inline">\(。因此，\)</span>Ric()=<em>i
+R</em>{ii}a_i<sup><em>a_i=(n-1)K=(n-1)<span class="math inline">\(.（准确的见 _小品：R……_）
+* 我一直希望，能够搞清楚Weitzenbock分解的几何意义。具体来说，就是Bochner
+Laplacian\)</span>^</em><span class="math inline">\(和Hodge Laplacian
+为什么差一个\)</span>R<span class="math inline">\(。为什么在函数意义上，它们是相等的，而在其他形式上，就差了一个曲率项，比如在1-形式上，就差了一个Ricci曲率项。
+* 我本计划先在一些例子上进行计算，如球面\)</span>S</sup>n<span class="math inline">\(和Poincare上半平面上，然而计算太难了，主要难点在于\)</span>^<em>$没有显示的表达。
+</em> 更新：过去一直被Rosenberg的表达式 <span class="math inline">\(\Delta=\nabla^*\nabla + R\)</span>，以及Bochner
+<span class="math inline">\(\nabla^*\nabla\)</span>被称为 rough
+Laplace，所误导。其实反而Bochner
+Laplace是更“全面”的那个，因为它基于Levi-Civita联络，而Levi-Civita联络又完全决定了流形的几何。相反，<span class="math inline">\(\Delta=\delta
+d+d\delta\)</span>，从根本上来讲，就是对形式进行两次微分操作（这一点从其定义，<span class="math inline">\(\delta=(-1)^{nk+1}*d*\)</span>，可以看出。而且，一个算子的伴随算子，其实也就是这个算子的操作，挪到了与其pair的partner上）。
+* 明白了这一点，可以看出，Hodge <span class="math inline">\(\Delta\)</span>
+对于一个微分形式的操作，只是将这个微分形式进行了两次微分——尽管其中一次是以
+<span class="math inline">\(*d*\)</span>
+的方式，更具体地说，只是对微分形式的系数进行了求偏导（两次）的操作。是的，不掺杂任何流形的弯曲（但这并不表示其与流形的几何无关，毕竟
+<span class="math inline">\(*\)</span>-算子借助了度量，但也仅限单纯的度量了），只是单纯地计算微分形式系数的（两次）偏导。
+* 其物理意义可概括地理解为，对于向量丛<span class="math inline">\(\Lambda^*T^*M\)</span>，其空间结构本身，亦有——和底流形一样——弯曲。而黎曼曲率自同构<span class="math inline">\(R\)</span>便是描述这个空间变化的。 *
+<strong>我们正确地写出Weitzenbock公式：<span class="math inline">\(\nabla^*\nabla=\Delta+R\)</span>，作用在形式<span class="math inline">\(\omega=fdx^1\wedge\cdots\wedge
+dx^k=fdx^I\)</span>上，<span class="math inline">\(\nabla^*\nabla
+fdx^I=\Delta fdx^I+R fdx^I=(d\delta+\delta d)fdx^I +
+fRdx^I\)</span>。其中第一项是<span class="math inline">\((d\delta+\delta
+d)fdx^I\)</span>可以视为对系数<span class="math inline">\(f\)</span>求散度，第二项可以视为对<span class="math inline">\(dx^I\)</span>本身求二阶导，这一项，对应了上面所说的，”向量丛<span class="math inline">\(\Lambda^*T^*M\)</span>，其空间结构本身，亦有——和底流形一样——弯曲”。</strong>
+*
+因此，<strong>Weitzenbock公式其实是一种Lebniz法则，其来源追根究底是<span class="math inline">\(\nabla(fdx^I)=df\wedge dx^I + f \nabla
+dx^I\)</span>.</strong><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ryan Lee</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ryanleefm.github.io/2025/01/08/%E5%B0%8F%E8%93%9D%E4%B9%A6III%EF%BC%9A%E7%83%AD%E6%A0%B8%E7%9A%84%E6%9E%84%E9%80%A0/">https://ryanleefm.github.io/2025/01/08/%E5%B0%8F%E8%93%9D%E4%B9%A6III%EF%BC%9A%E7%83%AD%E6%A0%B8%E7%9A%84%E6%9E%84%E9%80%A0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ryan Lee</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/01/09/%E5%B0%8F%E8%93%9D%E4%B9%A6IV%EF%BC%9A%E7%83%AD%E6%96%B9%E7%A8%8B%E6%96%B9%E6%B3%95%E8%AF%81%E6%98%8EAtiyah-Singer%E6%8C%87%E6%A0%87%E5%AE%9A%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="小蓝书IV：热方程方法证明Atiyah-Singer指标定理">
+                        
+                        <span class="card-title">小蓝书IV：热方程方法证明Atiyah-Singer指标定理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Ryan Lee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/01/06/%E4%B8%80%E4%BA%9B%E6%B2%89%E6%B5%B8%E5%BC%8F%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="一些沉浸式小技巧">
+                        
+                        <span class="card-title">一些沉浸式小技巧</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Here's something encrypted, password is required to continue reading.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Ryan Lee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Ryan Lee</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
