@@ -1,0 +1,67 @@
+/* Canvas cards use their original dimensions; article spacing does not apply. */
+.canvas-node {
+  box-sizing: border-box;
+}
+
+.canvas-node-text .canvas-node-content {
+  box-sizing: border-box;
+  padding: 10px 12px;
+  white-space: normal;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.canvas-node-text .canvas-node-content p {
+  margin: 0 0 0.4em;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.canvas-node-text .canvas-node-content > :first-child {
+  margin-top: 0;
+}
+
+.canvas-node-text .canvas-node-content > :last-child {
+  margin-bottom: 0;
+}
+
+.canvas-node-text .canvas-node-content ul,
+.canvas-node-text .canvas-node-content ol {
+  margin: 0.3em 0;
+  padding-left: 1.45em;
+}
+
+.canvas-node-text .canvas-node-content li {
+  margin: 0.12em 0;
+  line-height: inherit;
+}
+
+.canvas-node-text .canvas-node-content li > p {
+  margin: 0;
+}
+
+.canvas-node-text .canvas-node-content blockquote {
+  margin: 0.35em 0 0;
+  padding: 0 0 0 0.65em;
+  border-left-width: 2px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.canvas-node-content mjx-container[jax="SVG"] {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.canvas-node-content mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 0.1em 0;
+}
+
+.canvas-node-content mjx-container svg {
+  max-width: 100%;
+  overflow: visible;
+}

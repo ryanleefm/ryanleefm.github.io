@@ -10,19 +10,19 @@
     <link>https://ryanleefm.github.io/notes/</link>
     <guid>https://ryanleefm.github.io/notes/</guid>
     <description><![CDATA[ 这里整理我的数学学习笔记与知识地图。 近期学习心得 Soblev 空间 返回博客首页. ]]></description>
-    <pubDate>Wed, 11 Nov 2026 10:43:46 GMT</pubDate>
+    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
   </item><item>
     <title>近期学习心得</title>
     <link>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</link>
     <guid>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</guid>
     <description><![CDATA[ 一、算子分次六步 ① 依据给定算子的 次椭圆性，从其（主项）中读取 水平向量场（最重要、也最难）。 ② 上一步读取的水平向量场不唯一，但是其张成的 水平分布、切触结构 却是唯一的； 在此水平分布上允许的运动路径叫做 水平路径。 ③ 对于任意两点 p 和 q，其间水平路径的最短长度，叫做这两点间的 CC距离 \textcolor{#065279}{d_{CC}(p,q)}。 ④ 观察发现，存在一个特殊的空间变换 \textcolor{#065279}{\delta_t:\mathbb{R}^3\rightarrow\mathbb{R}^3} （实际上是根据参数 t 进行整体的 各向异性伸缩），满... ]]></description>
-    <pubDate>Wed, 11 Nov 2026 10:43:46 GMT</pubDate>
+    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
   </item><item>
     <title>Soblev 空间</title>
     <link>https://ryanleefm.github.io/notes/soblev-%E7%A9%BA%E9%97%B4.canvas</link>
     <guid>https://ryanleefm.github.io/notes/soblev-%E7%A9%BA%E9%97%B4.canvas</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 11 Nov 2026 10:43:46 GMT</pubDate>
+    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
   </item>
     </channel>
   </rss>
