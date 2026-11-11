@@ -1,0 +1,2611 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heisenberg 局部水平几何 · 膜片水平曲线 v35</title><style>html,body{margin:0;padding:0;background:#edf2f6;min-width:0;}body{padding:8px;width:100%;max-width:none;box-sizing:border-box;}
+#hgStandalone{height:calc(100dvh - 16px);min-height:440px;display:flex;flex-direction:column;width:100%;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#253444;background:#f9fbfd;border:1px solid #dae2e9;border-radius:14px;overflow:hidden;font-size:13px}
+#hgStandalone *{box-sizing:border-box}
+#hgStandalone .hg-head{padding:14px 16px;background:white;border-bottom:1px solid #e0e6eb;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+#hgStandalone .hg-head strong{font-size:15px}
+#hgStandalone .hg-head small{font-size:11px;color:#72808e}
+#hgStandalone .hg-layout{display:flex;flex:1;min-height:0;min-width:0}
+#hgStandalone .hg-side{width:clamp(294px,24vw,408px);height:auto;min-height:0;overflow-y:auto;flex-shrink:0;background:#fff;padding:12px 14px;border-right:1px solid #e0e6eb;scrollbar-gutter:stable}
+#hgStandalone .hg-side label{display:block;margin:13px 0 5px;font-size:12px}
+#hgStandalone .hg-side label span{float:right;color:#697989;font-variant-numeric:tabular-nums}
+#hgStandalone input[type=range]{width:100%;accent-color:#415d77}
+#hgStandalone select{width:100%;padding:7px;border:1px solid #d3dee7;border-radius:7px;color:#314658;background:#fff}
+#hgStandalone .hg-check{display:flex!important;gap:7px;align-items:center;margin-top:13px!important}
+#hgStandalone .hg-stage{flex:1;min-width:0;min-height:0;background:#fcfdff;position:relative;overflow:hidden}
+#hgStandalone canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+#hgStandalone canvas:active{cursor:grabbing}
+#hgStandalone .hg-hint{position:absolute;left:13px;bottom:11px;font-size:11px;color:#7d8a97;background:#ffffffd9;border:1px solid #e4eaf0;padding:6px 9px;border-radius:7px;pointer-events:none}
+#hgStandalone .hg-status{flex:0 0 auto;max-height:80px;overflow:auto;padding:10px 15px;background:#fff;border-top:1px solid #e1e7ed;font-size:11px;color:#667788;line-height:1.5}
+#hgStandalone button{border:1px solid #c9d7e2;color:#354d62;border-radius:8px;background:white;padding:8px 11px;cursor:pointer;font:inherit}
+#hgStandalone button.hg-download{background:#304e66;color:#fff;border-color:#304e66;font-weight:600}
+#hgStandalone .hg-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+#hgStandalone .hg-explain{font-size:11px;line-height:1.55;color:#758391;margin-top:13px}
+#hgStandalone .hg-color-key{display:grid;grid-template-columns:1fr 1fr;gap:7px 9px;margin:11px 0 2px;font-size:11px;color:#68798a}
+#hgStandalone .hg-color-key span{display:flex;align-items:center;gap:6px;white-space:nowrap}
+#hgStandalone .hg-color-key i{display:inline-block;width:19px;height:4px;border-radius:3px;flex:0 0 auto}
+#hgStandalone .hg-color-key .xy{height:7px;background:linear-gradient(90deg,#d96868,#e18a71,#e1ab7b,#c9c28b)}
+#hgStandalone .hg-color-key .edge{background:#536879;height:3px}
+#hgStandalone .hg-color-key .low{height:9px;background:#e18a71;border:1px solid #ca806a}
+#hgStandalone .hg-color-key .high{height:9px;background:#c9c28b;border:1px solid #9fa56b}
+#hgStandalone .hg-schemes{margin-top:11px}
+#hgStandalone .hg-scheme-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+#hgStandalone .hg-scheme-btn{padding:7px 8px;text-align:left;font-size:11px;line-height:1.35;background:#f7fafc;border:1px solid #d3dee7;border-radius:8px;color:#314658}
+#hgStandalone .hg-scheme-btn small{display:block;color:#778595;font-size:10px;line-height:1.3;margin-top:2px}
+#hgStandalone .hg-scheme-btn.active{background:#304e66;border-color:#304e66;color:#fff}
+#hgStandalone .hg-scheme-btn.active small{color:#d8e6ef}
+#hgStandalone .hg-scheme-note{font-size:11px;line-height:1.5;color:#758391;margin-top:8px}
+#hgStandalone .hg-binding{margin-top:13px;padding-top:10px;border-top:1px solid #e7edf2}
+#hgStandalone .hg-binding-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+#hgStandalone .hg-binding-btn{padding:7px 8px;text-align:left;font-size:11px;line-height:1.35;background:#f7fafc;border:1px solid #d3dee7;border-radius:8px;color:#314658}
+#hgStandalone .hg-binding-btn small{display:block;color:#778595;font-size:10px;line-height:1.3;margin-top:2px}
+#hgStandalone .hg-binding-btn.active{background:#355f68;border-color:#355f68;color:#fff}
+#hgStandalone .hg-binding-btn.active small{color:#dcecef}
+#hgStandalone .hg-binding-note{font-size:11px;line-height:1.5;color:#758391;margin-top:8px}
+#hgStandalone .hg-visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:8px 0 3px}
+#hgStandalone .hg-visual-btn{font-size:11px;text-align:left;line-height:1.3;padding:9px 9px;background:#f7fafc}
+#hgStandalone .hg-visual-btn small{display:block;font-size:10px;color:#788693;margin-top:4px}
+#hgStandalone .hg-visual-btn.active{background:#315d67;color:#fff;border-color:#315d67}
+#hgStandalone .hg-visual-btn.active small{color:#d6ebec}
+#hgStandalone .hg-legend{display:flex;flex-wrap:wrap;gap:6px 11px;margin:12px 0;color:#6b7c88;font-size:11px}
+#hgStandalone .hg-legend span{display:inline-flex;align-items:center;gap:5px}
+#hgStandalone .hg-legend i{height:9px;width:13px;border-radius:3px;display:inline-block}
+#hgStandalone .hg-legend .seed{background:#5f9ca2}
+#hgStandalone .hg-legend .near{background:#a2cecc}
+#hgStandalone .hg-legend .rest{background:#dce5eb}
+#hgStandalone .hg-legend .route{background:#d6864b}
+#hgStandalone .hg-readout{position:absolute;left:13px;top:12px;max-width:min(440px,calc(100% - 26px));padding:10px 12px;border:1px solid #dce5e9;border-radius:10px;background:#fffffff2;box-shadow:0 3px 10px #243c4b0c;pointer-events:none;font-size:12px;color:#344b59;line-height:1.6}
+#hgStandalone .hg-readout b{font-weight:650}
+#hgStandalone .hg-readout .tiny{color:#657987;font-size:11px}
+#hgStandalone .hg-group{margin-top:11px;padding-top:10px;border-top:1px solid #e7edf2}
+#hgStandalone [hidden]{display:none!important}
+#hgStandalone #hgStepRow[hidden],#hgStandalone #hgRadiusRow[hidden],#hgStandalone #hgCurveGroup[hidden],#hgStandalone #hgCurveSegmentsRow[hidden],#hgStandalone #hgCurveLoopsRow[hidden],#hgStandalone #hgCurveHeadingRow[hidden],#hgStandalone #hgCurveCustomRow[hidden]{display:none!important}
+#hgStandalone .hg-curve-group{padding:11px 10px 13px;margin:12px -3px 4px;background:#f2f8f9;border:1px solid #d6e6e9;border-radius:10px}
+#hgStandalone .hg-curve-title{font-size:12px;font-weight:700;color:#2e6170;margin:0 0 6px}
+#hgStandalone .hg-curve-group label{margin-top:11px}
+#hgStandalone .hg-curve-note{font-size:11px;color:#516d76;line-height:1.6;margin-top:9px}
+#hgStandalone .hg-curve-meta{font-size:11px;line-height:1.65;margin-top:9px;padding:8px;background:#ffffffaa;border-radius:6px;color:#334d59;font-variant-numeric:tabular-nums}
+#hgStandalone .hg-curve-buttons{display:flex;gap:7px;margin-top:8px}
+#hgStandalone .hg-curve-buttons button{flex:1}
+#hgStandalone .hg-curve-mode{font-size:12px}
+#hgStandalone .hg-curve-check{display:flex!important;gap:6px;align-items:flex-start;margin:9px 0!important;line-height:1.45}
+#hgStandalone .hg-curve-check input{margin-top:2px}
+#hgStandalone .hg-curve-readout{font-variant-numeric:tabular-nums}
+#hgStandalone .hg-wire-distance-panel{margin:5px 0 10px;padding:8px 9px;background:#f7fafc;border:1px solid #e1e9ee;border-radius:8px}
+#hgStandalone .hg-wire-distance-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:5px}
+#hgStandalone .hg-wire-check{display:flex!important;align-items:center;gap:5px;margin:4px 0!important;font-size:11px;color:#536575;line-height:1.35}
+#hgStandalone .hg-wire-check input{margin:0;accent-color:#415d77}
+#hgStandalone .hg-top-controls{padding-bottom:13px;border-bottom:2px solid #d6e3e8;margin-bottom:13px}
+#hgStandalone .hg-top-controls>label{margin-top:0;font-weight:650;font-size:12px}
+#hgStandalone .hg-top-controls .hg-curve-group{margin-top:12px}
+#hgStandalone .hg-context-menu{position:absolute;z-index:30;width:244px;background:#fff;border:1px solid #cbdbe2;border-radius:11px;box-shadow:0 9px 30px #264b6250;padding:11px 12px;line-height:1.45}
+#hgStandalone .hg-context-menu[hidden]{display:none!important}
+#hgStandalone .hg-context-menu .hg-menu-title{font-size:12px;font-weight:700;color:#2c485c;margin-bottom:8px}
+#hgStandalone .hg-context-menu .hg-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+#hgStandalone .hg-context-menu .hg-menu-actions button{font-size:11px;padding:7px 5px}
+#hgStandalone .hg-context-menu .hg-menu-actions [data-unit-action=hide]{color:#b0453f}
+#hgStandalone .hg-context-menu label{display:block;margin-top:8px;font-size:11px}
+#hgStandalone .hg-override-list{max-height:148px;overflow-y:auto}
+#hgStandalone .hg-override-item{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:4px 0;font-size:11px;color:#526476}
+#hgStandalone .hg-override-item button{padding:3px 6px;font-size:10px}
+@media(max-width:740px){
+ body{padding:4px;}
+ #hgStandalone{height:auto;min-height:0;}
+ #hgStandalone .hg-layout{flex-direction:column-reverse;min-height:0;}
+ #hgStandalone .hg-stage{height:min(56dvh,520px);min-height:290px;flex:none;}
+ #hgStandalone .hg-side{width:100%;height:auto;max-height:none;overflow:visible;border-right:0;border-top:1px solid #e0e6eb;scrollbar-gutter:auto;}
+ #hgStandalone canvas{height:100%;}
+ #hgStandalone .hg-status{max-height:none;}
+ #hgStandalone .hg-header-actions{width:100%;justify-content:flex-end;}
+}
+
+#hgStandalone .hg-head{flex:0 0 auto}
+#hgStandalone .hg-header-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#hgStandalone .hg-side>.hg-panel{margin-top:9px;border:1px solid #dce5eb;background:white;border-radius:10px;overflow:hidden}
+#hgStandalone .hg-panel>summary{list-style:none;cursor:pointer;user-select:none;padding:12px 12px;font-size:12px;font-weight:700;color:#355365;background:#f3f7fa;display:flex;justify-content:space-between;align-items:center}
+#hgStandalone .hg-panel>summary::-webkit-details-marker{display:none}
+#hgStandalone .hg-panel>summary::after{content:'⌄';color:#728799;font-size:17px;line-height:1;transform:rotate(-90deg);transition:transform .15s}
+#hgStandalone .hg-panel[open]>summary::after{transform:rotate(0deg)}
+#hgStandalone .hg-panel-inner{padding:5px 12px 13px}
+#hgStandalone .hg-panel-inner>.hg-group{margin-top:0;padding-top:0;border:0}
+#hgStandalone .hg-panel .hg-explain{margin-top:7px}
+#hgStandalone .hg-quick{padding:12px 13px;margin:9px 0 10px;border:1px solid #d2e4e5;border-radius:11px;background:#f1f7f7}
+#hgStandalone .hg-quick-heading{font-weight:700;color:#2b6170;font-size:12px}
+#hgStandalone .hg-quick-pill{background:#fff;border-radius:7px;padding:8px 9px;font-size:11px;color:#46636b;margin-top:9px}
+#hgStandalone .hg-quick button{margin-top:9px;font-size:11px}
+#hgStandalone .hg-top-controls{padding-bottom:8px;margin-bottom:0}
+#hgStandalone .hg-curve-group{margin-top:10px}
+#hgStandalone .hg-panel:focus-within{border-color:#a9c5ce}
+#hgStandalone .hg-curve-info{margin-top:9px;border-top:1px solid #d8e4e7;padding-top:7px}
+#hgStandalone .hg-curve-info>summary{cursor:pointer;font-size:11px;color:#4b6e7b;font-weight:650;user-select:none}
+#hgStandalone .hg-curve-info .hg-curve-meta{margin-top:6px}
+</style></head><body><div id="hgStandalone" data-app-block-stream-enter="" >
+  <div class="hg-head">
+    <div><strong>Heisenberg · 水平流网络与水平曲线</strong>
+      <div><small>水平流网络 · 水平回路 · 膜片贴合的仿 geodesic 螺旋折线</small></div>
+    </div>
+    <div class="hg-header-actions"><button id="hgReset" type="button">重置视角</button><button id="hgDownload" class="hg-download" data-app-block-stream-enter="">下载完整 HTML</button></div>
+  </div>
+  <div class="hg-layout" data-app-block-stream-enter="">
+    <aside class="hg-side"><div class="hg-top-controls">
+<label>几何观察方式</label>
+<div class="hg-visual-grid" id="hgViewGrid">
+<button class="hg-visual-btn" data-view="overview" type="button">全局概览<small>默认全部不透明、最高浓度</small></button>
+<button class="hg-visual-btn" data-view="local" type="button">局部邻接<small>选择参考点，突出真实邻居</small></button>
+<button class="hg-visual-btn" data-view="loop" type="button">水平回路<small>四段水平运动，观察竖直偏移</small></button>
+<button class="hg-visual-btn active" data-view="curve" type="button">水平曲线<small>两种贴合膜片的折线构造</small></button>
+</div>
+<div class="hg-curve-group" hidden="" id="hgCurveGroup">
+<div class="hg-curve-title">Horizontal curve · 水平曲线</div>
+<label for="hgCurvePreset">仿 geodesic 曲线对象</label>
+<select class="hg-curve-mode" id="hgCurvePreset">
+<option selected="" value="base">标准逆时针回路：O → (0,0,2)</option>
+<option value="ccwQuarter">逆时针转角：O → (1,1,1)</option>
+<option value="ccwThreeQuarter">逆时针三段弧：O → (0,1,2)</option>
+<option value="ccwDouble">逆时针双圈螺旋：O → (0,0,4)</option>
+<option value="cwQuarter">顺时针转角：O → (1,1,-1)</option>
+<option value="cwThreeQuarter">顺时针三段弧：O → (1,0,-2)</option>
+<option value="cwFull">顺时针完整回路：O → (0,0,-2)</option>
+<option value="custom">自定义两点：鼠标选起点与终点</option>
+</select>
+<div hidden="" id="hgCurveCustomRow">
+<div class="tiny">在画布上左键点击膜片：先选起点，再选终点；再次点击会重新从起点开始。右键菜单仍可单独调透明度。</div>
+<div class="hg-curve-buttons" style="margin-top:6px">
+<button id="hgCurveCustomReset" type="button">重置两点</button>
+<button id="hgCurveCustomSwap" type="button">交换起终点</button>
+</div>
+<div class="tiny" id="hgCurveCustomInfo">起点：未选择；终点：未选择。</div>
+</div>
+<label for="hgCurveKind">展示样式</label>
+<select class="hg-curve-mode" id="hgCurveKind">
+<option selected="" value="chord">圆弧弦折线（贴合膜片表面）</option>
+<option value="square">XY 水平流折线（经过单元中心）</option>
+</select>
+<div id="hgCurveHeightRow">
+<label>z 轴目标高度 Δz <span id="hgCurveHeightValue">0.90</span></label>
+<input id="hgCurveHeight" max="2.50" min="0.09" step="0.01" type="range" value="0.90"/>
+<div class="tiny" id="hgCurveHeightHint">最低值随铁环边长变化：h²，即铁环 (0,0,2) 的中心高度</div>
+</div>
+<div id="hgCurveSegmentsRow">
+<label>水平弦总分段数 <span id="hgCurveSegmentsValue">24</span></label>
+<input id="hgCurveSegments" max="64" min="4" step="1" type="range" value="24"/>
+</div>
+<div hidden="" id="hgCurveLoopsRow">
+<label id="hgCurveLoopsLabel">回路数 <span id="hgCurveLoopsValue">1</span></label>
+<input id="hgCurveLoops" max="16" min="1" step="1" type="range" value="1"/>
+</div>
+<div id="hgCurveHeadingRow">
+<label>初始水平朝向 <span id="hgCurveHeadingValue">0°</span></label>
+<input id="hgCurveHeading" max="330" min="0" step="30" type="range" value="0"/>
+</div>
+<label>路径展示进度 <span id="hgCurveProgressValue">100%</span></label>
+<input id="hgCurveProgress" max="100" min="0" step="1" type="range" value="100"/>
+<div class="hg-curve-buttons">
+<button id="hgCurvePlay" type="button">▶ 播放行进</button>
+<button id="hgCurveFull" type="button">显示全程</button>
+</div>
+<label>背景薄膜透明度 <span id="hgCurveAlphaValue">0.04</span></label>
+<input id="hgCurveAlpha" max="0.80" min="0" step="0.01" type="range" value="0.04"/>
+<div id="hgCurveCompareRow">
+<label class="hg-curve-check"><input checked="" id="hgCurveCompare" type="checkbox"/>折线模式下同时显示灰色测地线参照</label>
+</div>
+<label class="hg-curve-check"><input checked="" id="hgCurveXray" type="checkbox"/>曲线始终置于前景（便于查看；关闭后按真实三维遮挡）</label>
+<div id="hgCurveVectorRow">
+<label class="hg-curve-check"><input checked="" id="hgCurveVector" type="checkbox"/>在行进点显示水平切向量</label>
+</div>
+<details class="hg-curve-info"><summary>路径构造说明（展开查看）</summary><div class="hg-curve-meta" id="hgCurveMeta"></div></details>
+<div class="hg-curve-note">路径始终贴合相应膜片；膜片缝隙与竖向分离仅改变显示，不改变路径形态。跨膜连接沿用 FPC 视觉过渡。</div>
+</div>
+</div><div class="hg-quick" id="hgModeQuick">
+<div class="hg-quick-heading">当前模式 · 默认外观</div>
+<div hidden="" id="hgAppearanceOverview">
+<label>全部单元不透明度 <span id="hgOverviewOpacityValue">1.00</span></label>
+<input id="hgOverviewOpacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<label>全部单元颜色浓度 <span id="hgOverviewTintValue">1.00</span></label>
+<input id="hgOverviewTint" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<div class="hg-explain">全局概览使用统一参数；默认全部不透明、颜色饱和、铁框边线显示。</div>
+</div>
+<div hidden="" id="hgAppearanceCurve">
+<div class="hg-quick-pill">起终膜片 1.00 · 途经膜片 0.90</div>
+<label>途经中间膜片不透明度 <span id="hgCurveMidOpacityValue">0.90</span></label>
+<input id="hgCurveMidOpacity" max="1" min="0" step="0.01" type="range" value="0.90"/>
+<label>其他膜片颜色浓度 <span id="hgCurveBgTintValue">0.04</span></label>
+<input id="hgCurveBgTint" max="1" min="0" step="0.01" type="range" value="0.04"/>
+<div class="hg-explain">路径膜片统一采用参考单元颜色浓度；其余膜片统一最淡。背景不透明度由上方的“背景薄膜透明度”控制。</div>
+</div>
+<div hidden="" id="hgAppearanceLocal">
+<div class="hg-explain">保持距离 1–4 原有的独立颜色浓度和透明度；与水平曲线、全局概览互不覆盖。</div>
+<button id="hgOpenDistance" type="button">调整邻接分层参数</button>
+</div>
+<div hidden="" id="hgAppearanceLoop">
+<div class="hg-explain">水平回路使用局部邻接的分层显示参数，演示轨迹由下方的“参考单元与回路”控制。</div>
+</div>
+</div><details class="hg-panel" id="hgGeometryPanel" open=""><summary>网格与空间布局</summary><div class="hg-panel-inner"><label>观察模式</label><select id="hgMode">
+<option value="network">水平流生成网络</option>
+<option value="single">单个开口铁环</option>
+</select><label>邻接网络深度 <span data-app-block-stream-enter="" id="hgDepthValue">1</span></label><input data-app-block-stream-enter="" id="hgDepth" max="4" min="1" step="1" type="range" value="3"/><label data-app-block-stream-enter="">铁环边长 <span id="hgLengthValue">0.30</span></label><input data-app-block-stream-enter="" id="hgLength" max="0.70" min="0.30" step="0.05" type="range" value="0.30"/><label data-app-block-stream-enter="">水平邻边缝隙比例 <span id="hgGapValue">40.0%</span></label><input data-app-block-stream-enter="" id="hgGap" max="1.00" min="0" step="0.005" type="range" value="0.00"/><div class="hg-explain">水平缝隙最高为边长的 100%；属于左平移后的单元间距，不会拉伸单个铁环的真实水平边。</div><label>竖向分离（显示辅助） <span id="hgZGapValue">0.00</span></label><input id="hgZGap" max="3.5" min="0" step="0.01" type="range" value="0.0"/><div class="hg-explain">按每个铁环实际中心高度拉开，深度 1 同样有效；只改变屏幕展示，不修改真实水平边几何。</div><label data-app-block-stream-enter="">竖向显示倍率 <span id="hgZValue">0.50</span></label><input data-app-block-stream-enter="" id="hgZ" max="2" min="0.2" step="0.1" type="range" value="1.0"/></div></details><details class="hg-panel" id="hgReferencePanel" open=""><summary>参考单元与水平回路</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>局部参考与回路设置</label>
+<div class="hg-legend">
+<span><i class="seed"></i>参考铁环</span>
+<span><i class="near"></i>局部邻居</span>
+<span><i class="rest"></i>其余网络</span>
+<span><i class="route"></i>演示路径</span>
+</div>
+<div id="hgRadiusRow">
+<label>局部邻接半径 <span id="hgRadiusValue">1</span></label>
+<input id="hgRadius" max="4" min="1" step="1" type="range" value="1"/>
+</div>
+<div hidden="" id="hgStepRow">
+<label>水平回路演示 <span id="hgStepValue">4 / 4</span></label>
+<input id="hgStep" max="4" min="0" step="1" type="range" value="4"/>
+<div class="hg-explain">四段依次是 Y− → X+ → Y+ → X−。最后返回相同 XY，却上升 Δz = h²；虚线竖段只是测量标记，并非水平路径。</div>
+</div>
+<div class="hg-actions">
+<button id="hgSeed">选择中央参考铁环</button>
+</div>
+<div class="hg-explain" id="hgFocusHelp">左键点击膜片选择局部参考；右键点击单元可隐藏、设为半透明或恢复。隐藏单元通过左侧列表恢复。拖拽旋转。</div>
+</div></div></details><details class="hg-panel" id="hgFpcPanel" open=""><summary>FPC 柔性连接</summary><div class="hg-panel-inner"><label class="hg-check"><input checked="" id="hgShowLinks" type="checkbox"/>显示 FPC 多股邻接线路</label><div class="hg-visual-grid" id="hgFpcStyleGrid">
+<button class="hg-visual-btn active" data-fpc="curve" type="button">切向柔性连接<small>直接从边框出发，沿膜片方向平滑连接</small></button>
+<button class="hg-visual-btn" data-fpc="straight" type="button">直线排线<small>整边等宽，直接连接</small></button>
+</div><label>FPC 切向柔化程度 <span id="hgBendValue">0.50</span></label><input id="hgBend" max="1" min="0" step="0.02" type="range" value="0.50"/><div class="hg-explain">0 为直线；数值增大时，仅使用两侧膜片的外伸方向来确定曲线端点切线。没有可见的长直段，也不会人为制造 S 形弯曲。</div><label>FPC 线路透明度 <span id="hgLinkOpacityValue">1.00</span></label><input id="hgLinkOpacity" max="1" min="0" step="0.05" type="range" value="1.00"/></div></details><details class="hg-panel" id="hgWirePanel"><summary>铁环边框</summary><div class="hg-panel-inner"><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowWire" type="checkbox"/>显示铁环边框（总开关）</label><div class="hg-wire-distance-panel">
+<div class="hg-explain" style="margin-top:5px">按当前参考单元的图距离，分别控制各层铁环边框：</div>
+<div class="hg-wire-distance-grid">
+<label class="hg-wire-check"><input id="hgWireD0" type="checkbox"/>参考单元（0）</label>
+<label class="hg-wire-check"><input id="hgWireD1" type="checkbox"/>图距离 1</label>
+<label class="hg-wire-check"><input id="hgWireD2" type="checkbox"/>图距离 2</label>
+<label class="hg-wire-check"><input id="hgWireD3" type="checkbox"/>图距离 3</label>
+<label class="hg-wire-check"><input id="hgWireD4" type="checkbox"/>图距离 4</label>
+</div>
+<div class="hg-explain" style="margin-top:4px">局部邻接与全局概览各自保存边框开关；曲线模式默认隐藏边框（但允许单独开启）。</div>
+</div></div></details><details class="hg-panel" id="hgDistancePanel"><summary>局部邻接分层外观</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>其余单元不透明度 <span id="hgAlphaValue">0.18</span></label>
+<input id="hgAlpha" max="1" min="0" step="0.02" type="range" value="0.18"/>
+<div class="hg-explain" id="hgOtherCount">正在计算局部半径外的单元数……</div>
+<div class="hg-explain">仅控制当前局部半径之外的膜片与边框。0 为完全隐藏，1 为不透明。</div>
+<label>参考单元不透明度 <span id="hgSeedOpacityValue">1.00</span></label>
+<input id="hgSeedOpacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<label>图距离 1 不透明度 <span id="hgNear1OpacityValue">1.00</span></label>
+<input id="hgNear1Opacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<label>图距离 2 不透明度 <span id="hgNear2OpacityValue">1.00</span></label>
+<input id="hgNear2Opacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<label>图距离 3 不透明度 <span id="hgNear3OpacityValue">0.35</span></label>
+<input id="hgNear3Opacity" max="1" min="0" step="0.01" type="range" value="0.35"/>
+<label>图距离 4 不透明度 <span id="hgNear4OpacityValue">0.04</span></label>
+<input id="hgNear4Opacity" max="1" min="0" step="0.01" type="range" value="0.04"/>
+<div class="hg-explain">不透明度与颜色浓度分离：1.00 的膜片应遮挡后方边框；每组滑块同时控制膜片与铁环边框。</div>
+<label>参考单元颜色浓度 <span id="hgSeedTintValue">1.00</span></label>
+<input id="hgSeedTint" max="1" min="0" step="0.01" type="range" value="1.00"/>
+<label>图距离 1 颜色浓度 <span id="hgNear1TintValue">0.90</span></label>
+<input id="hgNear1Tint" max="1" min="0" step="0.01" type="range" value="0.90"/>
+<label>图距离 2 颜色浓度 <span id="hgNear2TintValue">0.50</span></label>
+<input id="hgNear2Tint" max="1" min="0" step="0.01" type="range" value="0.50"/>
+<label>图距离 3 颜色浓度 <span id="hgNear3TintValue">0.20</span></label>
+<input id="hgNear3Tint" max="1" min="0" step="0.01" type="range" value="0.20"/>
+<label>图距离 4 颜色浓度 <span id="hgNear4TintValue">0.04</span></label>
+<input id="hgNear4Tint" max="1" min="0" step="0.01" type="range" value="0.04"/>
+<div class="hg-explain" id="hgDistanceCount">正在计算各层受控单元数……</div>
+<div class="hg-explain">调整“距离 4 颜色浓度”将自动展开网络深度与局部半径至 4，使这一滑块一定有可见对象。</div>
+<div class="hg-explain">颜色浓度不改变透明度：越低越接近白色；上方滑块才决定膜片和边框透明度。各层可独立调整。</div>
+</div></div></details><details class="hg-panel" id="hgSurfacePanel"><summary>膜面与渲染特效</summary><div class="hg-panel-inner"><label>膜面立体明暗 <span id="hgLightValue">0.85</span></label><input id="hgLight" max="1.5" min="0" step="0.05" type="range" value="0.85"/><label class="hg-check"><input checked="" id="hgGlow" type="checkbox"/>高亮铁环柔光描边</label><label>描边发光强度 <span id="hgGlowStrengthValue">0.45</span></label><input id="hgGlowStrength" max="1" min="0" step="0.05" type="range" value="0.45"/><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowGap" type="checkbox"/>显示断口高度标记</label></div></details><details class="hg-panel" id="hgOverridePanel"><summary>单元单独覆盖</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>逐单元覆盖设置</label>
+<div class="hg-explain">隐藏一个单元时，将一并隐藏由该单元在生成树中派生的全部后代；恢复该单元会重新显示后代（其他单独隐藏设置仍保留）。半透明化只影响选中的单元。</div>
+<div class="hg-explain" id="hgOverrideSummary">无单独调整的单元</div>
+<div class="hg-override-list" id="hgOverrideList"></div>
+<div class="hg-actions"><button id="hgClearOverrides" type="button">恢复所有单元</button></div>
+</div></div></details><details class="hg-panel" id="hgHelpPanel"><summary>模型说明</summary><div class="hg-panel-inner"><div class="hg-explain">说明：开口铁环的四条实边是严格水平流线；膜片贴合折线是视觉示意路径，其表面插值不宣称严格满足水平条件。FPC 用来连接视觉分离的相邻膜片，不计入数学曲线。单元隐藏沿生成树向后代传播；生成树不等于完整邻接图。</div></div></details></aside>
+    <div class="hg-stage" data-app-block-stream-enter="">
+      <canvas id="hgCanvas" width="692" height="619"></canvas>
+      <div class="hg-readout" id="hgReadout">参考铁环 (0, 0, 0) · 局部邻接半径 1</div>
+      <div class="hg-context-menu" id="hgUnitMenu" hidden role="menu" aria-label="单元操作菜单">
+        <div class="hg-menu-title" id="hgMenuTitle">单元</div>
+        <div class="hg-menu-actions">
+          <button type="button" data-unit-action="hide">隐藏此单元及生成后代</button>
+          <button type="button" data-unit-action="semi">半透明 0.35</button>
+          <button type="button" data-unit-action="restore">恢复默认</button>
+        </div>
+        <label>此单元不透明度 <span id="hgMenuOpacityValue">1.00</span></label>
+        <input id="hgMenuOpacity" type="range" min="0" max="1" step="0.05" value="1">
+        <div class="hg-explain">单元透明度为 0 时，生成树上的全部后代也会隐藏；恢复后按各自设置显示。</div>
+      </div>
+      <div class="hg-hint">水平曲线自定义模式：依次点击起点、终点 · 拖拽旋转 · 滚轮缩放 · 右键管理单元</div>
+    </div>
+  </div>
+  <div id="hgStatus" class="hg-status" data-app-block-stream-enter="">正在校验水平边、原始共边匹配和邻边间隙…</div>
+</div><script id="hgStandaloneScript">
+(()=>{
+"use strict";
+const root=document.getElementById("hgStandalone");
+if(!root || root.dataset.ready==="1")return;
+root.dataset.ready="1";
+const $=id=>root.querySelector("#"+id);
+const canvas=$("hgCanvas"),ctx=canvas.getContext("2d");
+const X=(p,t)=>[p[0]+t,p[1],p[2]-p[1]*t/2];
+const Y=(p,t)=>[p[0],p[1]+t,p[2]+p[0]*t/2];
+const sub=(a,b)=>a.map((v,i)=>v-b[i]);
+const directions=["X+","X-","Y+","Y-"];
+// Each side index refers to consecutive vertices in [NW_low,SW,SE,NE,NW_high].
+const sideMap={"X+":[2,0],"X-":[0,2],"Y+":[3,1],"Y-":[1,3]};
+ let viewMode="curve",bindingMode="band",focusKey="0,0,0",focusRadius=1,demoStep=4;
+let focusDistances=new Map(),graphAdjacency=new Map(),generationParents=new Map(),pickFaces=[],pickEdges=[];
+// Only visual overrides; the Heisenberg lattice, raw rings and horizontal fields remain untouched.
+const unitOverrides=new Map();
+let menuKey=null;
+let az=-.83,el=.57,zoom=1,drag=null;
+const focusColors={base:[67,147,162],outside:[223,232,237]};
+const pathColors=["#d28a46","#268fb4","#d28a46","#268fb4"];
+const pathNames=["Y−","X+","Y+","X−"];
+  let curveKind='chord',curvePreset='base',curveTargetZ=.09,curveSegments=24,curveLoops=1,curveHeading=0,curveProgress=1,curveAlpha=.04;
+  let curveCompare=true,curveXray=true,curveVector=true,curveInfo=null;
+  let curveAnimFrame=0,curvePlaying=false,attachedLoopPresetApplied=false;
+  let curveRouteKeys=new Set();
+  let overviewOpacity=1,overviewTint=1,curveMidOpacity=.9,curveBgTint=.04;
+  const linkOpacityByMode={overview:.42,local:1,loop:1,curve:1};
+  const showWireByMode={overview:true,local:true,loop:true,curve:true};
+  let customCurveStartKey='0,0,0',customCurveEndKey='0,0,2',customCurvePickTarget='start';
+  let effectiveDepthUsed=1;
+  const curvePresets={
+    base:{label:'标准逆时针回路 · O → (0,0,2)',dirs:['X+','Y+','X-','Y-'],note:'原有基准路径；两种展示样式均保留。'},
+    ccwQuarter:{label:'逆时针转角 · O → (1,1,1)',dirs:['X+','Y+'],note:'由两段水平流组成的凸向转角路径。'},
+    ccwThreeQuarter:{label:'逆时针三段弧 · O → (0,1,2)',dirs:['X+','Y+','X-'],note:'连续左转的三段路径，保持同一弯曲方向。'},
+    ccwDouble:{label:'逆时针双圈螺旋 · O → (0,0,4)',dirs:['X+','Y+','X-','Y-','X+','Y+','X-','Y-'],note:'将标准回路连续重复两次，形成双层螺旋。'},
+    cwQuarter:{label:'顺时针转角 · O → (1,1,-1)',dirs:['Y+','X+'],note:'由两段水平流组成的反向凸向转角路径。'},
+    cwThreeQuarter:{label:'顺时针三段弧 · O → (1,0,-2)',dirs:['Y+','X+','Y-'],note:'连续右转的三段路径，保持同一弯曲方向。'},
+    cwFull:{label:'顺时针完整回路 · O → (0,0,-2)',dirs:['Y+','X+','Y-','X-'],note:'与标准回路方向相反的完整闭合 XY 回路。'},
+    custom:{label:'自定义两点膜片贴合折线',dirs:[],note:'鼠标选择起点和终点后，自动在当前网络中寻找连接折线。'}
+  };
+  let cells=[],connections=[],h=.3,gapRatio=.00,zGapRatio=0.0;
+let mode="network",alpha=.18,seedOpacity=1,near1Opacity=1,near2Opacity=1,near3Opacity=.35,near4Opacity=.04,seedTint=1,near1Tint=.90,near2Tint=.50,near3Tint=.20,near4Tint=.04,zView=.5,lightStrength=.85,showWire=true,showLinks=true,showGap=true;
+let showGlow=true,glowStrength=.45,linkOpacity=1,fpcStyle="curve",bendStrength=.50;
+let report=null;
+// Border visibility is independently configurable by graph distance.
+// Network views start with distances 0, 1, 2 enabled; curve view starts with all disabled.
+const wireControlIds=['hgWireD0','hgWireD1','hgWireD2','hgWireD3','hgWireD4'];
+const wireVisibilityByMode={
+  overview:[true,true,true,true,true],
+  network:[true,true,true,false,false],
+  curve:[false,false,false,false,false]
+};
+function wireVisibilityForCurrentMode(){
+  return wireVisibilityByMode[viewMode==='overview'?'overview':viewMode==='curve'?'curve':'network'];
+}
+function syncWireControlsFromMode(){
+  const values=wireVisibilityForCurrentMode();
+  wireControlIds.forEach((id,i)=>{const el=$(id);if(el)el.checked=!!values[i];});
+}
+function wireVisibleForKey(key){
+  if(!showWire)return false;
+  if(viewMode==='overview')return true;
+  const d=focusDistances.get(key);
+  if(!Number.isInteger(d)||d<0||d>4)return false;
+  return !!wireVisibilityForCurrentMode()[d];
+}
+
+// Integer Heisenberg lattice: noncommutative k-update tracks the vertical holonomy.
+function next([i,j,k],d){
+  switch(d){
+    case "X+":return[i+1,j,k-j];
+    case "X-":return[i-1,j,k+j];
+    case "Y+":return[i,j+1,k+i];
+    case "Y-":return[i,j-1,k-i];
+  }
+  throw new Error("Unknown direction");
+}
+function networkStates(depth){
+  const rootState=[0,0,0],seen=new Map([["0,0,0",rootState]]);
+  let frontier=[rootState],edges=[];
+  for(let radius=0;radius<depth;radius++){
+    const nextFront=[];
+    for(const p of frontier)for(const d of directions){
+      const q=next(p,d),key=q.join(",");
+      if(!seen.has(key)){
+        seen.set(key,q);nextFront.push(q);edges.push({p,q,d});
+      }
+    }
+    frontier=nextFront;
+  }
+  return {states:[...seen.values()],edges};
+}
+
+// Four horizontal flow segments. NW_low and NW_high have the same (x,y)
+// but differ by h^2 in z. The fifth segment is NOT a wire: it is the film's
+// auxiliary vertical closing seam, optional dashed marker in the visualization.
+function rawRing([i,j,k],step){
+  const xc=i*step,yc=j*step,z=k*step*step/2;
+  const xlo=xc-step/2,ylo=yc-step/2;
+  // Gauge chosen so matching neighbor-side endpoints agree BEFORE gap offsets.
+  const zNW=z+(3*step/4)*(xc+yc)-step*step/2;
+  const NWlow=[xlo,ylo+step,zNW];
+  const SW=Y(NWlow,-step);
+  const SE=X(SW,step);
+  const NE=Y(SE,step);
+  const NWhigh=X(NE,-step);
+  return [NWlow,SW,SE,NE,NWhigh];
+}
+
+// Heisenberg left translation by (dx,dy,0): preserves horizontal vector fields.
+function leftTranslate(p,dx,dy){
+  return [p[0]+dx,p[1]+dy,p[2]+(dx*p[1]-dy*p[0])/2];
+}
+function translateCell(p,dx,dy,dz){
+  const q=leftTranslate(p,dx,dy);
+  return [q[0],q[1],q[2]+dz];
+}
+const lin=(p,q,t)=>p.map((a,i)=>a+(q[i]-a)*t);
+const maxDist=(a,b)=>Math.max(...a.map((x,i)=>Math.abs(x-b[i])));
+const xyDist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]);
+// dz - (x dy - y dx)/2 must be zero for a horizontal tangent.
+function horizontalityResidual(p,q){
+  const dx=q[0]-p[0],dy=q[1]-p[1],dz=q[2]-p[2];
+  return Math.abs(dz-(p[0]*dy-p[1]*dx)/2);
+}
+function verifyGeometry(nw,cellsByKey){
+  let horizontal=0,join=0,holonomy=0,edgeCount=0;
+  let minGap=Infinity,maxGap=0;
+  for(const cell of cellsByKey.values()){
+    holonomy=Math.max(holonomy,Math.abs(cell.raw[4][2]-cell.raw[0][2]-h*h));
+    for(let side=0;side<4;side++){
+      const a=cell.ring[side],b=cell.ring[side+1];
+      // Verify derivatives at points along each WHOLE segment, not just endpoints.
+      for(const t of [0,.25,.5,.75,1]){
+        const p=lin(a,b,t),d=sub(b,a);
+        horizontal=Math.max(horizontal,Math.abs(d[2]-(p[0]*d[1]-p[1]*d[0])/2));
+      }
+      edgeCount++;
+    }
+  }
+  for(const edge of nw.edges){
+    const a=cellsByKey.get(edge.p.join(","));
+    const b=cellsByKey.get(edge.q.join(","));
+    const [sa,sb]=sideMap[edge.d];
+    join=Math.max(join,
+      maxDist(a.raw[sa],b.raw[sb+1]),maxDist(a.raw[sa+1],b.raw[sb]));
+    for(const t of [0,.5,1]){
+      const A=lin(a.ring[sa],a.ring[sa+1],t);
+      const B=lin(b.ring[sb+1],b.ring[sb],t);
+      const gap=xyDist(A,B);
+      minGap=Math.min(minGap,gap);
+      maxGap=Math.max(maxGap,gap);
+    }
+  }
+  const expected=h*gapRatio;
+  const gapErr=nw.edges.length?
+    Math.max(Math.abs(minGap-expected),Math.abs(maxGap-expected)):0;
+  const residual=Math.max(horizontal,join,holonomy,gapErr);
+  return {
+    horizontal,join,holonomy,minGap:nw.edges.length?minGap:0,
+    maxGap,expected,gapErr,residual,edgeCount,
+    neighbors:nw.edges.length,ok:residual<1e-10
+  };
+}
+
+ // Three geometric operations are kept distinct:
+ //   smooth/arcs: exact analytic horizontal lift of a Euclidean circle;
+ //   chord: exact lift of each straight chord (aX+bY constant on the chord);
+ //   square: exact concatenation of integral flows Y-, X+, Y+, X-.
+ // All three start at (0,0,0), end at (0,0,targetZ), and use NO visual z-offset.
+ function curveFrameTranslate(p,step=h){
+   // One Heisenberg left translation sends the seed membrane's NW-low
+   // opening corner to the group identity O=(0,0,0).
+   const dx=step/2,dy=-step/2,dz=step*step/2;
+   return [p[0]+dx,p[1]+dy,p[2]+(dx*p[1]-dy*p[0])/2+dz];
+ }
+
+function centerAlignedCurveTranslate(p,step=h){
+  // For the attached polyline modes, the desired start point is the genuine
+  // geometric centre of the seed membrane. In the raw cell coordinates that
+  // centre is already O, so no additional frame translation is applied.
+  return p;
+}
+function curveCellSequence(loops){
+  const states=[[0,0,0]],dirs=[];
+  let state=[0,0,0];
+  for(let m=0;m<loops;m++){
+    for(const d of ['X+','Y+','X-','Y-']){
+      state=next(state,d);
+      states.push(state);
+      dirs.push(d);
+    }
+  }
+  return {states,dirs};
+}
+function sequenceFromDirections(dirs,step=h){
+  const states=[[0,0,0]],planar=[[0,0]];
+  let state=[0,0,0],x=0,y=0;
+  for(const d of dirs){
+    state=next(state,d);
+    states.push(state);
+    if(d==='X+')x+=step;
+    else if(d==='X-')x-=step;
+    else if(d==='Y+')y+=step;
+    else y-=step;
+    planar.push([x,y]);
+  }
+  return {states,dirs:[...dirs],planar};
+}
+function curvePresetSequence(id){
+  const preset=curvePresets[id]||curvePresets.base;
+  const seq=sequenceFromDirections(preset.dirs,h);
+  return {...seq,id,label:preset.label,note:preset.note,startState:[0,0,0]};
+}
+function keyToState(key){
+  return (key||'0,0,0').split(',').map(Number);
+}
+function stateKey(state){return state.join(',');}
+function rebuildPlanarFromDirs(dirs,step=h){
+  const planar=[[0,0]]; let x=0,y=0;
+  for(const d of dirs){
+    if(d==='X+')x+=step; else if(d==='X-')x-=step; else if(d==='Y+')y+=step; else y-=step;
+    planar.push([x,y]);
+  }
+  return planar;
+}
+function findShortestStatePath(startState,endState,depth){
+  const nw=networkStates(depth),byKey=new Map(nw.states.map(st=>[stateKey(st),st]));
+  const startKey=stateKey(startState),endKey=stateKey(endState);
+  if(!byKey.has(startKey)||!byKey.has(endKey))return null;
+  const queue=[byKey.get(startKey)],seen=new Set([startKey]),parent=new Map();
+  for(let head=0;head<queue.length;head++){
+    const p=queue[head],pk=stateKey(p);
+    if(pk===endKey)break;
+    for(const d of directions){
+      const q=next(p,d),qk=stateKey(q);
+      if(!byKey.has(qk)||seen.has(qk))continue;
+      seen.add(qk); parent.set(qk,{prev:pk,d}); queue.push(byKey.get(qk));
+    }
+  }
+  if(!seen.has(endKey))return null;
+  const dirsRev=[],statesRev=[byKey.get(endKey)];
+  let cursor=endKey;
+  while(cursor!==startKey){
+    const info=parent.get(cursor); if(!info)break;
+    dirsRev.push(info.d); cursor=info.prev; statesRev.push(byKey.get(cursor));
+  }
+  const dirs=dirsRev.reverse(),states=statesRev.reverse();
+  return {states,dirs,planar:rebuildPlanarFromDirs(dirs,h),depth};
+}
+function customCurveSequence(baseDepth){
+  const startState=keyToState(customCurveStartKey),endState=keyToState(customCurveEndKey);
+  if(stateKey(startState)===stateKey(endState)){
+    return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'起点与终点相同。',states:[startState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
+  }
+  const maxDepth=Math.max(baseDepth+4,8);
+  for(let d=Math.max(1,baseDepth); d<=maxDepth; d++){
+    const found=findShortestStatePath(startState,endState,d);
+    if(found){
+      return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'根据鼠标选取的两个单元中心，自动在当前网络中寻找最短步数折线。',states:found.states,dirs:found.dirs,planar:found.planar,startState,endState,effectiveDepth:d};
+    }
+  }
+  return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'当前深度范围内尚未找到连接折线。',states:[startState,endState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
+}
+function currentAttachedSequence(baseDepth=1){
+  return curvePreset==='custom' ? customCurveSequence(baseDepth) : curvePresetSequence(curvePreset);
+}
+function routeKeysForCurrentCurve(sequence=null){
+  if(viewMode!=='curve')return new Set();
+  const seq=sequence||currentAttachedSequence(+$('hgDepth').value||1);
+  return new Set(seq.states.map(st=>st.join(',')));
+}
+function directionVector(d){
+  if(d==='X+')return [1,0];
+  if(d==='X-')return [-1,0];
+  if(d==='Y+')return [0,1];
+  if(d==='Y-')return [0,-1];
+  return [0,0];
+}
+function roundedPlanarPath(sequence,step=h,arcSegments=10){
+  const centers=sequence.planar;
+  if(centers.length<=2)return centers.map(p=>[...p]);
+  const out=[[...centers[0]]];
+  for(let i=1;i<centers.length-1;i++){
+    const P=centers[i],dIn=directionVector(sequence.dirs[i-1]),dOut=directionVector(sequence.dirs[i]);
+    const turn=dIn[0]*dOut[1]-dIn[1]*dOut[0];
+    const entry=[P[0]-dIn[0]*step/2,P[1]-dIn[1]*step/2];
+    const exit=[P[0]+dOut[0]*step/2,P[1]+dOut[1]*step/2];
+    if(Math.abs(turn)<1e-9){
+      if(Math.hypot(out[out.length-1][0]-entry[0],out[out.length-1][1]-entry[1])>1e-9)out.push(entry);
+      out.push(exit);
+      continue;
+    }
+    if(Math.hypot(out[out.length-1][0]-entry[0],out[out.length-1][1]-entry[1])>1e-9)out.push(entry);
+    const leftNormal=[-dIn[1],dIn[0]],R=step/2;
+    const arcCenter=[entry[0]+turn*leftNormal[0]*R,entry[1]+turn*leftNormal[1]*R];
+    const a0=Math.atan2(entry[1]-arcCenter[1],entry[0]-arcCenter[0]);
+    for(let j=1;j<=arcSegments;j++){
+      const a=a0+turn*(Math.PI/2)*(j/arcSegments);
+      out.push([arcCenter[0]+R*Math.cos(a),arcCenter[1]+R*Math.sin(a)]);
+    }
+    out[out.length-1]=exit;
+  }
+  const last=centers[centers.length-1];
+  if(Math.hypot(out[out.length-1][0]-last[0],out[out.length-1][1]-last[1])>1e-9)out.push([...last]);
+  return out;
+}
+ function curvePoint(theta,r,phi){
+   if(Math.abs(theta-Math.PI*2)<1e-12)return [0,0,Math.PI*r*r];
+   const a=r*Math.sin(theta),b=r*(1-Math.cos(theta));
+   const c=Math.cos(phi),s=Math.sin(phi);
+   return [c*a-s*b,s*a+c*b,.5*r*r*(theta-Math.sin(theta))];
+ }
+ function liftedPolyline(planar){
+   const path=[[planar[0][0],planar[0][1],0]];
+   let z=0,L=0;
+   for(let j=1;j<planar.length;j++){
+     const [x,y]=planar[j-1],[u,v]=planar[j];
+     z+=.5*(x*v-y*u);
+     L+=Math.hypot(u-x,v-y);
+     path.push([u,v,z]);
+   }
+   // Since these are straight planar segments, this 3-D linear interpolation
+   // is exactly horizontal, not just an endpoint approximation.
+   return {path,length:L};
+ }
+
+ function membraneChordPlanarPath(segmentCount,step){
+   // The limiting four-chord polygon must be exactly the XY-flow square:
+   // (0,0)->(h,0)->(h,h)->(0,h)->(0,0).
+   // For larger counts, sample a circle-shaped planar loop, rotated by -45
+   // degrees so its four arcs pass successively through the four neighbouring
+   // membrane cells. This is a visual pseudo-geodesic construction, not a
+   // separately rendered analytic geodesic.
+   const N=Math.max(4,Math.min(64,Math.round(segmentCount)));
+   const radius=step/Math.sqrt(Math.PI);
+   const phi=-Math.PI/4;
+   const base=Math.floor(N/4),rem=N%4;
+   const perQuarter=[0,1,2,3].map(q=>base+(q<rem?1:0));
+   const params=[];
+   for(let q=0;q<4;q++){
+     const count=perQuarter[q];
+     for(let j=0;j<count;j++)params.push((q+j/count)/4);
+   }
+   params.push(1);
+   const c=Math.cos(phi),s=Math.sin(phi);
+   const raw=params.map(t=>{
+     const theta=2*Math.PI*t;
+     const x=radius*Math.sin(theta),y=radius*(1-Math.cos(theta));
+     return [c*x-s*y,s*x+c*y];
+   });
+   let area=0;
+   for(let i=0;i<raw.length-1;i++)
+     area+=.5*(raw[i][0]*raw[i+1][1]-raw[i][1]*raw[i+1][0]);
+   if(Math.abs(area)<1e-12)return raw;
+   const scale=Math.sqrt(step*step/area);
+   const planar=raw.map(p=>[p[0]*scale,p[1]*scale]);
+   planar[0]=[0,0];planar[planar.length-1]=[0,0];
+   return planar;
+ }
+ function computeCurveGeometry(sequenceOverride=null){
+   const sequence=sequenceOverride||currentAttachedSequence(+$('hgDepth').value||1);
+   const endState=sequence.states[sequence.states.length-1];
+   const targetZ=endState[2]*h*h/2;
+   const isBase=curvePreset==='base';
+   let planar,reference=[];
+   if(isBase){
+     planar=curveKind==='chord'?membraneChordPlanarPath(curveSegments,h):sequence.planar.map(p=>[...p]);
+   }else{
+     planar=curveKind==='chord'
+       ? roundedPlanarPath(sequence,h,10)
+       : sequence.planar.map(p=>[...p]);
+   }
+   const lifted=liftedPolyline(planar);
+   const path=lifted.path;
+   // The surface-attached display terminates at the selected membrane centre.
+   // For rounded visual paths, preserve that selected endpoint in the camera bounds;
+   // the membrane-surface mapping remains the authoritative displayed geometry.
+   if(path.length)path[path.length-1][2]=targetZ;
+   return {
+     kind:curveKind,path,reference,planarPath:planar,
+     length:lifted.length,geodesicLength:lifted.length,ratio:1,
+     radius:isBase?h/Math.sqrt(Math.PI):0,z:targetZ,groups:sequence.dirs.length,
+     maxError:0,endError:0,states:sequence.states,dirs:sequence.dirs,
+     startState:sequence.startState||sequence.states[0],endState,label:sequence.label,note:sequence.note,isBase,step:h
+   };
+ }
+
+ function visibleCurvePath(info,progress){
+   const path=info.path,p=clamp01(progress);
+   if(p<=0)return [path[0]];
+   if(p>=1)return path;
+   if(info.kind==='smooth'||info.kind==='arcs'){
+     const n=Math.max(2,Math.ceil(360*p));
+     const phi=curveHeading*Math.PI/180;
+     return Array.from({length:n+1},(_,i)=>curvePoint(2*Math.PI*p*i/n,info.radius,phi));
+   }
+   const t=p*(path.length-1),whole=Math.floor(t),remainder=t-whole;
+   const visible=path.slice(0,whole+1);
+   if(remainder>1e-10)visible.push(lin(path[whole],path[whole+1],remainder));
+   return visible;
+ }
+ function stopCurveAnimation(){
+   if(curveAnimFrame)cancelAnimationFrame(curveAnimFrame);
+   curveAnimFrame=0;curvePlaying=false;
+   const b=$('hgCurvePlay');if(b)b.textContent='▶ 播放行进';
+ }
+ function curveStatusText(info){
+   const style=curveKind==='chord'?'膜片贴合圆弧弦折线':'XY 水平流中心折线';
+   return `${info.label} · ${style} · ${info.dirs.length} 段 · `+
+     `终点单元 (${info.endState.join(',')}) · 终点高度 z = ${info.z.toFixed(3)} · `+
+     (curveKind==='chord'?(curvePreset==='base'?'圆弦多边形贴合膜片':'转角采用同向外凸切向圆弧'):'折点经过各单元中心');
+ }
+ 
+function membraneCenter(cell){
+  // Use the actual geometric centre of the open square unit, not the fan point
+  // used only for membrane triangulation. For the square loop this is the
+  // midpoint of the opposite real corners SW and NE.
+  return lin(cell.renderRing[1],cell.renderRing[3],.5);
+}
+function membraneEdgeMid(cell,side){
+  return lin(cell.renderRing[side],cell.renderRing[side+1],.5);
+}
+function membraneOutward(ring,side){
+  const mid=lin(ring[side],ring[side+1],.5);
+  const center=[0,1,2].map(q=>ring.reduce((sum,p)=>sum+p[q],0)/ring.length);
+  const edge=sub(ring[side+1],ring[side]);
+  const edgeSq=edge.reduce((sum,x)=>sum+x*x,0)||1;
+  const toward=sub(mid,center);
+  const parallel=toward.reduce((sum,x,i)=>sum+x*edge[i],0)/edgeSq;
+  let normal=toward.map((x,i)=>x-parallel*edge[i]);
+  const mag=Math.hypot(...normal)||1;
+  return normal.map(x=>x/mag);
+}
+function membraneBridgePoints(cellA,sideA,cellB,sideB){
+  const rA=cellA.renderRing,rB=cellB.renderRing;
+  const P=membraneEdgeMid(cellA,sideA),Q=membraneEdgeMid(cellB,sideB);
+  const span=Math.hypot(...sub(Q,P));
+  if(span<1e-9)return [P,Q];
+  const nA=membraneOutward(rA,sideA),nB=membraneOutward(rB,sideB);
+  const handle=Math.min(.20*h,span*.24*bendStrength);
+  const C1=P.map((x,i)=>x+nA[i]*handle),C2=Q.map((x,i)=>x+nB[i]*handle);
+  const pts=[P],N=20;
+  for(let j=1;j<=N;j++){
+    const t=j/N,u=1-t;
+    pts.push(P.map((x,i)=>u*u*u*x+3*u*u*t*C1[i]+3*u*t*t*C2[i]+t*t*t*Q[i]));
+  }
+  return pts;
+}
+
+function membraneArcChordPoints(center,start,end,segments=8){
+  const u=sub(start,center),v=sub(end,center);
+  const ru=Math.hypot(...u),rv=Math.hypot(...v);
+  if(ru<1e-9||rv<1e-9)return [start,end];
+  const e1=u.map(x=>x/ru);
+  const proj=v.reduce((s,x,i)=>s+x*e1[i],0);
+  let temp=v.map((x,i)=>x-proj*e1[i]);
+  let nt=Math.hypot(...temp);
+  if(nt<1e-9)return [start,end];
+  const e2=temp.map(x=>x/nt);
+  const dot=Math.max(-1,Math.min(1,v.reduce((s,x,i)=>s+x*e1[i],0)/rv));
+  const ang=Math.acos(dot);
+  const sign = v.reduce((s,x,i)=>s+x*e2[i],0)>=0 ? 1 : -1;
+  const r=.5*(ru+rv);
+  const pts=[];
+  for(let j=0;j<=segments;j++){
+    const t=j/segments,th=sign*ang*t;
+    pts.push(center.map((c,i)=>c+r*(Math.cos(th)*e1[i]+Math.sin(th)*e2[i])));
+  }
+  pts[0]=start; pts[pts.length-1]=end;
+  return pts;
+}
+
+function membraneArcChords(P,C,Q,segments){
+  // A shallow arc-like curve through the membrane region, sampled as
+  // straight chords. It stays within the convex hull of both edge points and centre.
+  const N=Math.max(2,segments),pts=[];
+  const control=C.map((x,i)=>2*x-.5*(P[i]+Q[i]));
+  for(let j=0;j<=N;j++){
+    const t=j/N,u=1-t;
+    pts.push(P.map((x,i)=>u*u*x+2*u*t*control[i]+t*t*Q[i]));
+  }
+  pts[0]=P;pts[pts.length-1]=Q;
+  return pts;
+}
+
+
+function fanCenter3D(cell,ring=cell.raw){
+  return [0,1,2].map(q=>ring.reduce((sum,p)=>sum+p[q],0)/ring.length);
+}
+function barycentric2D(P,A,B,C){
+  const v0=[B[0]-A[0],B[1]-A[1]],v1=[C[0]-A[0],C[1]-A[1]],v2=[P[0]-A[0],P[1]-A[1]];
+  const den=v0[0]*v1[1]-v1[0]*v0[1];
+  if(Math.abs(den)<1e-12)return null;
+  const v=(v2[0]*v1[1]-v1[0]*v2[1])/den;
+  const w=(v0[0]*v2[1]-v2[0]*v0[1])/den;
+  const u=1-v-w;
+  return [u,v,w];
+}
+function pointOnCellSurface(cell,xy){
+  // IMPORTANT: construct the curve on the zero-gap membrane geometry.
+  // gapRatio and zGapRatio are display-only offsets; they must never enter
+  // the barycentric surface interpolation or alter the local curve shape.
+  const ring=cell.raw;
+  const c=fanCenter3D(cell,ring),cp=[c[0],c[1]];
+  let basePoint=null;
+  for(let q=0;q<4;q++){
+    const A=cp,B=[ring[q][0],ring[q][1]],C=[ring[q+1][0],ring[q+1][1]];
+    const bc=barycentric2D(xy,A,B,C);
+    if(!bc)continue;
+    if(bc[0]>=-1e-7&&bc[1]>=-1e-7&&bc[2]>=-1e-7){
+      basePoint=[0,1,2].map(i=>bc[0]*c[i]+bc[1]*ring[q][i]+bc[2]*ring[q+1][i]);
+      break;
+    }
+  }
+  if(!basePoint){
+    // Fallback also uses the unchanged base membrane, never the displaced one.
+    let best=null,bestScore=1e99;
+    for(let q=0;q<4;q++){
+      const A=cp,B=[ring[q][0],ring[q][1]],C=[ring[q+1][0],ring[q+1][1]];
+      const bc=barycentric2D(xy,A,B,C);
+      if(!bc)continue;
+      const deficit=Math.max(0,-bc[0])+Math.max(0,-bc[1])+Math.max(0,-bc[2]);
+      if(deficit<bestScore){bestScore=deficit;best={q,bc};}
+    }
+    if(best){
+      const q=best.q,bc=best.bc;
+      const cw=[Math.max(0,bc[0]),Math.max(0,bc[1]),Math.max(0,bc[2])];
+      const s=cw[0]+cw[1]+cw[2]||1,w=cw.map(x=>x/s);
+      basePoint=[0,1,2].map(i=>w[0]*c[i]+w[1]*ring[q][i]+w[2]*ring[q+1][i]);
+    }else{
+      basePoint=[xy[0],xy[1],cell.centerZ];
+    }
+  }
+  // Only after the point is fixed on the base membrane do we apply the
+  // same per-cell display translation used by the membrane itself.
+  const dx=cell.state[0]*h*gapRatio,dy=cell.state[1]*h*gapRatio;
+  const displayed=leftTranslate(basePoint,dx,dy);
+  displayed[2]+=cell.displayOffset;
+  return displayed;
+}
+function sampleSurfaceChord(cell,P,Q,steps){
+  const pts=[]; steps=Math.max(1,steps|0);
+  for(let j=0;j<=steps;j++)pts.push(pointOnCellSurface(cell,[P[0]+(Q[0]-P[0])*j/steps,P[1]+(Q[1]-P[1])*j/steps]));
+  return pts;
+}
+function buildMembraneChordPieces(info,cellByKey){
+  // Visual-priority chord mode: keep the global equal-area circle polygon in XY,
+  // but draw each clipped portion attached to the actual 3-D membrane surface.
+  // When the segment count is 4, reuse the original square-spiral builder so the
+  // limit case visually matches the X/Y flow construction.
+  if(curveSegments<=4){
+    const attached=buildMembraneAttachedPieces('square',curveCellSequence(1),cellByKey);
+    const startCell=cellByKey.get('0,0,0'),finishCell=cellByKey.get('0,0,2');
+    attached.start=startCell?membraneCenter(startCell):[0,0,0];
+    attached.finish=finishCell?membraneCenter(finishCell):[0,0,info.z];
+    attached.segmentCount=4;
+    return attached;
+  }
+  const path=info.path,pieces=[];
+  const bridgeColor='#c04f79';
+  const quarterColors=['#d77e32','#238eae','#d77e32','#238eae'];
+  const boundary=h/2;
+  const add=(type,points,color)=>{
+    if(!points||points.length<2)return;
+    const length=points.slice(1).reduce((sum,p,i)=>sum+Math.hypot(...sub(p,points[i])),0);
+    if(length>1e-9)pieces.push({type,points,color,length});
+  };
+  function stateFor(mid,quarter){
+    const i=mid[0]>=boundary?1:0;
+    const j=mid[1]>=boundary?1:0;
+    let k;
+    if(i===1&&j===0)k=0;
+    else if(i===1&&j===1)k=1;
+    else if(i===0&&j===1)k=2;
+    else k=quarter===3?2:0;
+    return [i,j,k];
+  }
+  const N=path.length-1,base=Math.floor(N/4),rem=N%4;
+  const quarterOfSegment=[];
+  for(let q=0;q<4;q++){
+    const count=base+(q<rem?1:0);
+    for(let j=0;j<count;j++)quarterOfSegment.push(q);
+  }
+  let previousMappedEnd=null,previousState=null;
+  for(let s=0;s<path.length-1;s++){
+    const A=path[s],B=path[s+1],quarter=quarterOfSegment[s]??Math.min(3,Math.floor((s/N)*4));
+    const cuts=[0,1];
+    for(const axis of [0,1]){
+      const d=B[axis]-A[axis];
+      if(Math.abs(d)>1e-12){
+        const t=(boundary-A[axis])/d;
+        if(t>1e-9&&t<1-1e-9)cuts.push(t);
+      }
+    }
+    cuts.sort((a,b)=>a-b);
+    const unique=cuts.filter((t,i)=>i===0||Math.abs(t-cuts[i-1])>1e-8);
+    for(let c=0;c<unique.length-1;c++){
+      const t0=unique[c],t1=unique[c+1];
+      const P=lin(A,B,t0),Q=lin(A,B,t1),mid=lin(P,Q,.5),state=stateFor(mid,quarter);
+      const cell=cellByKey.get(state.join(','));
+      if(!cell)continue;
+      const segLen=Math.hypot(Q[0]-P[0],Q[1]-P[1]);
+      const steps=Math.max(2,Math.ceil(segLen/h*6));
+      const surfacePts=sampleSurfaceChord(cell,P,Q,steps);
+      if(previousMappedEnd && previousState && state.join(',')!==previousState.join(',')){
+        add('bridge',[previousMappedEnd,surfacePts[0]],bridgeColor);
+      }
+      add('solid',surfacePts,quarterColors[quarter]);
+      previousMappedEnd=surfacePts[surfacePts.length-1];
+      previousState=state;
+    }
+  }
+  const startCell=cellByKey.get('0,0,0'),finishCell=cellByKey.get('0,0,2');
+  const start=startCell?pointOnCellSurface(startCell,[0,0]):[0,0,0];
+  const finish=finishCell?pointOnCellSurface(finishCell,[0,0]):[0,0,info.z];
+  return {pieces,start,finish,segmentCount:path.length-1};
+}
+
+function rawCellCenterXY(cell){
+  const a=cell.raw[1],b=cell.raw[3];
+  return [(a[0]+b[0])/2,(a[1]+b[1])/2];
+}
+function rawMembraneEdgeMidXY(cell,side){
+  const a=cell.raw[side],b=cell.raw[side+1];
+  return [(a[0]+b[0])/2,(a[1]+b[1])/2];
+}
+function surfacePolyline(cell,xyPoints){
+  return xyPoints.map(xy=>pointOnCellSurface(cell,xy));
+}
+function surfaceLine(cell,A,B,steps=6){
+  const pts=[];
+  for(let j=0;j<=steps;j++){
+    const t=j/steps;
+    pts.push(pointOnCellSurface(cell,[A[0]+(B[0]-A[0])*t,A[1]+(B[1]-A[1])*t]));
+  }
+  return pts;
+}
+function membraneTurnArcOnSurface(cell,inDir,outDir,segments=12){
+  const inSide=sideMap[inDir][1],outSide=sideMap[outDir][0];
+  const P=rawMembraneEdgeMidXY(cell,inSide),Q=rawMembraneEdgeMidXY(cell,outSide);
+  const dIn=directionVector(inDir),dOut=directionVector(outDir);
+  const turn=dIn[0]*dOut[1]-dIn[1]*dOut[0];
+  if(Math.abs(turn)<1e-9)return surfaceLine(cell,P,Q,8);
+  // A tangent quarter-circle fillet: the arc enters and exits with the
+  // directions of the two horizontal-flow segments. This avoids the inward
+  // bulging caused by taking an arbitrary short 3-D arc around the cell centre.
+  const leftNormal=[-dIn[1],dIn[0]],R=h/2;
+  const C=[P[0]+turn*leftNormal[0]*R,P[1]+turn*leftNormal[1]*R];
+  const a0=Math.atan2(P[1]-C[1],P[0]-C[0]);
+  const xy=[];
+  for(let j=0;j<=segments;j++){
+    const a=a0+turn*(Math.PI/2)*(j/segments);
+    xy.push([C[0]+R*Math.cos(a),C[1]+R*Math.sin(a)]);
+  }
+  xy[0]=P;xy[xy.length-1]=Q;
+  return surfacePolyline(cell,xy);
+}
+function buildMembraneAttachedPieces(kind,sequence,cellByKey){
+  const pieces=[];
+  const dirs=sequence.dirs,states=sequence.states;
+  const directionColor=d=>d==='X+'||d==='X-'?'#d77e32':'#238eae';
+  const bridgeColor=kind==='square'?'#9258c5':'#c04f79';
+  const add=(type,points,color)=>{
+    if(!points||points.length<2)return;
+    const length=points.slice(1).reduce((sum,p,i)=>sum+Math.hypot(...sub(p,points[i])),0);
+    if(length>1e-9)pieces.push({type,points,color,length});
+  };
+  let start=null,finish=null;
+  for(let i=0;i<states.length;i++){
+    const cell=cellByKey.get(states[i].join(','));
+    if(!cell)continue;
+    const center=membraneCenter(cell);
+    const hasIn=i>0,hasOut=i<states.length-1;
+    let inMid=null,outMid=null,inSide=null,outSide=null;
+    if(hasIn){inSide=sideMap[dirs[i-1]][1];inMid=membraneEdgeMid(cell,inSide);}
+    if(hasOut){outSide=sideMap[dirs[i]][0];outMid=membraneEdgeMid(cell,outSide);}
+    if(!hasIn&&hasOut){
+      // Preserve the original centre-to-edge segment used by the base curve.
+      add('solid',[center,outMid],directionColor(dirs[i]));
+      if(!start)start=center;
+    }else if(hasIn&&!hasOut){
+      add('solid',[inMid,center],directionColor(dirs[i-1]));
+      finish=center;
+    }else if(hasIn&&hasOut){
+      if(kind==='square'){
+        // Original XY-flow style: the polyline passes through each membrane centre.
+        add('solid',[inMid,center],directionColor(dirs[i-1]));
+        add('solid',[center,outMid],directionColor(dirs[i]));
+      }else{
+        const dIn=directionVector(dirs[i-1]),dOut=directionVector(dirs[i]);
+        const turn=dIn[0]*dOut[1]-dIn[1]*dOut[0];
+        // For a turn, use a tangent quarter-circle mapped point-by-point onto
+        // the actual membrane surface. For a straight run, retain the direct chord.
+        const pts=Math.abs(turn)>1e-9
+          ? membraneTurnArcOnSurface(cell,dirs[i-1],dirs[i],12)
+          : [inMid,outMid];
+        add('solid',pts,directionColor(dirs[i]));
+      }
+    }else{
+      start=finish=center;
+    }
+    if(hasOut){
+      const nextCell=cellByKey.get(states[i+1].join(','));
+      if(nextCell){
+        const nextSide=sideMap[dirs[i]][1];
+        const bridge=membraneBridgePoints(cell,outSide,nextCell,nextSide);
+        add('bridge',bridge,bridgeColor);
+      }
+    }
+  }
+  if(!start){const c=cellByKey.get(states[0].join(','));if(c)start=membraneCenter(c);}
+  if(!finish){const c=cellByKey.get(states[states.length-1].join(','));if(c)finish=membraneCenter(c);}
+  return {sequence,pieces,start,finish};
+}
+
+function build(){
+  mode=$("hgMode").value;
+  const requestedDepth=+$("hgDepth").value;
+  let depth=requestedDepth;
+  h=+$("hgLength").value;
+  gapRatio=+$("hgGap").value;
+   zGapRatio=+$('hgZGap').value;
+   curveKind=$('hgCurveKind').value;
+   curvePreset=$('hgCurvePreset').value;
+   curveLoops=1;
+   const heightControl=$('hgCurveHeight');
+   const minCurveHeight=h*h;
+   heightControl.min=minCurveHeight.toFixed(4);
+   heightControl.step='0.0025';
+   if(+heightControl.value<minCurveHeight)heightControl.value=minCurveHeight.toFixed(4);
+   curveTargetZ=0;
+   curveSegments=+$('hgCurveSegments').value;
+   curveHeading=+$('hgCurveHeading').value;
+   curveProgress=+$('hgCurveProgress').value/100;
+   curveAlpha=+$('hgCurveAlpha').value;
+   curveCompare=$('hgCurveCompare').checked;
+   curveXray=$('hgCurveXray').checked;
+   curveVector=$('hgCurveVector').checked;
+   const attachedSequence=viewMode==='curve'&&(curveKind==='chord'||curveKind==='square')?currentAttachedSequence(requestedDepth):null;
+   effectiveDepthUsed=attachedSequence&&attachedSequence.effectiveDepth?Math.max(requestedDepth,attachedSequence.effectiveDepth):requestedDepth;
+   depth=effectiveDepthUsed;
+   curveInfo=computeCurveGeometry(attachedSequence);
+   if(attachedSequence){
+     curveInfo.states=attachedSequence.states;
+     curveInfo.dirs=attachedSequence.dirs;
+     curveInfo.startState=attachedSequence.startState||attachedSequence.states[0];
+     curveInfo.endState=attachedSequence.endState||attachedSequence.states[attachedSequence.states.length-1];
+     curveInfo.label=attachedSequence.label;
+     curveInfo.note=attachedSequence.note;
+   }
+   curveTargetZ=curveInfo.z;
+   curveRouteKeys=routeKeysForCurrentCurve(attachedSequence);
+  overviewOpacity=+$('hgOverviewOpacity').value;
+  overviewTint=+$('hgOverviewTint').value;
+  curveMidOpacity=+$('hgCurveMidOpacity').value;
+  curveBgTint=+$('hgCurveBgTint').value;
+  alpha=+$("hgAlpha").value;
+  seedOpacity=+$('hgSeedOpacity').value;
+  near1Opacity=+$('hgNear1Opacity').value;
+  near2Opacity=+$('hgNear2Opacity').value;
+  near3Opacity=+$('hgNear3Opacity').value;
+  near4Opacity=+$('hgNear4Opacity').value;
+  seedTint=+$('hgSeedTint').value;
+  near1Tint=+$('hgNear1Tint').value;
+  near2Tint=+$('hgNear2Tint').value;
+  near3Tint=+$('hgNear3Tint').value;
+  near4Tint=+$('hgNear4Tint').value;
+  lightStrength=+$("hgLight").value;
+  linkOpacity=+$('hgLinkOpacity').value;
+  bendStrength=+$('hgBend').value;
+  glowStrength=+$('hgGlowStrength').value;
+  showLinks=$('hgShowLinks').checked;
+  showGlow=$('hgGlow').checked;
+  zView=+$('hgZ').value;
+  focusRadius=+$('hgRadius').value;
+  demoStep=+$('hgStep').value;
+  showWire=$('hgShowWire').checked;
+  showGap=$('hgShowGap').checked;
+   const membraneCurveMode=false;
+   const attachedCurveMode=viewMode==='curve'&&(curveKind==='chord'||curveKind==='square');
+   if(membraneCurveMode||attachedCurveMode)mode='network';
+   $('hgMode').disabled=membraneCurveMode||attachedCurveMode;
+   $('hgDepth').disabled=mode==='single';
+   $('hgZGap').disabled=false;
+   $('hgCurveGroup').hidden=viewMode!=='curve';
+   $('hgReferencePanel').hidden=viewMode==='curve'||viewMode==='overview';
+   $('hgDistancePanel').hidden=viewMode==='curve'||viewMode==='overview';
+   $('hgWirePanel').open=viewMode==='overview'?true:$('hgWirePanel').open;
+   ['overview','curve','local','loop'].forEach(v=>{
+     $('hgAppearance'+v.charAt(0).toUpperCase()+v.slice(1)).hidden=viewMode!==v;
+   });
+   $('hgCurveCustomRow').hidden=curvePreset!=='custom';
+   $('hgCurveHeightRow').hidden=true;
+   $('hgCurveSegmentsRow').hidden=!(curvePreset==='base'&&curveKind==='chord');
+   $('hgCurveLoopsRow').hidden=true;
+   $('hgCurveLoopsLabel').firstChild.textContent='回路数 ';
+   $('hgCurveHeadingRow').hidden=true;
+   $('hgCurveCompareRow').hidden=true;
+   curveCompare=false;
+   $('hgCurveVectorRow').hidden=true;
+   $('hgCurveHeightValue').textContent=curveTargetZ.toFixed(2);
+   $('hgCurveHeightHint').textContent=`最低值 h² = ${(h*h).toFixed(3)}，即铁环 (0,0,2) 的中心高度`;
+   $('hgCurveSegmentsRow').querySelector('label').firstChild.textContent='圆弧弦总分段数 ';
+   $('hgCurveSegmentsValue').textContent=String(curveSegments);
+   $('hgCurveLoopsValue').textContent=String(curveLoops);
+   $('hgCurveHeadingValue').textContent=curveHeading+'°';
+   $('hgCurveProgressValue').textContent=Math.round(curveProgress*100)+'%';
+   $('hgCurveAlphaValue').textContent=curveAlpha.toFixed(2);
+   $('hgCurveMeta').textContent=`${curveInfo.label}；方向序列：${curveInfo.dirs.join(' → ')}。`+
+     `两种展示样式共用同一条仿 geodesic 对象（相同起点、终点和单元序列）：圆弧弦样式采用膜片表面上的同向外凸过渡，`+
+     `XY 水平流样式保留单元中心折点；曲线途经单元统一采用参考单元颜色浓度，起点与终点不透明度为 1，中途为 0.90；其余膜片统一使用淡色、低不透明度，不影响局部邻接模式的分层参数。`;
+   const customSelectionReadout=$('hgCurveCustomInfo');
+   if(customSelectionReadout){
+     customSelectionReadout.textContent=`起点：(${customCurveStartKey})；终点：(${customCurveEndKey})；下一次点击设置${customCurvePickTarget==='start'?'起点':'终点'}。`;
+   }
+  $('hgDepthValue').textContent=String(depth);
+  $('hgLengthValue').textContent=h.toFixed(2);
+  $('hgGapValue').textContent=(100*gapRatio).toFixed(1)+'%';
+  $('hgZGapValue').textContent=zGapRatio.toFixed(2);
+  $('hgOverviewOpacityValue').textContent=overviewOpacity.toFixed(2);
+  $('hgOverviewTintValue').textContent=overviewTint.toFixed(2);
+  $('hgCurveMidOpacityValue').textContent=curveMidOpacity.toFixed(2);
+  $('hgCurveBgTintValue').textContent=curveBgTint.toFixed(2);
+  $('hgAlphaValue').textContent=alpha.toFixed(2);
+  $('hgSeedOpacityValue').textContent=seedOpacity.toFixed(2);
+  $('hgNear1OpacityValue').textContent=near1Opacity.toFixed(2);
+  $('hgNear2OpacityValue').textContent=near2Opacity.toFixed(2);
+  $('hgNear3OpacityValue').textContent=near3Opacity.toFixed(2);
+  $('hgNear4OpacityValue').textContent=near4Opacity.toFixed(2);
+  $('hgSeedTintValue').textContent=seedTint.toFixed(2);
+  $('hgNear1TintValue').textContent=near1Tint.toFixed(2);
+  $('hgNear2TintValue').textContent=near2Tint.toFixed(2);
+  $('hgNear3TintValue').textContent=near3Tint.toFixed(2);
+  $('hgNear4TintValue').textContent=near4Tint.toFixed(2);
+  $('hgLinkOpacityValue').textContent=linkOpacity.toFixed(2);
+  $('hgBendValue').textContent=bendStrength.toFixed(2);
+  $('hgBend').disabled=fpcStyle==='straight';
+  $('hgGlowStrengthValue').textContent=glowStrength.toFixed(2);
+  $('hgLightValue').textContent=lightStrength.toFixed(2);
+  $('hgZValue').textContent=zView.toFixed(2);
+  $('hgRadiusValue').textContent=String(focusRadius);
+  $('hgStepValue').textContent=demoStep+' / 4';
+  $('hgStepRow').hidden=viewMode!=='loop';
+  $('hgRadiusRow').hidden=viewMode==='overview';
+  $('hgViewGrid').querySelectorAll('[data-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===viewMode));
+  $('hgFpcStyleGrid').querySelectorAll('[data-fpc]').forEach(btn=>btn.classList.toggle('active',btn.dataset.fpc===fpcStyle));
+  const baseNW=mode==='single'?{states:[[0,0,0]],edges:[]}:networkStates(depth);
+  const stateMap=new Map(baseNW.states.map(st=>[st.join(','),st]));
+  // attachedSequence already computed above so custom routing can auto-expand depth.
+  if(membraneCurveMode){
+    for(let m=0;m<curveLoops;m++){
+      const state=[0,0,2*m];stateMap.set(state.join(','),state);
+    }
+  }
+  if(attachedSequence){
+    for(const state of attachedSequence.states)stateMap.set(state.join(','),state);
+  }
+  const edgeList=[...baseNW.edges];
+  if(attachedSequence){
+    for(let n=0;n<attachedSequence.dirs.length;n++){
+      edgeList.push({p:attachedSequence.states[n],q:attachedSequence.states[n+1],d:attachedSequence.dirs[n]});
+    }
+  }
+  const nw={states:[...stateMap.values()],edges:edgeList};
+  const liveKeys=new Set(nw.states.map(st=>st.join(',')));
+  if(!liveKeys.has(focusKey))focusKey='0,0,0';
+  graphAdjacency=new Map(nw.states.map(st=>[st.join(','),[]]));
+  generationParents=new Map([['0,0,0',null]]);
+  for(const e of nw.edges){
+    // A directed parent relation from the original BFS generation order.
+    generationParents.set(e.q.join(','),e.p.join(','));
+    const a=e.p.join(','),b=e.q.join(',');
+    graphAdjacency.get(a).push(b);
+    graphAdjacency.get(b).push(a);
+  }
+  if(attachedSequence){
+    for(let n=1;n<attachedSequence.states.length;n++){
+      generationParents.set(attachedSequence.states[n].join(','),attachedSequence.states[n-1].join(','));
+    }
+  }
+  if(membraneCurveMode){
+    let previous=null;
+    for(let m=0;m<curveLoops;m++){
+      const key=`0,0,${2*m}`;
+      generationParents.set(key,previous);
+      previous=key;
+    }
+  }
+  focusDistances=new Map([[focusKey,0]]);
+  const queue=[focusKey];
+  for(let head=0;head<queue.length;head++){
+    const key=queue[head];
+    for(const near of graphAdjacency.get(key)||[]){
+      if(!focusDistances.has(near)){
+        focusDistances.set(near,focusDistances.get(key)+1);
+        queue.push(near);
+      }
+    }
+  }
+  if(membraneCurveMode){
+    for(let m=0;m<curveLoops;m++)focusDistances.set(`0,0,${2*m}`,Math.min(m,4));
+  }
+  if(attachedSequence){
+    for(let n=0;n<attachedSequence.states.length;n++){
+      focusDistances.set(attachedSequence.states[n].join(','),Math.min(n,4));
+    }
+  }
+  const distanceCounts=[0,1,2,3,4].map(d=>nw.states.filter(st=>focusDistances.get(st.join(','))===d).length);
+  $('hgDistanceCount').textContent=`图距离 0–4：${distanceCounts.join(' / ')} 个单元。当前生效半径 ${focusRadius}，超出半径的颜色浓度不参与着色。`;
+  const outsideCount=nw.states.filter(st=>(focusDistances.get(st.join(','))??Infinity)>focusRadius).length;
+  $('hgOtherCount').textContent=viewMode==='overview'
+    ? `全局概览：全部 ${nw.states.length} 个单元受此滑块控制`
+    : `当前局部半径外：${outsideCount} 个单元${outsideCount===0?'（此时没有可调整对象）':''}`;
+  $('hgAlpha').disabled=viewMode!=='overview' && outsideCount===0;
+  updateOverrideList(liveKeys);
+  const byKey=new Map();
+  const framePoint=membraneCurveMode
+    ? (p=>curveFrameTranslate(p,h))
+    : attachedCurveMode
+      ? (p=>centerAlignedCurveTranslate(p,h))
+      : (p=>p);
+  const baseFrameRing=rawRing([0,0,0],h).map(framePoint);
+  const baseCenterZ=baseFrameRing.reduce((total,p)=>total+p[2],0)/baseFrameRing.length;
+  cells=nw.states.map(state=>{
+    const raw=rawRing(state,h).map(framePoint);
+    const dx=state[0]*h*gapRatio,dy=state[1]*h*gapRatio;
+    const ring=rawRing(state,h).map(p=>framePoint(leftTranslate(p,dx,dy)));
+    // In membrane-curve mode, keep the seed opening corner exactly at O;
+    // separate successive loop membranes relative to the seed membrane only.
+    const centerZ=ring.reduce((total,p)=>total+p[2],0)/ring.length;
+    const displayOffset=zGapRatio*(centerZ-(membraneCurveMode?baseCenterZ:0));
+    const renderRing=ring.map(p=>[p[0],p[1],p[2]+displayOffset]);
+    const cell={state,raw,ring,renderRing,centerZ,displayOffset};
+    byKey.set(state.join(","),cell);
+    return cell;
+  });
+  connections=nw.edges;
+  report=verifyGeometry(nw,byKey);
+  const status=$('hgStatus');
+  const selected=focusKey.split(',').map(Number);
+  const adjacencyCount=[...focusDistances.values()].filter(d=>d>0&&d<=focusRadius).length;
+  const readout=$('hgReadout');
+  if(viewMode==='overview'){
+    readout.innerHTML='<b>全局概览</b><div class="tiny">统一参考色 · 颜色浓度与不透明度均可独立控制</div>';
+  }else if(viewMode==='local'){
+    readout.innerHTML=`<b>参考铁环 (${selected.join(', ')})</b><div class="tiny">图距离 ≤ ${focusRadius} · 可见 ${adjacencyCount} 个邻接单元 · 点击可切换参考点</div>`;
+   }else if(viewMode==='curve'){
+     const pathName=curveInfo.label;
+     const styleName=curveKind==='chord'?'圆弧弦折线（膜片贴合）':'XY 水平流折线（单元中心）';
+     const startStateText=(curveInfo.startState||[0,0,0]).join(',');
+     readout.innerHTML=`<b>${pathName}</b> · <span class="hg-curve-readout">(${startStateText}) → (${curveInfo.endState.join(',')})</span>`+
+       `<div class="tiny">${styleName} · 方向序列：${curveInfo.dirs.length?curveInfo.dirs.join(' → '):'（零段）'} · 已展示 ${Math.round(curveProgress*100)}%</div>`;
+   }else{
+     const label=demoStep===0?'回路起点':`第 ${demoStep} 段：${pathNames[demoStep-1]}`;
+    readout.innerHTML=`<b>参考铁环 (${selected.join(', ')})</b><div>${label} · ${demoStep} / 4</div><div class="tiny">四步完成后，终点与起点 XY 相同；完整回路 Δz = h² = ${(h*h).toFixed(4)}</div>`;
+  }
+   const curveExtraStatus=viewMode==='curve'
+     ? ` · 起点单元 (${(curveInfo.startState||[0,0,0]).join(',')}) · 目标单元 (${curveInfo.endState.join(',')}) · 目标高度 z=${curveInfo.z.toFixed(4)}`
+     : ` · 单回路竖直位移 Δz=h²=${(h*h).toFixed(4)}`;
+   status.textContent=(viewMode==='curve'?curveStatusText(curveInfo)+' · ': '')+
+     (mode==='single'?'单个单元':('邻接深度 '+requestedDepth+(effectiveDepthUsed>requestedDepth?` → 自动扩展 ${effectiveDepthUsed}`:'')))+
+    ` · 膜片 ${cells.length} · 水平边 ${report.edgeCount} · 双边邻接 ${report.neighbors} 对`+
+    ` · 参考 ${focusKey} · 邻接半径 ${focusRadius}`+
+    curveExtraStatus+
+    ` · XY 微缝 ${(report.expected).toFixed(5)} · 竖向显示分离 ×${zGapRatio.toFixed(2)}`+
+    ` · 单独设置 ${unitOverrides.size} 项 · 实际隐藏 ${cells.filter(c=>opacityForKey(c.state.join(','))===0).length} 个`+
+    ` · ${report.ok?'几何验证通过':'几何验证未通过'}（最大误差 ${report.residual.toExponential(2)}）`;
+  status.title=`四条水平边切向残差 ${report.horizontal.toExponential(4)}
+原始共边匹配 ${report.join.toExponential(4)}
+西北角高度差误差 ${report.holonomy.toExponential(4)}
+平移后间隙误差 ${report.gapErr.toExponential(4)}`;
+  paint();
+}
+function fitCanvas(){
+  const rect=canvas.getBoundingClientRect();
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  const w=Math.max(250,rect.width||600),height=Math.max(250,rect.height||500);
+  if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(height*dpr)){
+    canvas.width=Math.round(w*dpr);
+    canvas.height=Math.round(height*dpr);
+  }
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  return {w,height};
+}
+// Reference color logic: X/Y position controls hue; vertical k controls brightness only.
+// The coordinate window is fixed at [-3,3], so colors remain stable when depth changes.
+function clamp01(v){return Math.max(0,Math.min(1,v));}
+function horizontalColor(i,j){
+  const tx=clamp01((i+3)/6),ty=clamp01((j+3)/6);
+  return [
+    Math.round(55+195*tx),
+    Math.round(206-128*tx-16*ty),
+    Math.round(50+195*ty)
+  ];
+}
+// Convert sRGB <-> OKLab/OKLCH so layer height and surface lighting can
+// change perceptual lightness while preserving the membrane's XY hue/chroma.
+function srgbToLinear(v){
+  v=v/255;
+  return v<=0.04045?v/12.92:Math.pow((v+0.055)/1.055,2.4);
+}
+function linearToSrgb(v){
+  v=Math.max(0,Math.min(1,v));
+  return 255*(v<=0.0031308?12.92*v:1.055*Math.pow(v,1/2.4)-0.055);
+}
+function rgbToOklch(rgb){
+  const [r,g,b]=rgb.map(srgbToLinear);
+  const l=Math.cbrt(0.4122214708*r+0.5363325363*g+0.0514459929*b);
+  const m=Math.cbrt(0.2119034982*r+0.6806995451*g+0.1073969566*b);
+  const s=Math.cbrt(0.0883024619*r+0.2817188376*g+0.6299787005*b);
+  const L=0.2104542553*l+0.7936177850*m-0.0040720468*s;
+  const a=1.9779984951*l-2.4285922050*m+0.4505937099*s;
+  const bb=0.0259040371*l+0.7827717662*m-0.8086757660*s;
+  return {L,C:Math.hypot(a,bb),h:Math.atan2(bb,a)};
+}
+function oklchToRgb(L,C,h){
+  const a=C*Math.cos(h),b=C*Math.sin(h);
+  function raw(c){
+    const ll=L+0.3963377774*a+0.2158037573*b;
+    const mm=L-0.1055613458*a-0.0638541728*b;
+    const ss=L-0.0894841775*a-1.2914855480*b;
+    const l=ll*ll*ll,m=mm*mm*mm,s=ss*ss*ss;
+    return [
+      4.0767416621*l-3.3077115913*m+0.2309699292*s,
+      -1.2684380046*l+2.6097574011*m-0.3413193965*s,
+      -0.0041960863*l-0.7034186147*m+1.7076147010*s
+    ];
+  }
+  let linear=raw(C);
+  if(linear.some(v=>v<0||v>1)){
+    let lo=0,hi=C;
+    for(let n=0;n<14;n++){
+      const mid=(lo+hi)/2,trial=raw(mid);
+      if(trial.every(v=>v>=0&&v<=1))lo=mid;else hi=mid;
+    }
+    linear=raw(lo);
+  }
+  return linear.map(linearToSrgb).map(v=>Math.round(v));
+}
+function adjustLightness(rgb,deltaL){
+  const c=rgbToOklch(rgb);
+  return oklchToRgb(Math.max(.12,Math.min(.94,c.L+deltaL)),c.C,c.h);
+}
+function heightColor(rgb,k,kMax,contrast){
+  const t=kMax>0?k/kMax:0;
+  // At the recommended 0.65 setting, the top/bottom layers move by at most
+  // about 0.09 OKLab L: enough to read the staircase without washing out hue.
+  return adjustLightness(rgb,t*contrast*.14);
+}
+function darkenBorder(rgb){
+  const c=rgbToOklch(rgb);
+  return oklchToRgb(Math.max(.10,c.L*.82),c.C,c.h);
+}
+function rgbCss(rgb){return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;}
+function mixRgb(a,b,t){
+  return [0,1,2].map(i=>Math.round(a[i]*(1-t)+b[i]*t));
+}
+function mixOklch(a,b,t){
+  const A=rgbToOklch(a),B=rgbToOklch(b);
+  const tau=Math.PI*2;
+  const dh=((B.h-A.h+Math.PI*3)%tau)-Math.PI;
+  return oklchToRgb(A.L+(B.L-A.L)*t,A.C+(B.C-A.C)*t,A.h+dh*t);
+}
+function applyOklchShift(rgb,dL=0,dC=0,dH=0){
+  const c=rgbToOklch(rgb);
+  return oklchToRgb(Math.max(.12,Math.min(.94,c.L+dL)),Math.max(0.02,Math.min(.34,c.C+dC)),c.h+dH);
+}
+function heightPalette(t){
+  const stops=[
+    [48,73,158],
+    [53,143,193],
+    [72,181,144],
+    [207,197,93],
+    [235,142,58],
+    [176,92,153]
+  ];
+  const u=Math.max(0,Math.min(.9999,(t+1)/2))*(stops.length-1);
+  const i=Math.floor(u),f=u-i;
+  const a=stops[i],b=stops[Math.min(stops.length-1,i+1)];
+  return mixRgb(a,b,f);
+}
+// Perceptual whitening: 0 = white, 1 = full local teal; no transparency involved.
+function whitenByConcentration(rgb,strength){
+  const c=rgbToOklch(rgb);
+  const t=clamp01(strength);
+  return oklchToRgb(.996-(.996-c.L)*t,c.C*t,c.h);
+}
+function tintForDistance(d){
+  if(d===0)return seedTint;
+  if(d===1)return near1Tint;
+  if(d===2)return near2Tint;
+  if(d===3)return near3Tint;
+  if(d===4)return near4Tint;
+  return 0;
+}
+ function cellMaterial(key){
+   if(viewMode==='overview')return whitenByConcentration(focusColors.base,overviewTint);
+   if(viewMode==='curve')return whitenByConcentration(focusColors.base,
+      curveRouteKeys.has(key)?seedTint:curveBgTint);
+   const d=focusDistances.get(key);
+   if(d===undefined||d>focusRadius)return focusColors.outside;
+   return whitenByConcentration(focusColors.base,tintForDistance(d));
+}
+function borderColorFromCell(rgb){
+  const c=rgbToOklch(rgb);
+  return oklchToRgb(Math.max(.10,c.L*.79),c.C,c.h);
+}
+// Opacity: a single scalar controls both the membrane and its four ring edges.
+// Per-unit overrides have precedence, then role/distance sliders, then background.
+function isBranchHidden(key){
+  // Descendancy is defined by the creation tree, not undirected proximity.
+  // A hidden ancestor always masks its subtree. Explicit child overrides
+  // remain stored, but do not circumvent a hidden ancestor.
+  const seen=new Set();
+  let cursor=key;
+  while(cursor!==null && cursor!==undefined && !seen.has(cursor)){
+    seen.add(cursor);
+    if(unitOverrides.get(cursor)===0)return true;
+    cursor=generationParents.get(cursor);
+  }
+  return false;
+}
+function opacityForKey(key){
+  if(isBranchHidden(key))return 0;
+  if(unitOverrides.has(key))return unitOverrides.get(key);
+  if(viewMode==='overview')return overviewOpacity;
+  if(viewMode==='curve'){
+    if(!curveRouteKeys.has(key))return curveAlpha;
+    const startKey=(curveInfo.startState||[0,0,0]).join(',');
+    const endKey=curveInfo.endState.join(',');
+    return (key===startKey||key===endKey)?1:curveMidOpacity;
+  }
+  const d=focusDistances.get(key);
+  if(d===undefined || d>focusRadius)return alpha;
+  if(d===0)return seedOpacity;
+  if(d===1)return near1Opacity;
+  if(d===2)return near2Opacity;
+  if(d===3)return near3Opacity;
+  if(d===4)return near4Opacity;
+  return alpha;
+}
+function updateOverrideList(liveKeys=null){
+  const container=$('hgOverrideList'),summary=$('hgOverrideSummary');
+  container.replaceChildren();
+  const all=[...unitOverrides.entries()].filter(([key])=>!liveKeys||liveKeys.has(key));
+  summary.textContent=all.length?`已设置 ${all.length} 个单元；隐藏会沿生成树传播到后代`:'无单独调整的单元';
+  for(const [key,opacity] of all){
+    const entry=document.createElement('div');entry.className='hg-override-item';
+    const label=document.createElement('span');
+    label.textContent=`(${key}) · ${opacity===0?'隐藏整个生成分支':opacity.toFixed(2)}`;
+    const btn=document.createElement('button');btn.type='button';btn.textContent='恢复';
+    btn.addEventListener('click',()=>{unitOverrides.delete(key);closeUnitMenu();build();});
+    entry.append(label,btn);container.appendChild(entry);
+  }
+}
+function setUnitOpacity(key,value){
+  if(!key)return;
+  unitOverrides.set(key,Math.max(0,Math.min(1,value)));
+  build();
+}
+function closeUnitMenu(){
+  $('hgUnitMenu').hidden=true;
+  menuKey=null;
+}
+function cellRole(key){
+  if(viewMode==='overview')return 'other';
+  const d=focusDistances.get(key);
+  if(d===0)return 'seed';
+  if(d!==undefined && d<=focusRadius)return 'near';
+  return 'other';
+}
+function filmOpacityForKey(key){return opacityForKey(key);}
+function wireOpacityForKey(key){return opacityForKey(key);}
+function paint(){
+  const {w,height}=fitCanvas();
+  ctx.clearRect(0,0,w,height);
+  ctx.fillStyle="#fbfcfe";ctx.fillRect(0,0,w,height);
+  if(!cells.length)return;
+
+   const points=cells.flatMap(cell=>cell.renderRing);
+   if(viewMode==='curve'&&curveInfo){
+     points.push(...curveInfo.path,...curveInfo.reference,[0,0,0],[0,0,curveTargetZ]);
+   }
+  const center=[0,1,2].map(i=>(Math.min(...points.map(p=>p[i]))+Math.max(...points.map(p=>p[i])))/2);
+  const ca=Math.cos(az),sa=Math.sin(az),ce=Math.cos(el),se=Math.sin(el);
+  function rotate(p){
+    const x=p[0]-center[0],y=p[1]-center[1],z=(p[2]-center[2])*zView;
+    return {x:-sa*x+ca*y,y:-se*ca*x-se*sa*y+ce*z,
+            depth:ce*ca*x+ce*sa*y+se*z};
+  }
+  const rp=points.map(rotate);
+  const bounds=[Math.min(...rp.map(p=>p.x)),Math.max(...rp.map(p=>p.x)),
+                Math.min(...rp.map(p=>p.y)),Math.max(...rp.map(p=>p.y))];
+  const scale=Math.min((w-42)/Math.max(.1,bounds[1]-bounds[0]),
+                       (height-48)/Math.max(.1,bounds[3]-bounds[2]))*.91*zoom;
+  const project=p=>{
+    const v=rotate(p);
+    return {x:w/2+v.x*scale,y:height/2-v.y*scale,d:v.depth};
+  };
+  const films=[],patches=[],wires=[],marks=[],helperLinks=[],tangentFilms=[];
+  pickFaces=[];pickEdges=[];
+  // Directional light on a single material: brightness changes with the real
+  // 3D orientation of each triangular facet, including the raised NW lip.
+  const light=[-.58,.21,1.00];
+  const ln=Math.hypot(...light);
+  const L=light.map(v=>v/ln);
+  function faceLightDelta(a,b,c){
+    const U=sub(b,a),V=sub(c,a);
+    let n=[U[1]*V[2]-U[2]*V[1],U[2]*V[0]-U[0]*V[2],U[0]*V[1]-U[1]*V[0]];
+    const mag=Math.hypot(...n)||1;
+    n=n.map(v=>v/mag);
+    // Thin membrane is double-sided; normal lighting remains independent of semantic color binding.
+    const diffuse=Math.abs(n[0]*L[0]+n[1]*L[1]+n[2]*L[2]);
+    return (diffuse-.48)*lightStrength*.14;
+  }
+  function shadeFace(a,b,c,base){
+    return rgbCss(adjustLightness(base,faceLightDelta(a,b,c)));
+  }
+  function addTriangle(arr,a,b,c,color,opacity){
+    const P=project(a),Q=project(b),R=project(c);
+    arr.push({pts:[P,Q,R],depth:(P.d+Q.d+R.d)/3,color,opacity});
+  }
+  function addLine(arr,a,b,color,width=1.6,opacity=1,dashed=false,glow=0){
+    arr.push({p:project(a),q:project(b),color,width,opacity,dashed,glow});
+  }
+  const kMax=Math.max(1,...cells.map(cell=>Math.abs(cell.state[2])));
+  const cellByKey=new Map(cells.map(cell=>[cell.state.join(","),cell]));
+  const materialByCell=new Map();
+  for(const cell of cells){
+    const [i,j,k]=cell.state;
+    materialByCell.set(cell.state.join(','),cellMaterial(cell.state.join(',')));
+  }
+  // Bind the two fan triangles that meet the same real horizontal-flow adjacency.
+  // The exact same edge color is used on both sides, then fades toward each ring's own material.
+  const bindingBySide=new Map();
+  const curveRouteEdges = viewMode==='curve' && (curveKind==='chord'||curveKind==='square')
+    ? (()=>{const seq=curveInfo?{states:curveInfo.states,dirs:curveInfo.dirs}:currentAttachedSequence(+$('hgDepth').value||1),set=new Set();
+        for(let i=0;i<seq.dirs.length;i++)
+          set.add(`${seq.states[i].join(',')}|${seq.states[i+1].join(',')}|${seq.dirs[i]}`);
+        return set;})()
+    : null;
+  if(viewMode!=='overview' && mode==='network'){
+    for(const edge of connections){
+      const keyA=edge.p.join(','),keyB=edge.q.join(',');
+      if(curveRouteEdges && !curveRouteEdges.has(`${keyA}|${keyB}|${edge.d}`))continue;
+      // Curve-mode FPC must span every transition of the displayed path;
+      // the local-neighbourhood radius is a network-view filter, not a route cut.
+      if(!curveRouteEdges && ((focusDistances.get(keyA)??Infinity)>focusRadius ||
+         (focusDistances.get(keyB)??Infinity)>focusRadius))continue;
+      if(opacityForKey(keyA)<=.001 || opacityForKey(keyB)<=.001)continue;
+      const cellA=cellByKey.get(keyA),cellB=cellByKey.get(keyB);
+      if(!cellA||!cellB)continue;
+      const [sideA,sideB]=sideMap[edge.d];
+      const baseA=materialByCell.get(keyA),baseB=materialByCell.get(keyB);
+      // A single relation color is computed once and reused on both sides.
+      // This guarantees exact color identity at the paired adjacency edge.
+      // Exactly the same shared color on both true matching edges.
+      const shared=mixOklch(baseA,baseB,.5);
+      const centerA=[0,1,2].map(q=>cellA.renderRing.reduce((sum,p)=>sum+p[q],0)/5);
+      const centerB=[0,1,2].map(q=>cellB.renderRing.reduce((sum,p)=>sum+p[q],0)/5);
+      const deltaA=faceLightDelta(centerA,cellA.renderRing[sideA],cellA.renderRing[sideA+1]);
+      const deltaB=faceLightDelta(centerB,cellB.renderRing[sideB],cellB.renderRing[sideB+1]);
+      const sharedBinding={color:shared,lightDelta:(deltaA+deltaB)/2};
+      bindingBySide.set(keyA+"|"+sideA,sharedBinding);
+      bindingBySide.set(keyB+"|"+sideB,sharedBinding);
+    }
+  }
+  for(const cell of cells){
+    const r=cell.renderRing;
+    const [i,j,k]=cell.state;
+    const cellKey=cell.state.join(",");
+    const materialRgb=materialByCell.get(cellKey);
+    const dFocus=focusDistances.get(cellKey);
+    const role=cellRole(cellKey);
+    const patchOpacity=filmOpacityForKey(cellKey);
+    const localWireOpacity=wireOpacityForKey(cellKey);
+    const materialColor=rgbCss(materialRgb);
+    const borderColor=rgbCss(borderColorFromCell(materialRgb));
+    const c=[0,1,2].map(q=>r.reduce((sum,p)=>sum+p[q],0)/5);
+    const vertexProjected=r.map(project),cp=project(c);
+    const faces=[];
+    for(let q=0;q<5;q++){
+      const a=c,b=r[q],cc=r[(q+1)%5];
+      const deltaL=faceLightDelta(a,b,cc);
+      const ownShade=adjustLightness(materialRgb,deltaL);
+      let color=rgbCss(ownShade);
+      addTriangle(films,a,b,cc,color,patchOpacity);
+      const binding=bindingBySide.get(cellKey+"|"+q);
+      let treatment=null;
+      if(binding){
+        const edgeShade=adjustLightness(binding.color,binding.lightDelta);
+        const edgeA=vertexProjected[q],edgeB=vertexProjected[(q+1)%5];
+        const edgeMid={x:(edgeA.x+edgeB.x)/2,y:(edgeA.y+edgeB.y)/2};
+        const centerMid={x:(edgeMid.x+cp.x)/2,y:(edgeMid.y+cp.y)/2};
+        const middleBase=mixOklch(binding.color,materialRgb,.42);
+        const middleShade=adjustLightness(middleBase,deltaL*.55+binding.lightDelta*.45);
+        treatment={
+          kind:"band",
+          edge:rgbCss(edgeShade),
+          middle:rgbCss(middleShade),
+          own:rgbCss(ownShade),
+          from:edgeMid,
+          to:cp
+        };
+      }
+      faces.push({pts:[cp,vertexProjected[q],vertexProjected[(q+1)%5]],color,treatment});
+      pickFaces.push({key:cellKey,opacity:patchOpacity,pts:[cp,vertexProjected[q],vertexProjected[(q+1)%5]]});
+    }
+    patches.push({depth:cp.d,center:cp,vertices:vertexProjected,faces,materialColor,opacity:patchOpacity});
+    if(wireVisibleForKey(cellKey)){
+      for(let q=0;q<4;q++){
+        const binding=bindingBySide.get(cellKey+"|"+q);
+        const edgeColor=binding?rgbCss(darkenBorder(binding.color)):borderColor;
+        const glow=(showGlow && viewMode!=='overview' && (role==='seed'||role==='near'))
+          ? (role==='seed'?1:.65) : 0;
+        addLine(wires,r[q],r[q+1],edgeColor,2.0,localWireOpacity,false,glow);
+        if(localWireOpacity>.025){
+          pickEdges.push({key:cellKey,p:project(r[q]),q:project(r[q+1]),opacity:localWireOpacity});
+        }
+      }
+    }
+    if(showGap&&(mode==="single"||cells.length<=5))
+      addLine(marks,r[0],r[4],"#b76f4e",1.7,.96*patchOpacity,true);
+  }
+  // Full-width FPC: 11 matching strands anchored ON both frame edges.
+  // Treat the former "rafters" ONLY as tangent vectors at the endpoints.
+  // A SINGLE cubic Bezier immediately leaves each frame in its membrane's
+  // outward direction; no visible straight stem is introduced.
+  // This stays smooth without any imposed S-shaped displacement.
+  // FPC is an explanatory overlay, NOT a horizontal integral curve.
+   if(showLinks && linkOpacity>0 && mode==='network' && viewMode!=='overview'){
+    const count=11;
+    const add3=(p,v,t)=>p.map((x,i)=>x+t*v[i]);
+    function outwardFromMembrane(r,side){
+      const mid=lin(r[side],r[side+1],.5);
+      const center=[0,1,2].map(q=>r.reduce((sum,p)=>sum+p[q],0)/r.length);
+      const edge=sub(r[side+1],r[side]);
+      const edgeSq=edge.reduce((sum,x)=>sum+x*x,0)||1;
+      const towardOut=sub(mid,center);
+      const parallel=towardOut.reduce((sum,x,i)=>sum+x*edge[i],0)/edgeSq;
+      let normal=towardOut.map((x,i)=>x-parallel*edge[i]);
+      let mag=Math.hypot(...normal);
+      if(mag<1e-9){normal=towardOut;mag=Math.hypot(...normal)||1;}
+      return normal.map(x=>x/mag);
+    }
+    for(const edge of connections){
+      const keyA=edge.p.join(','),keyB=edge.q.join(',');
+      if(curveRouteEdges && !curveRouteEdges.has(`${keyA}|${keyB}|${edge.d}`))continue;
+      if(!curveRouteEdges && ((focusDistances.get(keyA)??Infinity)>focusRadius ||
+         (focusDistances.get(keyB)??Infinity)>focusRadius))continue;
+      if(opacityForKey(keyA)<=.001 || opacityForKey(keyB)<=.001)continue;
+      const cellA=cellByKey.get(keyA),cellB=cellByKey.get(keyB);
+      if(!cellA||!cellB)continue;
+      const [sa,sb]=sideMap[edge.d];
+      const rA=cellA.renderRing,rB=cellB.renderRing;
+      const a0=rA[sa],a1=rA[sa+1],b0=rB[sb+1],b1=rB[sb];
+      const outA=outwardFromMembrane(rA,sa),outB=outwardFromMembrane(rB,sb);
+      const midA=lin(a0,a1,.5),midB=lin(b0,b1,.5);
+      const span=Math.hypot(...sub(midB,midA));
+      // The rafter is now a VIRTUAL tangent guide, not a drawn segment.
+      // Keep stem exactly zero: this yields a single cubic Bezier.
+      // The handle controls the tangent direction smoothly from each frame;
+      // 0 still degenerates to an exact straight line.
+      const stem=0;
+      const handle=Math.min(.20*h,span*.20,span*.24*bendStrength);
+      const strands=[];
+      for(let n=0;n<count;n++){
+        const t=n/(count-1);
+        const P=lin(a0,a1,t),Q=lin(b0,b1,t);
+        const C1=add3(P,outA,handle),C2=add3(Q,outB,handle);
+        // From -> control1 follows the first membrane's outward direction;
+        // control2 -> To follows the negative of the second membrane's outward direction.
+        strands.push({from:project(P),startStub:project(P),
+          cp1:project(C1),cp2:project(C2),endStub:project(Q),to:project(Q),
+          stem,handle});
+      }
+      helperLinks.push({strands,opacity:linkOpacity*Math.min(opacityForKey(keyA),opacityForKey(keyB))});
+    }
+  }
+  function paintTriangles(arr){
+    for(const t of arr){
+      ctx.globalAlpha=t.opacity;
+      ctx.beginPath();ctx.moveTo(t.pts[0].x,t.pts[0].y);
+      ctx.lineTo(t.pts[1].x,t.pts[1].y);
+      ctx.lineTo(t.pts[2].x,t.pts[2].y);ctx.closePath();
+      ctx.fillStyle=t.color;ctx.fill();
+    }
+  }
+  // Render each film ONCE into a small offscreen tile (opaque base + lighting).
+  // Then composite the whole tile with user opacity exactly once. This keeps
+  // alpha=0.5 equal to 50%, restores 3-D lighting, and eliminates fan seams.
+  tangentFilms.sort((a,b)=>a.depth-b.depth);
+  paintTriangles(tangentFilms);
+  const filmTile=document.createElement("canvas");
+  const tctx=filmTile.getContext("2d");
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  patches.sort((a,b)=>a.depth-b.depth);
+  if(patches.some(p=>p.opacity>0))for(const patch of patches){
+    const C=patch.center,v=patch.vertices;
+    const all=[C,...v];
+    const x0=Math.floor(Math.min(...all.map(p=>p.x)))-2;
+    const y0=Math.floor(Math.min(...all.map(p=>p.y)))-2;
+    const x1=Math.ceil(Math.max(...all.map(p=>p.x)))+2;
+    const y1=Math.ceil(Math.max(...all.map(p=>p.y)))+2;
+    const bw=Math.max(1,x1-x0),bh=Math.max(1,y1-y0);
+    filmTile.width=Math.ceil(bw*dpr);
+    filmTile.height=Math.ceil(bh*dpr);
+    tctx.setTransform(dpr,0,0,dpr,-x0*dpr,-y0*dpr);
+    tctx.globalAlpha=1;
+    tctx.beginPath();
+    for(let i=0;i<5;i++){
+      tctx.moveTo(C.x,C.y);
+      tctx.lineTo(v[i].x,v[i].y);
+      tctx.lineTo(v[(i+1)%5].x,v[(i+1)%5].y);
+      tctx.closePath();
+    }
+    tctx.fillStyle=patch.materialColor;
+    tctx.fill();
+    for(const f of patch.faces){
+      const p=f.pts;
+      tctx.beginPath();tctx.moveTo(p[0].x,p[0].y);
+      tctx.lineTo(p[1].x,p[1].y);tctx.lineTo(p[2].x,p[2].y);tctx.closePath();
+      tctx.fillStyle=f.color;
+      tctx.fill();
+      if(f.treatment && f.treatment.kind==="band"){
+        tctx.save();
+        tctx.clip();
+        const g=tctx.createLinearGradient(f.treatment.from.x,f.treatment.from.y,
+                                          f.treatment.to.x,f.treatment.to.y);
+        g.addColorStop(0,f.treatment.edge);
+        g.addColorStop(.42,f.treatment.middle);
+        g.addColorStop(1,f.treatment.own);
+        tctx.fillStyle=g;
+        tctx.fillRect(x0,y0,bw,bh);
+        tctx.restore();
+      }
+    }
+    if(patch.opacity>0){
+      ctx.globalAlpha=patch.opacity;
+      ctx.drawImage(filmTile,0,0,filmTile.width,filmTile.height,x0,y0,bw,bh);
+    }
+  }
+
+  // A single painter's-order pass cannot correctly decide whether a 3-D edge
+  // is behind a nonplanar membrane. Instead, perform a screen-space depth test
+  // against EVERY membrane triangle at each sample of EVERY edge.
+  // For n membranes in front of the edge, its visible opacity is
+  //                  baseOpacity * (1 - filmOpacity)^n .
+  // Therefore alpha=1 truly HIDES all rear edges, while alpha=0 shows all.
+  const tile=28,nx=Math.ceil(w/tile),ny=Math.ceil(height/tile);
+  const buckets=new Array(nx*ny);
+  for(const t of films){
+    if(t.opacity<=0)continue;
+    const [A,B,C]=t.pts;
+    const bx=B.x-A.x,by=B.y-A.y,cx=C.x-A.x,cy=C.y-A.y;
+    const det=bx*cy-by*cx;
+    if(Math.abs(det)<1e-7)continue;
+    const l=Math.max(0,Math.floor(Math.min(A.x,B.x,C.x)/tile));
+    const r=Math.min(nx-1,Math.floor(Math.max(A.x,B.x,C.x)/tile));
+    const top=Math.max(0,Math.floor(Math.min(A.y,B.y,C.y)/tile));
+    const bottom=Math.min(ny-1,Math.floor(Math.max(A.y,B.y,C.y)/tile));
+    if(l>r||top>bottom)continue;
+    const face={ax:A.x,ay:A.y,ad:A.d,bx,by,cx,cy,
+                db:B.d-A.d,dc:C.d-A.d,inv:1/det,opacity:t.opacity};
+    for(let yy=top;yy<=bottom;yy++)for(let xx=l;xx<=r;xx++){
+      const idx=yy*nx+xx;
+      (buckets[idx]||(buckets[idx]=[])).push(face);
+    }
+  }
+  const eps=Math.max(1e-6,h*.001);
+  function transmittanceInFront(x,y,d){
+    if(x<0||y<0||x>=w||y>=height)return 1;
+    const cell=buckets[Math.floor(y/tile)*nx+Math.floor(x/tile)];
+    if(!cell)return 1;
+    let tau=1;
+    for(const f of cell){
+      const qx=x-f.ax,qy=y-f.ay;
+      const u=(qx*f.cy-qy*f.cx)*f.inv;
+      const v=(f.bx*qy-f.by*qx)*f.inv;
+      if(u < -1e-7||v < -1e-7||u+v > 1+1e-7)continue;
+      if(f.ad+u*f.db+v*f.dc > d+eps)tau*=1-f.opacity;
+    }
+    return tau;
+  }
+  function paintLines(lines){
+    // Draw in batches: each depth layer has one stroke path, so dragging
+    // and rotating still work smoothly at all three network depths.
+    const batches=new Map();
+    for(const ln of lines){
+      const P=ln.p,Q=ln.q,dx=Q.x-P.x,dy=Q.y-P.y;
+      const length=Math.hypot(dx,dy);
+      const steps=Math.max(1,Math.ceil(length/2.5));
+      const groups=new Map();
+      for(let j=0;j<steps;j++){
+        const t=(j+.5)/steps;
+        if(ln.dashed && ((t*length)%9)>5)continue;
+        const d=P.d+(Q.d-P.d)*t;
+         const tau=ln.ignoreOcclusion?1:transmittanceInFront(P.x+dx*t,P.y+dy*t,d);
+        const a=ln.opacity*tau;
+        if(a<.008)continue;
+        const key=ln.color+"|"+ln.width+"|"+Math.round(tau*100)+"|"+Math.round(ln.opacity*100)+"|"+(ln.dashed?1:0)+"|"+ln.glow;
+        let group=groups.get(key);
+        if(!group){
+          group={color:ln.color,width:ln.width,a,glow:ln.glow,segments:[]};
+          groups.set(key,group);
+        }
+        const t0=j/steps,t1=(j+1)/steps;
+        group.segments.push([P.x+dx*t0,P.y+dy*t0,P.x+dx*t1,P.y+dy*t1]);
+      }
+      for(const [key,g] of groups){
+        let b=batches.get(key);
+        if(!b){b={color:g.color,width:g.width,a:g.a,glow:g.glow,segments:[]};batches.set(key,b);}
+        b.segments.push(...g.segments);
+      }
+    }
+    for(const b of batches.values()){
+      ctx.globalAlpha=b.a;
+      ctx.strokeStyle=b.color;
+      ctx.lineWidth=b.width;
+      ctx.lineCap="round";
+      ctx.shadowBlur=showGlow?b.glow*glowStrength*11:0;
+      ctx.shadowColor="rgba(44,165,193,0.8)";
+      ctx.beginPath();
+      for(const s of b.segments){ctx.moveTo(s[0],s[1]);ctx.lineTo(s[2],s[3]);}
+      ctx.stroke();
+    }
+    ctx.shadowBlur=0;
+  }
+  paintLines(wires);
+  paintLines(marks);
+  // Depth-tested FPC ribbon. Its endpoints still span each complete frame edge.
+  // The original version painted these decorative lines unconditionally OVER
+  // every membrane; now a fully opaque foreground film masks them, too.
+  const fpcFragments=[];
+  function bezPoint(track,t){
+    if(fpcStyle==='straight' || bendStrength<=0){
+      return {x:track.from.x+(track.to.x-track.from.x)*t,
+              y:track.from.y+(track.to.y-track.from.y)*t,
+              d:track.from.d+(track.to.d-track.from.d)*t};
+    }
+    // A single cubic Bezier in 3D, with control points determined by
+    // the outward membrane tangents. The two old linear pieces now have
+    // zero length and zero parameter duration; camera projection is affine,
+    // preserving the endpoint tangent constraints.
+    const P=track.from,A=track.startStub,C1=track.cp1;
+    const C2=track.cp2,B=track.endStub,Q=track.to;
+    const lerp=(a,b,u)=>a+(b-a)*u;
+    const cubic=(p,a,b,q,u)=>{
+      const v=1-u;
+      return v*v*v*p+3*v*v*u*a+3*v*u*u*b+u*u*u*q;
+    };
+    const total=Math.max(1e-8,2*track.stem+3*track.handle);
+    const t1=track.stem/total,t2=(track.stem+3*track.handle)/total;
+    if(t<t1&&t1>1e-9){
+      const u=t/t1;
+      return {x:lerp(P.x,A.x,u),y:lerp(P.y,A.y,u),d:lerp(P.d,A.d,u)};
+    }
+    if(t<t2&&t2>t1+1e-9){
+      const u=(t-t1)/(t2-t1);
+      return {x:cubic(A.x,C1.x,C2.x,B.x,u),
+              y:cubic(A.y,C1.y,C2.y,B.y,u),
+              d:cubic(A.d,C1.d,C2.d,B.d,u)};
+    }
+    const u=(t-t2)/Math.max(1e-9,1-t2);
+    return {x:lerp(B.x,Q.x,u),y:lerp(B.y,Q.y,u),d:lerp(B.d,Q.d,u)};
+  }
+  for(const ribbon of helperLinks){
+    for(let n=0;n<ribbon.strands.length;n++){
+      const track=ribbon.strands[n],outer=n===0||n===ribbon.strands.length-1;
+      const opacity=ribbon.opacity*(outer?.62:.78);
+      const N=60;
+      let prev=bezPoint(track,0),length=0;
+      for(let j=1;j<=N;j++){
+        const next=bezPoint(track,j/N);
+        const len=Math.hypot(next.x-prev.x,next.y-prev.y);
+        // One dash pattern follows the entire strand, instead of restarting
+        // at each individual line segment.
+        if((length+len/2+(n%2)*1.6)%7.7<3.4){
+          fpcFragments.push({p:prev,q:next,
+            width:outer?1.05:.85,opacity,color:outer?'#4d839b':'#689bad',
+            dashed:false,glow:0});
+        }
+        length+=len;prev=next;
+      }
+    }
+  }
+   paintLines(fpcFragments);
+   // -------- Exact horizontal curves in the unmodified group coordinates --------
+   if(viewMode==='curve' && curveInfo){
+     if(curveKind==='chord'||curveKind==='square'){
+       // Keep the square-flow spiral on its original membrane-attached builder.
+       // Only chord mode uses the global circle-chord path builder.
+       const sequence=curveInfo?{states:curveInfo.states,dirs:curveInfo.dirs,startState:curveInfo.startState,endState:curveInfo.endState}:currentAttachedSequence(+$('hgDepth').value||1);
+       const attached=(curveKind==='chord'&&curvePreset==='base')
+         ? buildMembraneChordPieces(curveInfo,cellByKey)
+         : buildMembraneAttachedPieces(curveKind,sequence,cellByKey);
+       const pieces=attached.pieces;
+       const guide=[],casing=[],colored=[],fpcBase=[],fpcHighlight=[];
+       const xray=curveXray;
+       function lineBetween(arr,a,b,color,width,opacity=1,ignoreOcclusion=xray,dashed=false){
+         arr.push({p:project(a),q:project(b),color,width,opacity,glow:0,ignoreOcclusion,dashed});
+       }
+       function polyLength(points){
+         let L=0;for(let i=1;i<points.length;i++)L+=Math.hypot(...sub(points[i],points[i-1]));return L;
+       }
+       function clipPolyline(points,maxLength){
+         if(maxLength<=0)return [points[0]];
+         const out=[points[0]];let used=0;
+         for(let i=1;i<points.length;i++){
+           const a=points[i-1],b=points[i],L=Math.hypot(...sub(b,a));
+           if(used+L<=maxLength+1e-10){out.push(b);used+=L;continue;}
+           const t=L>1e-12?Math.max(0,Math.min(1,(maxLength-used)/L)):0;
+           out.push(lin(a,b,t));break;
+         }
+         return out;
+       }
+       // Grey analytic geodesic is retained only as a reference; it is not the
+       // membrane-attached path.
+       if(curveCompare){
+         const ref=curveInfo.reference;
+         for(let i=1;i<ref.length;i++)if(i%5<3)
+           lineBetween(guide,ref[i-1],ref[i],'#748b9a',1.6,.55);
+       }
+       const totalLength=pieces.reduce((sum,p)=>sum+p.length,0);
+       let remaining=totalLength*curveProgress;
+       let currentPoint=pieces.length?pieces[0].points[0]:[0,0,0];
+       for(const piece of pieces){
+         if(remaining<=1e-10)break;
+         const shown=Math.min(piece.length,remaining);
+         const pts=clipPolyline(piece.points,shown);
+         if(pts.length>1){
+           currentPoint=pts[pts.length-1];
+           if(piece.type==='solid'){
+             for(let j=1;j<pts.length;j++){
+               lineBetween(casing,pts[j-1],pts[j],'#ffffff',7.0,.98);
+               lineBetween(colored,pts[j-1],pts[j],piece.color,4.1,1);
+             }
+           }else{
+             // The purple segmented connector is a distinct geometric cue for
+             // the curve's continuity across the membrane gap. It must remain
+             // visible even when the multi-strand FPC ribbon is enabled.
+             // Build explicit dash segments (rather than relying on the generic
+             // per-line dash phase, which can hide short bridge pieces).
+             for(let j=1;j<pts.length;j+=5){
+               const k=Math.min(pts.length-1,j+3);
+               if(k<=j-1)continue;
+               lineBetween(fpcBase,pts[j-1],pts[k],'#6599ad',1.35,.88,xray,false);
+               lineBetween(fpcHighlight,pts[j-1],pts[k],piece.color,3.8,1,xray,false);
+             }
+           }
+         }
+         remaining-=shown;
+       }
+       paintLines(guide);
+       paintLines(fpcBase);
+       paintLines(fpcHighlight);
+       paintLines(casing);
+       paintLines(colored);
+       function disk(p,r,color,stroke='#ffffff',opacity=1){
+         const q=project(p),tau=xray?1:transmittanceInFront(q.x,q.y,q.d);
+         if(tau<.03)return;
+         ctx.save();ctx.globalAlpha=opacity*tau;ctx.beginPath();ctx.arc(q.x,q.y,r,0,2*Math.PI);
+         ctx.fillStyle=color;ctx.fill();ctx.lineWidth=1.4;ctx.strokeStyle=stroke;ctx.stroke();ctx.restore();
+       }
+       const start=attached.start||(pieces.length?pieces[0].points[0]:[0,0,0]);
+       const finish=attached.finish||(pieces.length?pieces[pieces.length-1].points.slice(-1)[0]:[0,0,curveTargetZ]);
+       disk(start,5.8,'#275f75');
+       disk(finish,6.0,'#a85a45');
+       if(attached.sequence){
+         for(const state of attached.sequence.states.slice(1,-1)){
+           const cell=cellByKey.get(state.join(','));
+           if(cell)disk(membraneCenter(cell),3.0,'#355f76','#ffffff',.96);
+         }
+       }
+       if(curveProgress>.002&&curveProgress<.999)disk(currentPoint,6.1,'#e0a23f');
+       ctx.save();ctx.globalAlpha=1;ctx.font='600 12px system-ui';ctx.strokeStyle='#ffffff';ctx.lineWidth=3;
+       const s=project(start),e=project(finish);
+       const startState=attached.sequence?(attached.sequence.startState||attached.sequence.states[0]):[0,0,0];
+       ctx.strokeText(`单元 (${startState.join(',')})`,s.x-18,s.y+18);ctx.fillStyle='#31576a';ctx.fillText(`单元 (${startState.join(',')})`,s.x-18,s.y+18);
+       const endState=attached.sequence?(attached.sequence.endState||attached.sequence.states[attached.sequence.states.length-1]):[0,0,2*curveLoops];
+       ctx.strokeText(`单元 (${endState.join(',')})`,e.x+10,e.y-9);
+       ctx.fillStyle='#9c5746';ctx.fillText(`单元 (${endState.join(',')})`,e.x+10,e.y-9);
+       ctx.restore();
+       // XY inset remains the theoretical square/chord projection.
+       const miniSize=166,miniX=w-miniSize-16,miniY=13,planar=curveInfo.path;
+       const xyLim=Math.max(.1,...planar.map(p=>Math.abs(p[0])),...planar.map(p=>Math.abs(p[1])));
+       const miniScale=(miniSize-46)/(2*xyLim);
+       const mp=p=>({x:miniX+miniSize/2+p[0]*miniScale,y:miniY+miniSize/2-p[1]*miniScale});
+       ctx.save();ctx.globalAlpha=.94;ctx.fillStyle='#ffffff';ctx.strokeStyle='#d5e1e7';ctx.lineWidth=1;
+       ctx.beginPath();ctx.roundRect(miniX,miniY,miniSize,miniSize,10);ctx.fill();ctx.stroke();
+       const cross=mp([0,0]);ctx.strokeStyle='#d3e0e6';ctx.lineWidth=.8;ctx.beginPath();
+       ctx.moveTo(miniX+8,cross.y);ctx.lineTo(miniX+miniSize-8,cross.y);
+       ctx.moveTo(cross.x,miniY+25);ctx.lineTo(cross.x,miniY+miniSize-12);ctx.stroke();
+       ctx.beginPath();for(let i=0;i<planar.length;i++){const q=mp(planar[i]);if(i===0)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);}
+       const xyClosed=Math.hypot(planar[0][0]-planar[planar.length-1][0],planar[0][1]-planar[planar.length-1][1])<1e-8;
+       if(xyClosed){ctx.closePath();ctx.fillStyle='#e3ab6130';ctx.fill();}
+       ctx.strokeStyle='#d9893f';ctx.lineWidth=2.1;ctx.stroke();
+       const visibleInset=visibleCurvePath(curveInfo,curveProgress),nowPt=mp(visibleInset[visibleInset.length-1]);
+       ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
+       ctx.fillStyle='#d58736';ctx.beginPath();ctx.arc(nowPt.x,nowPt.y,4.3,0,2*Math.PI);ctx.fill();
+       ctx.font='600 11px system-ui';ctx.fillStyle='#486273';
+       ctx.fillText(xyClosed?'XY 投影 · 闭合回路':'XY 投影 · 开放路径',miniX+9,miniY+16);ctx.font='11px system-ui';
+       ctx.fillText(curveKind==='square'?'折点经过单元中心':(curvePreset==='base'?'圆弦多边形贴合膜片':'同向外凸圆弧贴合膜片'),miniX+9,miniY+miniSize-10);
+       ctx.restore();
+     }else{
+     const info=curveInfo;
+     const xray=curveXray;
+     function lineBetween(arr,a,b,color,width,opacity=1,ignoreOcclusion=xray){
+       arr.push({p:project(a),q:project(b),color,width,opacity,glow:0,ignoreOcclusion});
+     }
+     if(info.kind==='membrane'){
+       const routeRings=info.states.map(state=>cellByKey.get(state.join(','))).filter(Boolean);
+       const routeSegments=[];
+       for(let m=0;m<routeRings.length;m++){
+         const cell=routeRings[m],ring=cell.renderRing,key=cell.state.join(',');
+         for(let side=0;side<4;side++){
+           routeSegments.push({type:'edge',a:ring[side],b:ring[side+1],side,key,
+             opacity:opacityForKey(key),color:pathColors[side]});
+         }
+         if(m<routeRings.length-1){
+           const nextCell=routeRings[m+1];
+           routeSegments.push({type:'bridge',a:ring[4],b:nextCell.renderRing[0],
+             keyA:key,keyB:nextCell.state.join(','),
+             opacity:Math.min(opacityForKey(key),opacityForKey(nextCell.state.join(',')))});
+         }
+       }
+       const guide=[],casing=[],colored=[],fpcLines=[],arrows=[];
+       const total=routeSegments.length,position=curveProgress*total;
+       const completed=Math.floor(position),partial=position-completed;
+       const activeIndex=Math.min(total-1,completed);
+       let currentPoint=routeSegments.length?routeSegments[0].a:[0,0,0];
+       let activeIsHorizontal=false,activeDirection=null;
+       // The z-axis is a display reference. Its endpoint includes the artificial
+       // inter-film spacing; the true holonomy remains N*h^2.
+       const displayEndZ=info.z+zGapRatio*Math.max(0,info.loops-1)*h*h;
+       const axisN=Math.max(12,info.loops*8);
+       for(let i=0;i<axisN;i++)if(i%3!==2){
+         lineBetween(guide,[0,0,displayEndZ*i/axisN],[0,0,displayEndZ*(i+1)/axisN],
+           '#647482',1.35,.52);
+       }
+       function arrowOnEdge(a,b,color){
+         const A=project(a),B=project(b),dx=B.x-A.x,dy=B.y-A.y,dist=Math.hypot(dx,dy);
+         if(dist<14)return;
+         const t=.78,cx=A.x+dx*t,cy=A.y+dy*t,d=A.d+(B.d-A.d)*t;
+         const vx=dx/dist,vy=dy/dist,wing=6;
+         for(const sign of [-1,1])arrows.push({
+           p:{x:cx-vx*wing+sign*(-vy)*4,y:cy-vy*wing+sign*vx*4,d},
+           q:{x:cx,y:cy,d},color,width:1.8,opacity:.96,glow:0,ignoreOcclusion:xray
+         });
+       }
+       function drawEdge(seg,fraction){
+         if(seg.opacity<=.001)return;
+         const end=lin(seg.a,seg.b,clamp01(fraction));
+         lineBetween(casing,seg.a,end,'#ffffff',7.0,.98);
+         lineBetween(colored,seg.a,end,seg.color,4.1,.98);
+         if(fraction>=.78)arrowOnEdge(seg.a,seg.b,seg.color);
+         currentPoint=end;activeIsHorizontal=true;
+         activeDirection=sub(seg.b,seg.a);
+       }
+       function bridgePoint(a,b,offset,t,strandIndex){
+         const q=lin(a,b,t);
+         if(fpcStyle==='curve'&&bendStrength>0){
+           const side=(strandIndex-4)/4;
+           q[0]+=Math.sin(Math.PI*t)*bendStrength*h*.10*(1+.25*side);
+         }
+         q[0]+=offset[0];q[1]+=offset[1];
+         return q;
+       }
+       function drawBridge(seg,fraction){
+         if(!showLinks||linkOpacity<=0||seg.opacity<=.001){
+           currentPoint=lin(seg.a,seg.b,clamp01(fraction));activeIsHorizontal=false;return;
+         }
+         const strandCount=9,samples=Math.max(2,Math.ceil(22*fraction));
+         const radius=h*.10;
+         const bridgeAlpha=linkOpacity*(seg.opacity<=.001?0:Math.max(.75,seg.opacity));
+         // A pale core makes the FPC read as a narrow band; eight fine strands
+         // sit around it, with one darker central strand marking the connector.
+         const coreEnd=lin(seg.a,seg.b,clamp01(fraction));
+         lineBetween(fpcLines,seg.a,coreEnd,'#8db6c3',6.0,bridgeAlpha*.48);
+         for(let n=0;n<strandCount;n++){
+           const angle=2*Math.PI*n/8;
+           const offset=n===8?[0,0,0]:[Math.cos(angle)*radius,Math.sin(angle)*radius,0];
+           let prev=bridgePoint(seg.a,seg.b,offset,0,n);
+           for(let j=1;j<=samples;j++){
+             const t=fraction*j/samples;
+             const next=bridgePoint(seg.a,seg.b,offset,t,n);
+             const center=n===8;
+             lineBetween(fpcLines,prev,next,center?'#315f73':'#6b9eae',center?1.75:1.0,
+               bridgeAlpha*(center?.98:.76));
+             prev=next;
+           }
+         }
+         currentPoint=lin(seg.a,seg.b,clamp01(fraction));activeIsHorizontal=false;
+       }
+       for(let i=0;i<routeSegments.length;i++){
+         const amount=i<completed?1:(i===completed?partial:0);
+         if(amount<=0)continue;
+         const seg=routeSegments[i];
+         if(seg.type==='edge')drawEdge(seg,amount);else drawBridge(seg,amount);
+       }
+       paintLines(guide);paintLines(casing);paintLines(colored);paintLines(fpcLines);paintLines(arrows);
+       // Draw the start/end points and the current progress marker.
+       function disk(p,r,color,stroke='#ffffff',opacity=1){
+         const q=project(p),tau=xray?1:transmittanceInFront(q.x,q.y,q.d);
+         if(tau<.03)return;
+         ctx.save();ctx.globalAlpha=opacity*tau;ctx.beginPath();ctx.arc(q.x,q.y,r,0,2*Math.PI);
+         ctx.fillStyle=color;ctx.fill();ctx.lineWidth=1.4;ctx.strokeStyle=stroke;ctx.stroke();ctx.restore();
+       }
+       const start=[0,0,0],trueEnd=[0,0,info.z],displayEnd=[0,0,displayEndZ];
+       disk(start,5.8,'#275f75');
+       if(curveProgress>=.999)disk(displayEnd,6.1,'#aa5d45');
+       else if(curveProgress>.002)disk(currentPoint,6.1,'#e3a94c');
+       // The actual endpoint before display separation is shown separately.
+       if(zGapRatio>0&&info.loops>1){
+         const P=project(trueEnd),Q=project(displayEnd);
+         ctx.save();ctx.globalAlpha=.72;ctx.strokeStyle='#a65d48';ctx.lineWidth=1.2;ctx.setLineDash([3,4]);
+         ctx.beginPath();ctx.moveTo(P.x,P.y);ctx.lineTo(Q.x,Q.y);ctx.stroke();ctx.setLineDash([]);
+         ctx.fillStyle='#a65d48';ctx.beginPath();ctx.arc(P.x,P.y,3.2,0,2*Math.PI);ctx.fill();ctx.restore();
+       }
+       ctx.save();ctx.globalAlpha=1;ctx.font='600 12px system-ui';
+       const s=project(start),e=project(displayEnd),te=project(trueEnd);
+       ctx.lineWidth=3;ctx.strokeStyle='#ffffff';ctx.fillStyle='#31576a';
+       ctx.strokeText('O',s.x-18,s.y+18);ctx.fillText('O',s.x-18,s.y+18);
+       ctx.fillStyle='#9c5746';ctx.strokeText(`显示端点`,e.x+9,e.y-9);ctx.fillText(`显示端点`,e.x+9,e.y-9);
+       if(zGapRatio>0&&info.loops>1){
+         ctx.fillStyle='#a65d48';ctx.strokeText(`真实 Δz=${info.z.toFixed(2)}`,te.x+9,te.y+14);
+         ctx.fillText(`真实 Δz=${info.z.toFixed(2)}`,te.x+9,te.y+14);
+       }else{
+         ctx.fillStyle='#9c5746';ctx.strokeText(`(0,0,${info.z.toFixed(2)})`,e.x+9,e.y-9);
+         ctx.fillText(`(0,0,${info.z.toFixed(2)})`,e.x+9,e.y-9);
+       }
+       ctx.restore();
+       // Inset: one square loop in XY; N repetitions accumulate N*h^2 holonomy.
+       const miniSize=166,miniX=w-miniSize-16,miniY=13;
+       const planar=info.planarSquare;
+       const xyLim=Math.max(.1,...planar.map(p=>Math.abs(p[0])),...planar.map(p=>Math.abs(p[1])));
+       const miniScale=(miniSize-46)/(2*xyLim);
+       const mp=p=>({x:miniX+miniSize/2+p[0]*miniScale,y:miniY+miniSize/2-p[1]*miniScale});
+       ctx.save();ctx.globalAlpha=.94;ctx.fillStyle='#ffffff';ctx.strokeStyle='#d5e1e7';ctx.lineWidth=1;
+       ctx.beginPath();ctx.roundRect(miniX,miniY,miniSize,miniSize,10);ctx.fill();ctx.stroke();
+       const cross=mp([0,0]);ctx.strokeStyle='#d3e0e6';ctx.lineWidth=.8;
+       ctx.beginPath();ctx.moveTo(miniX+8,cross.y);ctx.lineTo(miniX+miniSize-8,cross.y);
+       ctx.moveTo(cross.x,miniY+25);ctx.lineTo(cross.x,miniY+miniSize-12);ctx.stroke();
+       ctx.beginPath();for(let i=0;i<planar.length;i++){const q=mp(planar[i]);if(i===0)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);}
+       ctx.closePath();ctx.fillStyle='#e3ab6130';ctx.fill();ctx.strokeStyle='#d9893f';ctx.lineWidth=2.35;ctx.stroke();
+       ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
+       ctx.font='600 11px system-ui';ctx.fillStyle='#486273';ctx.fillText('膜片单圈 XY 投影',miniX+9,miniY+16);
+       ctx.font='11px system-ui';ctx.fillText(`${info.loops} × h² = Δz ${info.z.toFixed(2)}`,miniX+9,miniY+miniSize-10);
+       ctx.restore();
+       if(curveVector&&activeIsHorizontal&&activeDirection&&curveProgress>.001&&curveProgress<.999){
+         const n=Math.hypot(activeDirection[0],activeDirection[1])||1;
+         const len=Math.min(.12,h*.38),p=currentPoint;
+         const q=[p[0]+len*activeDirection[0]/n,p[1]+len*activeDirection[1]/n,
+           p[2]+len*(p[0]*activeDirection[1]-p[1]*activeDirection[0])/(2*n)];
+         const tangent=[];lineBetween(tangent,p,q,'#285d65',2.7,.95,true);paintLines(tangent);
+       }
+     }else{
+       const full=info.path,visible=visibleCurvePath(info,curveProgress);
+       const guide=[],casing=[],colored=[],arrows=[],ticks=[];
+     // The grey curve is the actual distance-minimizing geodesic, not an offset
+     // or an artificial 3-D spline. Optional comparison works for both polylines.
+     if(info.kind!=='smooth' && info.kind!=='arcs' && curveCompare){
+       const ref=info.reference;
+       for(let i=1;i<ref.length;i++){
+         if(i%5<3)lineBetween(guide,ref[i-1],ref[i],'#6e8798',1.8,.70);
+       }
+     }
+     // z-axis is a nonhorizontal measurement/reference line, NEVER part of the path.
+     const axisN=45;
+     for(let i=0;i<axisN;i++)if(i%3!==2){
+       lineBetween(guide,[0,0,curveTargetZ*i/axisN],
+                     [0,0,curveTargetZ*(i+1)/axisN],'#647482',1.45,.64);
+     }
+     // Paint the first progress fraction of an exact lift, or the X/Y or chord lifts.
+     const m=visible.length-1;
+     for(let i=0;i<m;i++){
+       const a=visible[i],b=visible[i+1];
+       const fraction=(i+.5)/Math.max(1,m);
+       let color='#e08235';
+       if(info.kind==='arcs'){
+         const part=Math.min(curveSegments-1,Math.floor(fraction*curveSegments*curveProgress));
+         color=part%2===0?'#d87a32':'#239baa';
+       }else if(info.kind==='chord')color=i%2===0?'#d87a32':'#238eaf';
+       else if(info.kind==='square')color=i%4===0||i%4===2?'#db8236':'#268fac';
+       lineBetween(casing,a,b,'#ffffff',7.2,.97);
+       lineBetween(colored,a,b,color,4.0,1);
+     }
+     // At full progress place marked joins, but on the actual lifted trajectory.
+     const joinPoints=[];
+     if(info.kind==='arcs'){
+       const r=info.radius,phi=curveHeading*Math.PI/180;
+       for(let i=1;i<curveSegments;i++){
+         const t=i/curveSegments;
+         if(t<=curveProgress+1e-9)joinPoints.push(curvePoint(2*Math.PI*t,r,phi));
+       }
+     }else if(info.kind==='chord'||info.kind==='square'){
+       for(let i=1;i<info.path.length-1;i++)if(i/(info.path.length-1)<=curveProgress+1e-9)
+         joinPoints.push(info.path[i]);
+     }
+     // Arrows are based on projected tangents of the rendered, true horizontal path.
+     for(const targetFraction of [.24,.50,.76]){
+       if(targetFraction>curveProgress-.035)continue;
+       const t=targetFraction*(full.length-1),j=Math.min(full.length-2,Math.floor(t));
+       const a=project(full[j]),b=project(full[j+1]);
+       const cx=a.x+(b.x-a.x)*(t-j),cy=a.y+(b.y-a.y)*(t-j);
+       const d=a.d+(b.d-a.d)*(t-j),dist=Math.hypot(b.x-a.x,b.y-a.y);
+       if(dist<1e-6)continue;
+       const vx=(b.x-a.x)/dist,vy=(b.y-a.y)/dist;
+       for(const sign of [-1,1]){
+         const wing={x:cx-vx*9+sign*(-vy)*5,y:cy-vy*9+sign*vx*5,d};
+         arrows.push({p:wing,q:{x:cx,y:cy,d},color:'#294c64',width:2.1,opacity:.96,glow:0,ignoreOcclusion:xray});
+       }
+     }
+     paintLines(guide);
+     paintLines(casing);
+     paintLines(colored);
+     paintLines(arrows);
+     // A little disk and label for each joint; this is a drawing annotation.
+     function disk(p,r,color,stroke='#ffffff',opacity=1){
+       const q=project(p);
+       const tau=xray?1:transmittanceInFront(q.x,q.y,q.d);
+       if(tau<.03)return;
+       ctx.save();ctx.globalAlpha=opacity*tau;
+       ctx.beginPath();ctx.arc(q.x,q.y,r,0,2*Math.PI);
+       ctx.fillStyle=color;ctx.fill();ctx.lineWidth=1.4;ctx.strokeStyle=stroke;ctx.stroke();
+       ctx.restore();
+     }
+     if(joinPoints.length<=65)for(const p of joinPoints)disk(p,2.8,'#375e74','#ffffff',.95);
+     const start=[0,0,0],end=[0,0,curveTargetZ],current=visible[visible.length-1];
+     disk(start,5.8,'#275f75');
+     disk(end,6.1,'#aa5d45');
+     if(curveProgress>.002 && curveProgress<.999)disk(current,6.5,'#e3a94c');
+     // Horizontal tangent vector (as a genuine horizontal lift of an XY heading).
+     if(curveVector && curveProgress>.001 && curveProgress<.999){
+       let dx,dy;
+       if(info.kind==='smooth'||info.kind==='arcs'){
+         const theta=2*Math.PI*curveProgress,phi=curveHeading*Math.PI/180;
+         dx=Math.cos(theta+phi);dy=Math.sin(theta+phi);
+       }else{
+         const t=curveProgress*(full.length-1);
+         const j=Math.min(full.length-2,Math.floor(t));
+         dx=full[j+1][0]-full[j][0];dy=full[j+1][1]-full[j][1];
+         const n=Math.hypot(dx,dy)||1;dx/=n;dy/=n;
+       }
+       const len=Math.max(.13,Math.min(.26,info.radius*.35));
+       const vecEnd=[current[0]+len*dx,current[1]+len*dy,
+                     current[2]+len*.5*(current[0]*dy-current[1]*dx)];
+       lineBetween(ticks,current,vecEnd,'#285d65',3.0,.96,xray);
+       paintLines(ticks);
+       disk(vecEnd,3.2,'#285d65');
+     }
+     ctx.save();ctx.globalAlpha=1;ctx.font='600 12px system-ui';
+     const s=project(start),e=project(end);
+     ctx.strokeStyle='#ffffff';ctx.lineWidth=3;
+     function label(txt,p,dx,dy){
+       ctx.strokeText(txt,p.x+dx,p.y+dy);ctx.fillText(txt,p.x+dx,p.y+dy);
+     }
+     ctx.fillStyle='#31576a';label('O',s,-19,18);
+     ctx.fillStyle='#9c5746';label(`(0,0,${curveTargetZ.toFixed(2)})`,e,10,-9);
+     ctx.restore();
+     // Inset: the projected planar closed loop (with orientation and swept area).
+     // The signed XY area, counting turns, is exactly the endpoint's Δz.
+     const miniSize=166,miniX=w-miniSize-16,miniY=13;
+     const planar=info.path;
+     const xyLim=Math.max(.1,...planar.map(p=>Math.abs(p[0])),...planar.map(p=>Math.abs(p[1])));
+     const miniScale=(miniSize-46)/(2*xyLim);
+     const mp=p=>({x:miniX+miniSize/2+p[0]*miniScale,
+                    y:miniY+miniSize/2-p[1]*miniScale});
+     ctx.save();
+     ctx.globalAlpha=.94;ctx.fillStyle='#ffffff';ctx.strokeStyle='#d5e1e7';
+     ctx.lineWidth=1;ctx.beginPath();ctx.roundRect(miniX,miniY,miniSize,miniSize,10);
+     ctx.fill();ctx.stroke();
+     const cross=mp([0,0]);
+     ctx.strokeStyle='#d3e0e6';ctx.lineWidth=.8;
+     ctx.beginPath();ctx.moveTo(miniX+8,cross.y);ctx.lineTo(miniX+miniSize-8,cross.y);
+     ctx.moveTo(cross.x,miniY+25);ctx.lineTo(cross.x,miniY+miniSize-12);ctx.stroke();
+     ctx.beginPath();
+     for(let i=0;i<planar.length;i++){
+       const q=mp(planar[i]);if(i===0)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);
+     }
+     ctx.closePath();ctx.fillStyle='#e3ab6130';ctx.fill();
+     ctx.strokeStyle='#d9893f';ctx.lineWidth=2.35;ctx.stroke();
+     const nowPt=mp(visible[visible.length-1]);
+     ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
+     ctx.fillStyle='#d58736';ctx.beginPath();ctx.arc(nowPt.x,nowPt.y,4.3,0,2*Math.PI);ctx.fill();
+     ctx.font='600 11px system-ui';ctx.fillStyle='#486273';
+     ctx.fillText('XY 投影 · 有向面积',miniX+9,miniY+16);
+     ctx.font='11px system-ui';
+     ctx.fillText(`∮ (xdy−ydx)/2 = ${curveTargetZ.toFixed(2)}`,miniX+9,miniY+miniSize-10);
+     ctx.restore();
+     }
+   }
+
+     }
+   ctx.globalAlpha=1;
+   if(viewMode!=='overview' && viewMode!=='curve'){
+    const chosen=cellByKey.get(focusKey);
+    if(chosen && opacityForKey(focusKey)>.001){
+      const C=[0,1,2].map(q=>chosen.renderRing.reduce((sum,p)=>sum+p[q],0)/5);
+      const pos=project(C);
+      // Annotation overlays remain legible even when the 3-D ring lies behind a membrane.
+      ctx.save();
+      ctx.globalAlpha=1;
+      ctx.beginPath();ctx.arc(pos.x,pos.y,4.5,0,Math.PI*2);
+      ctx.fillStyle='#235e6b';ctx.fill();
+      ctx.lineWidth=2.4;ctx.strokeStyle='#ffffff';ctx.stroke();
+      ctx.restore();
+      if(viewMode==='loop'){
+        // The loop is a real horizontal ring in the unseparated geometry.
+        // Its DISPLAY-SPACE projection uses chosen.renderRing; unlike v6,
+        // all projected segments are now occluded by foreground membrane faces.
+        const projected=chosen.renderRing.map(project);
+        const casing=[],colored=[],arrowSegments=[];
+        const annotationOpacity=opacityForKey(focusKey);
+        for(let q=0;q<demoStep;q++){
+          const p=projected[q],v=projected[q+1];
+          casing.push({p,q:v,color:'#ffffff',width:6.2,opacity:annotationOpacity,glow:0});
+          colored.push({p,q:v,color:pathColors[q],width:3.7,opacity:annotationOpacity,glow:0});
+          const dx=v.x-p.x,dy=v.y-p.y,dist=Math.hypot(dx,dy);
+          if(dist>17){
+            const u=.78,ax=p.x+dx*u,ay=p.y+dy*u,ad=p.d+(v.d-p.d)*u;
+            const vx=dx/dist,vy=dy/dist;
+            const wing=6.5;
+            for(const sign of [-1,1]){
+              arrowSegments.push({p:{x:ax-vx*wing+sign*(-vy)*4.2,
+                                     y:ay-vy*wing+sign*vx*4.2,d:ad},
+                                  q:{x:ax,y:ay,d:ad},
+                                  color:pathColors[q],width:2.0,opacity:annotationOpacity,glow:0});
+            }
+          }
+        }
+        paintLines(casing);
+        paintLines(colored);
+        paintLines(arrowSegments);
+        // Labels are supplementary annotations, shown only on visible portions.
+        ctx.save();
+        for(let q=0;q<demoStep;q++){
+          const p=projected[q],v=projected[q+1];
+          const t=.50,mx=p.x+(v.x-p.x)*t,my=p.y+(v.y-p.y)*t,md=p.d+(v.d-p.d)*t;
+          const tau=transmittanceInFront(mx,my,md);
+          if(tau>.35){
+            ctx.globalAlpha=Math.min(1,tau*annotationOpacity);
+            ctx.font='bold 11px system-ui';ctx.fillStyle='#263746';
+            ctx.fillText(String(q+1),mx+7,my-7);
+          }
+        }
+        const start=projected[0],current=projected[demoStep];
+        for(const [p,color,radius] of [[start,'#244f64',5],[current,'#c66d40',5]]){
+          const tau=transmittanceInFront(p.x,p.y,p.d);
+          if(tau<.03)continue;
+          ctx.globalAlpha=tau*annotationOpacity;
+          ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);
+          ctx.fillStyle=color;ctx.fill();ctx.lineWidth=1.5;ctx.strokeStyle='#ffffff';ctx.stroke();
+        }
+        ctx.restore();
+        if(demoStep===4){
+          // The closing height marker is a depth-tested measurement guide,
+          // not a fifth horizontal segment.
+          paintLines([{p:projected[0],q:projected[4],color:'#b55d46',
+                       width:1.7,opacity:annotationOpacity,dashed:true,glow:0}]);
+          const p=projected[0],v=projected[4];
+          const mx=(p.x+v.x)/2,my=(p.y+v.y)/2,md=(p.d+v.d)/2;
+          const tau=transmittanceInFront(mx,my,md);
+          if(tau>.35){
+            ctx.save();ctx.globalAlpha=tau*annotationOpacity;
+            ctx.font='bold 12px system-ui';ctx.fillStyle='#a75942';
+            ctx.fillText('Δz = h²',v.x+9,my);ctx.restore();
+          }
+        }
+        ctx.globalAlpha=1;
+      }
+    }
+  }
+}
+function download(){
+  // Clone the ENTIRE standalone page, including its actual <style> tag.
+  // No missing #hgStandaloneStyle dependency; remove initialization guard.
+  const doc=document.documentElement.cloneNode(true);
+  const widget=doc.querySelector("#hgStandalone");
+  widget.removeAttribute("data-ready");
+  const html="<!doctype html>\n"+doc.outerHTML;
+  const uri=URL.createObjectURL(new Blob([html],{type:"text/html;charset=utf-8"}));
+  const a=document.createElement("a");
+  a.href=uri;
+     a.download="Heisenberg_Horizontal_Curves_v35.html";
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(uri),3000);
+}
+$('hgDownload').addEventListener('click',download);
+$('hgReset').addEventListener('click',()=>{az=-.83;el=.57;zoom=1;paint();});
+$('hgLinkOpacity').addEventListener('input',()=>{
+  linkOpacityByMode[viewMode]=+$('hgLinkOpacity').value;
+});
+$('hgShowWire').addEventListener('change',()=>{
+  showWireByMode[viewMode]=$('hgShowWire').checked;
+});
+$('hgOpenDistance').addEventListener('click',()=>{
+  const panel=$('hgDistancePanel');panel.open=true;panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+
+$('hgSeed').addEventListener('click',()=>{focusKey='0,0,0';build();});
+ ['hgMode','hgDepth','hgLength','hgGap','hgAlpha','hgSeedOpacity','hgNear1Opacity','hgNear2Opacity','hgNear3Opacity','hgNear4Opacity','hgSeedTint','hgNear1Tint','hgNear2Tint','hgNear3Tint','hgLight','hgZ','hgRadius','hgStep','hgShowWire','hgShowLinks','hgLinkOpacity','hgBend','hgGlow','hgGlowStrength','hgShowGap',
+  'hgOverviewOpacity','hgOverviewTint','hgCurveMidOpacity','hgCurveBgTint','hgCurveKind','hgCurvePreset','hgCurveHeight','hgCurveSegments','hgCurveLoops','hgCurveHeading','hgCurveProgress','hgCurveAlpha','hgCurveCompare','hgCurveXray','hgCurveVector']
+  .forEach(id=>$(id).addEventListener('input',build));
+  let zGapBuildQueued=false;
+ $('hgZGap').addEventListener('input',()=>{
+   if(zGapBuildQueued)return;
+   zGapBuildQueued=true;
+   requestAnimationFrame(()=>{
+     zGapBuildQueued=false;
+     build();
+   });
+ });
+
+ $('hgCurveKind').addEventListener('change',build);
+ $('hgCurvePreset').addEventListener('change',()=>{
+   if($('hgCurvePreset').value==='custom')customCurvePickTarget='start';
+   build();
+ });
+ $('hgCurveCustomReset').addEventListener('click',()=>{
+   customCurveStartKey='0,0,0'; customCurveEndKey='0,0,2'; customCurvePickTarget='start'; build();
+ });
+ $('hgCurveCustomSwap').addEventListener('click',()=>{
+   const tmp=customCurveStartKey; customCurveStartKey=customCurveEndKey; customCurveEndKey=tmp;
+   customCurvePickTarget='start'; build();
+ });
+wireControlIds.forEach((id,i)=>$(id).addEventListener('change',()=>{
+  wireVisibilityForCurrentMode()[i]=$(id).checked;
+  build();
+}));
+// Distance-4 tint is otherwise a no-op when depth/radius are too small.
+// The user is explicitly adjusting that layer, so make it observable.
+$('hgNear4Tint').addEventListener('input',()=>{
+  if(mode==='single')$('hgMode').value='network';
+  if(+$('hgDepth').value<4)$('hgDepth').value='4';
+  if(+$('hgRadius').value<4)$('hgRadius').value='4';
+  build();
+});
+ root.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>{
+   stopCurveAnimation();
+   viewMode=btn.dataset.view||'overview';
+   syncWireControlsFromMode();
+   if(viewMode==='curve'){
+     $('hgZ').value='1.00';
+     $('hgMode').value='network';
+     focusKey='0,0,0';
+   }
+   $('hgLinkOpacity').value=String(linkOpacityByMode[viewMode]);
+   $('hgShowWire').checked=showWireByMode[viewMode];
+   build();
+ }));
+ $('hgCurveFull').addEventListener('click',()=>{
+   stopCurveAnimation();$('hgCurveProgress').value='100';build();
+ });
+ $('hgCurvePlay').addEventListener('click',()=>{
+   if(curvePlaying){stopCurveAnimation();return;}
+   let initial=+$('hgCurveProgress').value;
+   if(initial>=100){initial=0;$('hgCurveProgress').value='0';build();}
+   let startTime=null;
+   const duration=6500*(1-initial/100);
+   curvePlaying=true;$('hgCurvePlay').textContent='Ⅱ 暂停';
+   function frame(now){
+     if(!curvePlaying||viewMode!=='curve')return;
+     if(startTime===null)startTime=now;
+     const p=Math.min(100,initial+100*(now-startTime)/Math.max(1,duration)*(1-initial/100));
+     $('hgCurveProgress').value=String(Math.floor(p));
+     build();
+     if(p<100)curveAnimFrame=requestAnimationFrame(frame);
+     else stopCurveAnimation();
+   }
+   curveAnimFrame=requestAnimationFrame(frame);
+ });
+ $('hgCurveProgress').addEventListener('pointerdown',stopCurveAnimation);
+root.querySelectorAll('[data-fpc]').forEach(btn=>btn.addEventListener('click',()=>{
+  fpcStyle=btn.dataset.fpc==='straight'?'straight':'curve';
+  $('hgBend').disabled=fpcStyle==='straight';
+  paint();
+  $('hgFpcStyleGrid').querySelectorAll('[data-fpc]').forEach(el=>el.classList.toggle('active',el.dataset.fpc===fpcStyle));
+}));
+function pickCell(x,y){
+  let best=null,bestDepth=-Infinity;
+  for(const face of pickFaces){
+    if(face.opacity<=0.025)continue;
+    const [A,B,C]=face.pts;
+    const bx=B.x-A.x,by=B.y-A.y,cx=C.x-A.x,cy=C.y-A.y;
+    const det=bx*cy-by*cx;
+    if(Math.abs(det)<1e-8)continue;
+    const u=((x-A.x)*cy-(y-A.y)*cx)/det;
+    const v=(bx*(y-A.y)-by*(x-A.x))/det;
+    if(u<0||v<0||u+v>1)continue;
+    const d=A.d+u*(B.d-A.d)+v*(C.d-A.d);
+    if(d>bestDepth){bestDepth=d;best=face.key;}
+  }
+  if(best)return best;
+  let edgeBest=null,distBest=7,depthBest=-Infinity;
+  for(const edge of pickEdges){
+    const dx=edge.q.x-edge.p.x,dy=edge.q.y-edge.p.y;
+    const ll=dx*dx+dy*dy;
+    if(ll<1e-9)continue;
+    const t=Math.max(0,Math.min(1,((x-edge.p.x)*dx+(y-edge.p.y)*dy)/ll));
+    const dd=Math.hypot(x-(edge.p.x+t*dx),y-(edge.p.y+t*dy));
+    const depth=edge.p.d+(edge.q.d-edge.p.d)*t;
+    if(dd<distBest || (Math.abs(dd-distBest)<.15&&depth>depthBest)){
+      distBest=dd;depthBest=depth;edgeBest=edge.key;
+    }
+  }
+  return edgeBest;
+}
+function openUnitMenu(key,x,y){
+  menuKey=key;
+  const menu=$('hgUnitMenu');menu.hidden=false;
+  $('hgMenuTitle').textContent=`铁环 (${key})`;
+  const value=opacityForKey(key);
+  $('hgMenuOpacity').value=String(value);
+  $('hgMenuOpacityValue').textContent=value.toFixed(2);
+  const stage=$('hgCanvas').parentElement;
+  const width=menu.offsetWidth||244,height=menu.offsetHeight||190;
+  menu.style.left=Math.max(4,Math.min(x,stage.clientWidth-width-5))+'px';
+  menu.style.top=Math.max(4,Math.min(y,stage.clientHeight-height-5))+'px';
+}
+canvas.addEventListener('contextmenu',e=>{
+  e.preventDefault();
+  const rect=canvas.getBoundingClientRect();
+  const x=e.clientX-rect.left,y=e.clientY-rect.top;
+  const key=pickCell(x,y);
+  if(key)openUnitMenu(key,x+6,y+6);else closeUnitMenu();
+});
+$('hgUnitMenu').querySelectorAll('[data-unit-action]').forEach(btn=>btn.addEventListener('click',()=>{
+  if(!menuKey)return;
+  const key=menuKey,action=btn.dataset.unitAction;
+  if(action==='restore'){unitOverrides.delete(key);closeUnitMenu();build();}
+  else{closeUnitMenu();setUnitOpacity(key,action==='hide'?0:.35);}
+}));
+$('hgMenuOpacity').addEventListener('input',e=>{
+  if(!menuKey)return;
+  const value=+e.target.value;
+  $('hgMenuOpacityValue').textContent=value.toFixed(2);
+  setUnitOpacity(menuKey,value);
+});
+$('hgClearOverrides').addEventListener('click',()=>{
+  unitOverrides.clear();closeUnitMenu();build();
+});
+document.addEventListener('pointerdown',e=>{
+  if(!$('hgUnitMenu').hidden && !$('hgUnitMenu').contains(e.target) && e.target!==canvas)closeUnitMenu();
+});
+canvas.addEventListener('pointerdown',e=>{
+  if(e.button!==0)return;
+  closeUnitMenu();
+  drag={x:e.clientX,y:e.clientY,az,el};
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove",e=>{
+  if(!drag)return;
+  az=drag.az-(e.clientX-drag.x)*.008;
+  el=Math.max(-1.35,Math.min(1.35,drag.el+(e.clientY-drag.y)*.008));
+  paint();
+});
+canvas.addEventListener('pointerup',e=>{
+  if(!drag)return;
+  const travel=Math.hypot(e.clientX-drag.x,e.clientY-drag.y);
+  drag=null;
+  if(travel>5)return;
+  const rect=canvas.getBoundingClientRect();
+  const key=pickCell(e.clientX-rect.left,e.clientY-rect.top);
+  if(key){
+    focusKey=key;
+    if(viewMode==='curve' && curvePreset==='custom'){
+      if(customCurvePickTarget==='start'){
+        customCurveStartKey=key;
+        if(!customCurveEndKey)customCurveEndKey=key;
+        customCurvePickTarget='end';
+      }else{
+        customCurveEndKey=key;
+        customCurvePickTarget='start';
+      }
+      build();
+      return;
+    }
+    if(viewMode==='overview')viewMode='local';
+    build();
+  }
+});
+canvas.addEventListener("pointercancel",()=>drag=null);
+canvas.addEventListener("wheel",e=>{
+  e.preventDefault();zoom=Math.max(.5,Math.min(4,zoom*Math.exp(-e.deltaY*.001)));
+  paint();
+},{passive:false});
+if(typeof ResizeObserver!=="undefined"){
+  new ResizeObserver(()=>paint()).observe(canvas);
+}else window.addEventListener("resize",paint);
+syncWireControlsFromMode();
+$('hgLinkOpacity').value=String(linkOpacityByMode[viewMode]);
+$('hgShowWire').checked=showWireByMode[viewMode];
+build();
+})();
+</script></body></html>
