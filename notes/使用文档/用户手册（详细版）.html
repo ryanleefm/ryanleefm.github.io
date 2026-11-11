@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>用户手册（详细版）</title><meta charset="utf-8"/><link rel="preload" href="../index-257cf85c.css" as="style"/><link rel="preload" href="../prescript-ee7931aa.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Ryan · 学习笔记"/><meta property="og:title" content="用户手册（详细版）"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="用户手册（详细版）"/><meta name="twitter:description" content="Obsidian Git 同步用户手册（详细版） 记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。 快速操作见 用户手册（简略版），错误处理见 故障排查表，维护交接见 Agent 交接说明。 1."/><meta property="og:description" content="Obsidian Git 同步用户手册（详细版） 记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。 快速操作见 用户手册（简略版），错误处理见 故障排查表，维护交接见 Agent 交接说明。 1."/><meta property="og:image:alt" content="Obsidian Git 同步用户手册（详细版） 记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。 快速操作见 用户手册（简略版），错误处理见 故障排查表，维护交接见 Agent 交接说明。 1."/><meta property="og:image" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta property="og:image:url" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta name="twitter:image" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="ryanleefm.github.io/notes"/><meta property="og:url" content="https://ryanleefm.github.io/notes/使用文档/用户手册（详细版）"/><meta property="twitter:url" content="https://ryanleefm.github.io/notes/使用文档/用户手册（详细版）"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Obsidian Git 同步用户手册（详细版） 记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。 快速操作见 用户手册（简略版），错误处理见 故障排查表，维护交接见 Agent 交接说明。 1."/><meta name="generator" content="Quartz"/><link href="../index-257cf85c.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8e859f3f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-02d2a92c.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-0be4fa7f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d2eefd3a.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a71023bb.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-89d3cd78.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-ee7931aa.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json() }).catch(e => { console.warn("[Quartz] Could not load ../static/contentIndex.json (" + e.message + "); is configuration.contentIndex disabled?"); return {} });window.quartzStaticUrl = new URL("../static/", location.href).href</script></head><body data-slug="使用文档/用户手册（详细版）" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar" data-sidebar-mode="fit"><h2 class="page-title" data-quartz-plugin="page-title" data-quartz-component="PageTitle"><a href="..">Ryan · 学习笔记</a></h2><div class="mobile-only"><div class="spacer" data-quartz-plugin="spacer" data-quartz-component="Spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search" data-quartz-plugin="search" data-quartz-component="Search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式" data-quartz-plugin="darkmode" data-quartz-component="Darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a, b) => {\n    if (!a.isFolder &amp;&amp; !b.isFolder || a.isFolder &amp;&amp; b.isFolder) {\n      return (a.displayName || \&quot;\&quot;).localeCompare(b.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a.isFolder &amp;&amp; b.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}" data-quartz-plugin="explorer" data-quartz-component="Explorer"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-11" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-11" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs" data-quartz-plugin="breadcrumbs" data-quartz-component="Breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../使用文档/">使用文档</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>用户手册（详细版）</a></div></nav><h1 class="article-title" data-quartz-plugin="article-title" data-quartz-component="ArticleTitle">用户手册（详细版）</h1></div></div><article class="popover-hint" data-quartz-plugin="content-page" data-quartz-component="ContentPage"><div class="markdown-preview-view markdown-rendered"><h1 id="obsidian-git-同步用户手册详细版">Obsidian Git 同步用户手册（详细版）<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#obsidian-git-同步用户手册详细版" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。</p>
+<p>快速操作见 <a href="../使用文档/用户手册（简略版）" class="internal internal-link alias" data-slug="使用文档/用户手册（简略版）">用户手册（简略版）</a>，错误处理见 <a href="../使用文档/故障排查表" class="internal internal-link alias" data-slug="使用文档/故障排查表">故障排查表</a>，维护交接见 <a href="../使用文档/agent交接说明（详细版）" class="internal internal-link alias" data-slug="使用文档/agent交接说明（详细版）">Agent 交接说明</a>。</p>
+<h2 id="1-使用哪个笔记库">1. 使用哪个笔记库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#1-使用哪个笔记库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>项目</th><th>当前值</th></tr></thead><tbody><tr><td>GitHub 私有仓库</td><td><a href="https://github.com/ryanleefm/Obsidian-Sync-Git" class="external external-link">ryanleefm/Obsidian-Sync-Git<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>分支</td><td>main</td></tr><tr><td>Zirconium 同步库</td><td>/home/rlee/Documents/Obsidian-Sync-Git</td></tr><tr><td>Windows 同步库</td><td>D:\Obsidian-Sync-Git</td></tr><tr><td>Zirconium 原先空库</td><td>/home/rlee/Documents/Obsidian Vault，已保留</td></tr><tr><td>Linux 外部备份</td><td>/home/rlee/Documents/Obsidian-Sync-Backups</td></tr><tr><td>Windows 外部备份</td><td>D:\Obsidian-Sync-Backups</td></tr><tr><td>Windows 原笔记库</td><td>路径尚未提供，仍是待导入的数据源</td></tr></tbody></table></div>
+<p>日常工作应打开对应系统上的同步库。旧 Windows 库不会因为新库配置完成而自动加入同步。Windows 原笔记尚未导入，原库备份是否完成尚未确认。</p>
+<p>本方案通过 Git 和 GitHub 私有仓库同步文件。界面布局、插件和字体等设备设置保留在各自电脑上。</p>
+<h2 id="2-已完成什么">2. 已完成什么<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#2-已完成什么" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Linux 与 Windows 的新库已通过双向 Git 同步测试。</li>
+<li>Windows 使用 Git 插件提交并推送 Windows-Sync-Test.md，Linux 收到提交 4807e9f，用户确认中文显示正常。</li>
+<li>Linux 手动推送 Zirconium-Sync-Test.md，Windows 使用插件拉取，双方确认到提交 22adb0b，Windows 工作区干净。</li>
+<li>Linux 插件的定时自动提交和推送已实际验证。</li>
+<li>Windows 用户已备份配置并开启每 10 分钟自动同步。</li>
+<li>Windows-Auto-Sync-Test.md 已由用户在 Windows 创建，定时同步验证仍在等待结果。不要将“已开启”当作“定时测试已通过”。</li>
+<li>Linux 中文字体显示问题已修复，用户确认正常。</li>
+</ul>
+<h2 id="3-自动同步设置">3. 自动同步设置<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#3-自动同步设置" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>在每台设备的 Obsidian 中进入“设置 → Git”。设置是每个库、每台设备单独保存的。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>英文选项</th><th>本方案设置</th><th>作用</th></tr></thead><tbody><tr><td>Auto commit-and-sync interval (minutes)</td><td>10</td><td>定时提交并执行同步</td></tr><tr><td>Use separate commit and push intervals</td><td>关闭</td><td>使用一组提交同步定时器</td></tr><tr><td>Auto push interval (minutes)</td><td>0</td><td>不额外启用独立推送定时器</td></tr><tr><td>Auto pull interval (minutes)</td><td>0</td><td>不额外启用独立拉取定时器</td></tr><tr><td>Pull on startup</td><td>开启</td><td>打开库时拉取远端</td></tr><tr><td>Pull on commit-and-sync</td><td>开启</td><td>提交同步流程包含拉取</td></tr><tr><td>Push on commit-and-sync</td><td>开启</td><td>提交同步流程包含推送</td></tr></tbody></table></div>
+<p>这里的两个独立间隔为 0，不代表整个同步已关闭；整体定时流程由第一项控制。插件名称是 Git，插件目录名为 obsidian-git。</p>
+<p>自动任务需要 Obsidian 打开这个库，电脑联网且未休眠。关闭应用后不会继续在后台每 10 分钟执行。插件可能记住定时任务时间，下次打开时执行到期任务；定时运行不是实时协作服务。<a href="https://publish.obsidian.md/git-doc/Features" class="external external-link">插件自动任务说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>本机 Linux 使用 Merge 合并，冲突策略为 none，不自动选择某一端的内容。Windows 合并相关选项尚未逐项核验；在更改合并行为前先备份。</p>
+<h2 id="4-每天怎么使用">4. 每天怎么使用<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#4-每天怎么使用" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="开始编辑前">开始编辑前<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#开始编辑前" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>打开本系统的同步库。</li>
+<li>等待启动拉取完成；需要明确检查时打开命令面板，执行 Git: Pull。</li>
+<li>确认没有认证、网络或冲突错误，再开始编辑。</li>
+<li>新库刚接入时，确认测试笔记和预期文档都已出现。</li>
+</ol>
+<h3 id="编辑期间">编辑期间<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#编辑期间" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Obsidian 会保存文件，Git 插件按间隔同步。自动同步报错时，本地文件可能仍已保存，但还没有推送到 GitHub；应查看具体错误。</p>
+<p>两端可以同时打开，但编辑前都应拉取。尽量避免同时修改同一篇笔记，尤其不要两端同时移动同一文件夹或重命名同一篇笔记。处理不同文件也可能让分支暂时分叉；出现错误按故障排查表处理。</p>
+<h3 id="切换电脑系统或准备关机前">切换电脑、系统或准备关机前<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#切换电脑系统或准备关机前" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>按 Ctrl+P。</li>
+<li>执行 Git: Commit-and-sync。</li>
+<li>等待完成，并查看是否有错误通知。</li>
+<li>需要确认时运行下面的 Git 状态命令。</li>
+<li>在另一端先拉取，再继续编辑。</li>
+</ol>
+<p>不要在刚编辑完时立刻关机，并假定 10 分钟定时器已经运行。</p>
+<h3 id="离线工作">离线工作<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#离线工作" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>本地编辑可以继续。离线期间无法拉取或推送，自动任务可能报网络错误。恢复网络后先检查状态，再执行 Commit-and-sync；两端都离线修改过同一文件时可能需要人工合并。</p>
+<h2 id="5-怎样确认同步成功">5. 怎样确认同步成功<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#5-怎样确认同步成功" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Windows PowerShell：</p>
+<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git status --short --branch
+git -C D:\Obsidian-Sync-Git log -1 --oneline
+</code></pre>
+<p>Zirconium 终端：</p>
+<pre><code class="language-bash">git -C /home/rlee/Documents/Obsidian-Sync-Git status --short --branch
+git -C /home/rlee/Documents/Obsidian-Sync-Git log -1 --oneline
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>输出</th><th>含义</th></tr></thead><tbody><tr><td>只有 main…origin/main，没有文件行</td><td>工作区干净，与本地记录的远端分支一致</td></tr><tr><td>M 文件名</td><td>已跟踪文件有未提交修改</td></tr><tr><td>?? 文件名</td><td>新文件尚未加入 Git</td></tr><tr><td>ahead N</td><td>有本地提交尚未推送</td></tr><tr><td>behind N</td><td>本地记录的远端分支领先</td></tr><tr><td>ahead N, behind M</td><td>两端提交历史已分叉，需要检查后合并</td></tr><tr><td>UU 或 unmerged</td><td>存在冲突</td></tr></tbody></table></div>
+<p>origin/main 是本地缓存，状态干净不能独立证明 GitHub 当前没有更新。需要严格验证时先完成备份，再 fetch 获取最新远端信息，或者在 GitHub 查看提交。fetch 更新远端记录，不直接改写笔记工作区。另一台设备成功拉取并显示相同提交，是更完整的跨设备证据。</p>
+<h2 id="6-暂停和恢复自动同步">6. 暂停和恢复自动同步<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#6-暂停和恢复自动同步" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="暂停">暂停<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#暂停" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>先记录当前设置。将自动提交、独立推送和独立拉取间隔全部改为 0，关闭 Pull on startup。暂停后不要主动运行 Pull 或 Commit-and-sync，直到完成检查。</p>
+<p>导入原笔记、处理冲突、恢复历史文件时，先暂停相关设备的同步。更稳妥的做法是关闭另一端正在使用此库的 Obsidian。</p>
+<h3 id="恢复">恢复<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#恢复" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>恢复第 3 节中的设置。处理冲突或导入后先完成一次手动同步，并在另一端确认结果，再恢复定时任务。</p>
+<p>插件的 data.json 可能在首次修改设置前尚未生成。缺少该文件不等于插件安装失败。备份整个 .obsidian 目录即可包含已经存在的配置。</p>
+<h2 id="7-如何备份">7. 如何备份<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#7-如何备份" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>备份放在同步库外，保留完整目录，包括隐藏的 .git 与 .obsidian。GitHub 历史有助于恢复已提交内容，但未提交文件、未推送提交及设备配置仍需要本地备份。</p>
+<h3 id="windows-新同步库备份">Windows 新同步库备份<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#windows-新同步库备份" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>先关闭这个库的 Obsidian 窗口，再执行整个代码块。任一步失败都会停止该代码块：</p>
+<pre><code class="language-powershell">&amp; {
+    $ErrorActionPreference = 'Stop'
+    $vaultBackup = 'D:\Obsidian-Sync-Backups\manual-' + [guid]::NewGuid().ToString('N')
+    New-Item -ItemType Directory -Path $vaultBackup | Out-Null
+    Copy-Item -LiteralPath 'D:\Obsidian-Sync-Git' -Destination $vaultBackup -Recurse -Force
+    git -C &quot;$vaultBackup\Obsidian-Sync-Git&quot; fsck --full
+    if ($LASTEXITCODE -ne 0) { throw '备份 Git 完整性检查失败' }
+    Write-Host &quot;备份目录：$vaultBackup&quot;
+}
+</code></pre>
+<p>fsck 检查 Git 对象，不会验证未跟踪文件或所有 .obsidian 设置。重要备份还应确认笔记、附件和配置存在，并比较文件数量、大小或哈希。Windows 原笔记库必须用它自己的实际路径另行备份，不能拿新库备份替代。</p>
+<h3 id="linux-新同步库备份">Linux 新同步库备份<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#linux-新同步库备份" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>先关闭这个库的 Obsidian，再执行整个代码块。子 shell 中任一步失败就停止，不影响终端本身：</p>
+<pre><code class="language-bash">(
+    set -eu
+    vaultBackupDir=&quot;$(mktemp -d /home/rlee/Documents/Obsidian-Sync-Backups/manual-XXXXXXXX)&quot;
+    tar -czf &quot;$vaultBackupDir/vault.tar.gz&quot; -C /home/rlee/Documents Obsidian-Sync-Git
+    tar -tzf &quot;$vaultBackupDir/vault.tar.gz&quot;
+)
+</code></pre>
+<p>确认每一步成功。最后一条只检查压缩包能否列出内容；对重要备份再做逐文件哈希核验。恢复时先解压到新的目录，比较内容后再决定是否替换，避免直接覆盖正在使用的库。</p>
+<h2 id="8-导入-windows-原始笔记">8. 导入 Windows 原始笔记<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#8-导入-windows-原始笔记" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>当前尚未执行这一步。导入前：</p>
+<ol>
+<li>确定原笔记库的实际路径，确认它是数据源。</li>
+<li>关闭原库，完整备份原库；保留原目录和旧 Git 历史。</li>
+<li>备份新同步库，暂停新库的自动任务，并让另一端暂时关闭此库。</li>
+<li>在新库拉取最新内容，确认没有未处理冲突。</li>
+<li>复制笔记、Canvas 与附件。保留新库的 .git、.gitignore、.gitattributes，不复制旧库的 .git、.obsidian、.trash。</li>
+<li>遇到同名文件先比较，不能直接覆盖。保留冲突副本再人工决定。</li>
+<li>检查上传文件列表和内容，排除真实凭据、恢复码及不希望同步的私人资料。原库可能有工作资料，需要逐项决定是否上传到这个私有仓库。</li>
+<li>人工提交并推送，另一端拉取核验笔记数量、附件链接和中文显示。</li>
+<li>确认成功后恢复自动同步。</li>
+</ol>
+<p>导入保留的是内容；旧 Windows 仓库的历史仍留在旧库和备份里，新同步库不会自动继承它。需要迁移旧历史时另行设计方案。</p>
+<h2 id="9-哪些内容会同步">9. 哪些内容会同步<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#9-哪些内容会同步" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>会同步：未被忽略的 Markdown、Canvas、附件，以及本文件夹的四份文档。</p>
+<p>默认不提交：</p>
+<ul>
+<li>.obsidian/：插件、界面和字体设置；</li>
+<li>.trash/、系统杂项、编辑器状态和临时文件；</li>
+<li>.env、.env.*、常见密钥文件和凭据目录；</li>
+<li>库内名为 Obsidian-Sync-Backups 的目录。</li>
+</ul>
+<p>.env.example 被允许跟踪，只能放无真实秘密的示例。忽略规则不会自动移除早已跟踪的文件，也不能识别写在普通 Markdown 中的密码。完整规则以库根目录的 .gitignore 为准。</p>
+<p>文本文件使用 LF；换行提醒通常不代表中文编码损坏。二进制附件保持原格式。</p>
+<p>大型附件应先评估。GitHub 对大于 50 MiB 的文件发出警告，普通 Git 上传会阻止大于 100 MiB 的文件。本项目尚未配置 Git LFS；遇到超限文件时暂停提交并设计附件存储方案。<a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github" class="external external-link">GitHub 文件大小说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="10-认证与-2fa">10. 认证与 2FA<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#10-认证与-2fa" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Linux 通过 Flatpak 自带的 GitHub CLI 进行 OAuth 登录，当前凭据保存在系统密钥环。Windows 使用 Git Credential Manager；不需要把 Linux 的认证文件复制过去。</p>
+<p>启用 GitHub 2FA 通常不要求重建 Git 仓库。OAuth/GCM 认证与网页密码登录不同，重新授权时按浏览器要求完成二次验证；令牌撤销、权限变化或凭据失效仍可能要求重新登录。<a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/accessing-github-using-two-factor-authentication" class="external external-link">GitHub 2FA 认证说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>不要把令牌写进远端 URL、Markdown、Git 配置截图或交接文档。出现异常登录地点时先核对自己是否正在授权；学校网络出口可能与所在地不同，但不能只凭这个可能性认定任何授权都是安全的。</p>
+<p>Linux 确认需要重新授权时，在自己的终端运行：</p>
+<pre><code class="language-bash">flatpak run --command=gh md.obsidian.Obsidian auth login --hostname github.com --git-protocol https --web
+</code></pre>
+<p>保留现有仓库本地 helper；如询问是否同时配置 Git 认证，可选 No，继续完成网页授权。网页成功后回到终端确认流程完成，不把设备授权码或凭据发给别人。Windows 使用 GCM 的浏览器授权提示。<a href="https://cli.github.com/manual/gh_auth_login" class="external external-link">GitHub CLI 登录说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="11-中文显示和设备迁移">11. 中文显示和设备迁移<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#11-中文显示和设备迁移" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Linux 的 Obsidian 专用字体位于：</p>
+<pre><code class="language-text">/home/rlee/.var/app/md.obsidian.Obsidian/data/fonts/obsidian-cjk
+</code></pre>
+<p>界面和正文使用 Noto Sans CJK SC，代码字体使用 Noto Sans Mono CJK SC。修复后曾因旧主进程仍在运行而未立即生效，完整退出所有 Obsidian 窗口再启动后已正常显示。</p>
+<p>字体目录与 .obsidian 不进入 Git。因此重新安装 Flatpak 或换电脑时，要重新检查字体、Git 与认证。不要把 Linux 的整份 .obsidian 复制到 Windows，以免携带 Linux 路径或字体名称。</p>
+<p>插件更新应逐端操作：备份配置，更新后检查插件兼容性，手动拉取和推送测试通过后再恢复自动任务。<a href="https://publish.obsidian.md/git-doc/Installation" class="external external-link">插件安装说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="12-恢复旧内容与更换设备">12. 恢复旧内容与更换设备<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#12-恢复旧内容与更换设备" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>恢复一篇笔记时，先暂停同步并备份。通过命令面板 Git: Open history view 查看目标笔记的历史，把需要的旧内容复制到新的恢复笔记，比较后再更新当前笔记并提交。附件先恢复到库外目录再比较，避免覆盖。Git 历史只能恢复曾经提交的内容；未提交内容优先找本地备份或回收站。<a href="https://publish.obsidian.md/git-doc/Features" class="external external-link">插件历史视图说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>新 Windows 或 Linux 电脑的具体接入步骤已独立整理为 <a href="../使用文档/新电脑接入指南（windows与linux）" class="internal internal-link alias" data-slug="使用文档/新电脑接入指南（windows与linux）">新电脑接入指南（Windows 与 Linux）</a>，包括安装、认证、克隆、备份、插件和双向测试。原设备保留到新设备验证完成。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar" data-sidebar-mode="fit"></div><footer class data-quartz-plugin="footer" data-quartz-component="Footer"><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.1.0</a> © 2026</p><ul><li><a href="https://ryanleefm.github.io/">Blog</a></li><li><a href="https://github.com/ryanleefm">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-b151bd49.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-6f848dab.js" type="module" data-persist="true"></script></html>

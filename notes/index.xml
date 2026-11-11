@@ -6,23 +6,65 @@
       <description>最近的10条笔记 on Ryan · 学习笔记</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>HeisenbergACE6AD9CE797ADE5A6B9E587BF%98_2026-10-28</title>
+    <link>https://ryanleefm.github.io/notes/heisenbergace6ad9ce797ade5a6b9e587bf-percent98_2026-10-28</link>
+    <guid>https://ryanleefm.github.io/notes/heisenbergace6ad9ce797ade5a6b9e587bf-percent98_2026-10-28</guid>
+    <description><![CDATA[ 从退化主符号到 Heisenberg 模型算子：学习备忘 2026-10-28。供转入新对话时延续讨论。研究背景：Beals–Greiner 的 Heisenberg calculus / 参数子构造，以及 Erik van Erp (2010), Noncommutative Topology and the World’s Simplest Index Theorem。 0. ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>Hormander函数类下标定义式的来历_最小修改标注版</title>
+    <link>https://ryanleefm.github.io/notes/hormander%E5%87%BD%E6%95%B0%E7%B1%BB%E4%B8%8B%E6%A0%87%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%9A%84%E6%9D%A5%E5%8E%86_%E6%9C%80%E5%B0%8F%E4%BF%AE%E6%94%B9%E6%A0%87%E6%B3%A8%E7%89%88</link>
+    <guid>https://ryanleefm.github.io/notes/hormander%E5%87%BD%E6%95%B0%E7%B1%BB%E4%B8%8B%E6%A0%87%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%9A%84%E6%9D%A5%E5%8E%86_%E6%9C%80%E5%B0%8F%E4%BF%AE%E6%94%B9%E6%A0%87%E6%B3%A8%E7%89%88</guid>
+    <description><![CDATA[ 问题：面对偏好（幂的）比例的自然界（即函数 a），如何提取出各处自然坐标 v（的放缩倍率 \displaystyle\lim_{\xi\to R}\frac{v(\xi;R)}{\xi-R}=\left.\frac{\partial v}{\partial\xi}\right|_{\xi=R}）？（原文：\frac{v}{\xi-R}=\left.\frac{ds}{d\xi}\right|_{\xi=R}；原因：一般应取局部极限，且局部坐标 v 与全局坐标 s 需区分。） 以下暂不讨论 Hörmander 象征类的全部上界情况，而仅考虑高频 R\gg1 时，函数及其导数呈现典型边界量级、局部... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>Hormander函数类下标定义式的来历（以ρ=1为例）</title>
+    <link>https://ryanleefm.github.io/notes/hormander%E5%87%BD%E6%95%B0%E7%B1%BB%E4%B8%8B%E6%A0%87%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%9A%84%E6%9D%A5%E5%8E%86%EF%BC%88%E4%BB%A5%CF%81=1%E4%B8%BA%E4%BE%8B%EF%BC%89</link>
+    <guid>https://ryanleefm.github.io/notes/hormander%E5%87%BD%E6%95%B0%E7%B1%BB%E4%B8%8B%E6%A0%87%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%9A%84%E6%9D%A5%E5%8E%86%EF%BC%88%E4%BB%A5%CF%81=1%E4%B8%BA%E4%BE%8B%EF%BC%89</guid>
+    <description><![CDATA[ 问题：面对偏好（幂的）比例的自然界（即函数 a），如何提取出各处自然坐标 v（的放缩倍率 \frac{v}{\xi-R}=\frac{d s}{d\xi}\vert_{\xi=R}）？ 仅需求\xi=R 局部的变化比率 \frac{d a}{d \xi}(R)/a(R)=\lim_{\xi\rightarrow R}\frac{a(\xi)-a(R)}{\xi-R}/a(R)即可，这是因为 \frac{\Delta a}{\Delta \xi}=\frac{a(\xi)-a(R)}{\xi-R}=\frac{a(\xi)-a(R)}{v(\xi;R)}\frac{v(\xi;R)}{\xi-R... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>Hormander象征类下标的几何意义_整理版</title>
+    <link>https://ryanleefm.github.io/notes/hormander%E8%B1%A1%E5%BE%81%E7%B1%BB%E4%B8%8B%E6%A0%87%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89_%E6%95%B4%E7%90%86%E7%89%88</link>
+    <guid>https://ryanleefm.github.io/notes/hormander%E8%B1%A1%E5%BE%81%E7%B1%BB%E4%B8%8B%E6%A0%87%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89_%E6%95%B4%E7%90%86%E7%89%88</guid>
+    <description><![CDATA[ Hörmander 象征类下标的几何意义：从局部放大镜到导数估计 核心问题： Hörmander 象征类中的 m,\rho,\delta，为什么以 m+\delta|\alpha|-\rho|\beta| 的形式出现？它们能否从函数图像的局部几何特征得到解释？ 本文先不考虑象征类定义所允许的全部函数，而只观察高频 R\gg1 时具有典型边界变化尺度的模型。我们希望先理解这些指数在几何上描述什么，再自然地理解一般象征类为什么采用相应的导数上界。 一、问题的出发点：能否让不同位置的局部图像看起来一样？ 设 a(\xi) 是一个随频率 \xi&gt;0 变化的函数。在不同的高频位置 \xi=R 附近... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>Hörmander象征类下标的几何意义_图解版</title>
+    <link>https://ryanleefm.github.io/notes/h%C3%B6rmander%E8%B1%A1%E5%BE%81%E7%B1%BB%E4%B8%8B%E6%A0%87%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89_%E5%9B%BE%E8%A7%A3%E7%89%88</link>
+    <guid>https://ryanleefm.github.io/notes/h%C3%B6rmander%E8%B1%A1%E5%BE%81%E7%B1%BB%E4%B8%8B%E6%A0%87%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89_%E5%9B%BE%E8%A7%A3%E7%89%88</guid>
+    <description><![CDATA[ Hörmander 象征类下标的几何意义：从局部放大镜到导数估计 核心问题： Hörmander 象征类中的 m,\rho,\delta，为什么以 m+\delta|\alpha|-\rho|\beta| 的形式出现？它们能否从函数图像的局部几何特征得到解释？ 本文先不考虑象征类定义所允许的全部函数，而只观察高频 R\gg1 时具有典型边界变化尺度的模型。我们希望先理解这些指数在几何上描述什么，再自然地理解一般象征类为什么采用相应的导数上界。 一、问题的出发点：能否让不同位置的局部图像看起来一样？ 设 a(\xi) 是一个随频率 \xi&gt;0 变化的函数。在不同的高频位置 \xi=R 附近... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
     <title>学习笔记</title>
     <link>https://ryanleefm.github.io/notes/</link>
     <guid>https://ryanleefm.github.io/notes/</guid>
-    <description><![CDATA[ 这里整理我的数学学习笔记与知识地图。 近期学习心得 Soblev 空间 返回博客首页. ]]></description>
-    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
+    <description><![CDATA[ 这里整理我的数学学习笔记与知识地图。 知识地图（26） 1772年拉格朗日化非线性一阶PDE为线性 1779年拉格朗日解线性一阶PDE 对比几何与辛几何 对偶表示设计流程图 哈密顿力学/哈密顿力学_纯几何意义与不同既deterministic又reversible物理情形下的反推 量子化：经典力学→量子力学 流程图示（彩） 蒙日锥 数学主线动机 相空间与频率关系 一般二元二阶PDE的特征方程是如何推出的（以波动方程为例） 一张图理解所有李代数/一张图理解所有李代数 有限响应原则 坐标变换下的算子 ACE6AD9CE797ADE48E80E596B1E98688E6A19E%8B ACE6AD9... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
   </item><item>
-    <title>近期学习心得</title>
-    <link>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</link>
-    <guid>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</guid>
-    <description><![CDATA[ 一、算子分次六步 ① 依据给定算子的 次椭圆性，从其（主项）中读取 水平向量场（最重要、也最难）。 ② 上一步读取的水平向量场不唯一，但是其张成的 水平分布、切触结构 却是唯一的； 在此水平分布上允许的运动路径叫做 水平路径。 ③ 对于任意两点 p 和 q，其间水平路径的最短长度，叫做这两点间的 CC距离 \textcolor{#065279}{d_{CC}(p,q)}。 ④ 观察发现，存在一个特殊的空间变换 \textcolor{#065279}{\delta_t:\mathbb{R}^3\rightarrow\mathbb{R}^3} （实际上是根据参数 t 进行整体的 各向异性伸缩），满... ]]></description>
-    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
+    <title>一个 AI 算力供应商眼中的 Hörmander 象征类</title>
+    <link>https://ryanleefm.github.io/notes/%E4%B8%80%E4%B8%AA-ai-%E7%AE%97%E5%8A%9B%E4%BE%9B%E5%BA%94%E5%95%86%E7%9C%BC%E4%B8%AD%E7%9A%84-h%C3%B6rmander-%E8%B1%A1%E5%BE%81%E7%B1%BB</link>
+    <guid>https://ryanleefm.github.io/notes/%E4%B8%80%E4%B8%AA-ai-%E7%AE%97%E5%8A%9B%E4%BE%9B%E5%BA%94%E5%95%86%E7%9C%BC%E4%B8%AD%E7%9A%84-h%C3%B6rmander-%E8%B1%A1%E5%BE%81%E7%B1%BB</guid>
+    <description><![CDATA[ 一、越来越能干的 Agent 与等效结算日 假设你是一家 AI 算力公司的老板，专门向客户出租 Agent。随着机器学习的规模效应逐渐显现，你发现了一个有趣的现象：上下文容量越大的 Agent，干活竟然越卖力！ 但你关心的可不只是 Agent 一天能干多少活，而是它相对于已经完成的工作，每天还能创造多少新产出。 比如，你手下有两个 Agent： 小 Agent 已经累计创造了100万元的产出，现在每天还能创造2万元，相对生产力就是2%。 大 Agent 已经累计创造了1000万元的产出，现在每天却能再创造50万元，相对生产力达到了5%。 你发现，大 Agent 不仅干活更多，就连相对于自己的体... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
   </item><item>
-    <title>Soblev 空间</title>
-    <link>https://ryanleefm.github.io/notes/soblev-%E7%A9%BA%E9%97%B4.canvas</link>
-    <guid>https://ryanleefm.github.io/notes/soblev-%E7%A9%BA%E9%97%B4.canvas</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 11 Nov 2026 11:41:28 GMT</pubDate>
+    <title>Agent交接说明（详细版）</title>
+    <link>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/agent%E4%BA%A4%E6%8E%A5%E8%AF%B4%E6%98%8E%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89</link>
+    <guid>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/agent%E4%BA%A4%E6%8E%A5%E8%AF%B4%E6%98%8E%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89</guid>
+    <description><![CDATA[ Obsidian Git 同步 Agent 交接说明（详细版） 记录日期：2026-10-02，Asia/Shanghai。本文是维护交底，不是对未来操作的无限授权。接手时以用户最新指令和实际状态为准。 关联文档：详细用户手册、简略手册、故障排查表、新电脑接入指南。 1. ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>故障排查表</title>
+    <link>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E8%A1%A8</link>
+    <guid>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E8%A1%A8</guid>
+    <description><![CDATA[ Obsidian Git 同步故障排查表 记录日期：2026-10-02。路径、当前设置和备份方法见 详细手册。维护者先读 Agent 交接说明。 遇到错误先保留原文件。冲突、丢失、覆盖风险出现时，暂停自动同步并在库外备份。下面的检查尽量从只读命令开始，涉及拉取、修改配置或恢复文件时先确认备份。 1. ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
+  </item><item>
+    <title>新电脑接入指南（Windows与Linux）</title>
+    <link>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E6%96%B0%E7%94%B5%E8%84%91%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97%EF%BC%88windows%E4%B8%8Elinux%EF%BC%89</link>
+    <guid>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E6%96%B0%E7%94%B5%E8%84%91%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97%EF%BC%88windows%E4%B8%8Elinux%EF%BC%89</guid>
+    <description><![CDATA[ 新电脑接入指南：Windows 与 Linux 编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。 仓库：ryanleefm/Obsidian-Sync-Git，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 Agent 交接说明 交给维护者。 先判断属于哪一种情况 情况应做什么只重装 Obsidian，原同步库仍在备份后打开原目录，检查本机 Git、认证、插件和自动设置全新电脑或库目录已经丢失按本指南克隆到新的空目录，再配置本机准备用已有本地笔记加入同步先备份... ]]></description>
+    <pubDate>Wed, 11 Nov 2026 11:56:20 GMT</pubDate>
   </item>
     </channel>
   </rss>

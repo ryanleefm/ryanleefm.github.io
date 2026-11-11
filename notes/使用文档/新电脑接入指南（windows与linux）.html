@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>新电脑接入指南（Windows与Linux）</title><meta charset="utf-8"/><link rel="preload" href="../index-257cf85c.css" as="style"/><link rel="preload" href="../prescript-ee7931aa.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Ryan · 学习笔记"/><meta property="og:title" content="新电脑接入指南（Windows与Linux）"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="新电脑接入指南（Windows与Linux）"/><meta name="twitter:description" content="新电脑接入指南：Windows 与 Linux 编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。 仓库：ryanleefm/Obsidian-Sync-Git，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 Agent 交接说明 交给维护者。 先判断属于哪一种情况 情况应做什么只重装 Obsidian，原同步库仍在备份后打开原目录，检查本机 Git、认证、插件和自动设置全新电脑或库目录已经丢失按本指南克隆到新的空目录，再配置本机准备用已有本地笔记加入同步先备份..."/><meta property="og:description" content="新电脑接入指南：Windows 与 Linux 编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。 仓库：ryanleefm/Obsidian-Sync-Git，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 Agent 交接说明 交给维护者。 先判断属于哪一种情况 情况应做什么只重装 Obsidian，原同步库仍在备份后打开原目录，检查本机 Git、认证、插件和自动设置全新电脑或库目录已经丢失按本指南克隆到新的空目录，再配置本机准备用已有本地笔记加入同步先备份..."/><meta property="og:image:alt" content="新电脑接入指南：Windows 与 Linux 编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。 仓库：ryanleefm/Obsidian-Sync-Git，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 Agent 交接说明 交给维护者。 先判断属于哪一种情况 情况应做什么只重装 Obsidian，原同步库仍在备份后打开原目录，检查本机 Git、认证、插件和自动设置全新电脑或库目录已经丢失按本指南克隆到新的空目录，再配置本机准备用已有本地笔记加入同步先备份..."/><meta property="og:image" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta property="og:image:url" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta name="twitter:image" content="https://ryanleefm.github.io/notes/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="ryanleefm.github.io/notes"/><meta property="og:url" content="https://ryanleefm.github.io/notes/使用文档/新电脑接入指南（windows与linux）"/><meta property="twitter:url" content="https://ryanleefm.github.io/notes/使用文档/新电脑接入指南（windows与linux）"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="新电脑接入指南：Windows 与 Linux 编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。 仓库：ryanleefm/Obsidian-Sync-Git，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 Agent 交接说明 交给维护者。 先判断属于哪一种情况 情况应做什么只重装 Obsidian，原同步库仍在备份后打开原目录，检查本机 Git、认证、插件和自动设置全新电脑或库目录已经丢失按本指南克隆到新的空目录，再配置本机准备用已有本地笔记加入同步先备份..."/><meta name="generator" content="Quartz"/><link href="../index-257cf85c.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8e859f3f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-02d2a92c.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-0be4fa7f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d2eefd3a.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a71023bb.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-89d3cd78.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-ee7931aa.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json() }).catch(e => { console.warn("[Quartz] Could not load ../static/contentIndex.json (" + e.message + "); is configuration.contentIndex disabled?"); return {} });window.quartzStaticUrl = new URL("../static/", location.href).href</script></head><body data-slug="使用文档/新电脑接入指南（windows与linux）" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar" data-sidebar-mode="fit"><h2 class="page-title" data-quartz-plugin="page-title" data-quartz-component="PageTitle"><a href="..">Ryan · 学习笔记</a></h2><div class="mobile-only"><div class="spacer" data-quartz-plugin="spacer" data-quartz-component="Spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search" data-quartz-plugin="search" data-quartz-component="Search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式" data-quartz-plugin="darkmode" data-quartz-component="Darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a, b) => {\n    if (!a.isFolder &amp;&amp; !b.isFolder || a.isFolder &amp;&amp; b.isFolder) {\n      return (a.displayName || \&quot;\&quot;).localeCompare(b.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a.isFolder &amp;&amp; b.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}" data-quartz-plugin="explorer" data-quartz-component="Explorer"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-9" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-9" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs" data-quartz-plugin="breadcrumbs" data-quartz-component="Breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../使用文档/">使用文档</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>新电脑接入指南（Windows与Linux）</a></div></nav><h1 class="article-title" data-quartz-plugin="article-title" data-quartz-component="ArticleTitle">新电脑接入指南（Windows与Linux）</h1></div></div><article class="popover-hint" data-quartz-plugin="content-page" data-quartz-component="ContentPage"><div class="markdown-preview-view markdown-rendered"><h1 id="新电脑接入指南windows-与-linux">新电脑接入指南：Windows 与 Linux<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#新电脑接入指南windows-与-linux" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>编写日期：2026-10-02，Asia/Shanghai。用于把已有的 GitHub 私有仓库接入另一台电脑，或在重装系统后恢复使用。</p>
+<p>仓库：<a href="https://github.com/ryanleefm/Obsidian-Sync-Git" class="external external-link">ryanleefm/Obsidian-Sync-Git<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>，分支 main。正常接入不需要 agent；认证、Flatpak 权限或冲突难以判断时，可以把 <a href="../使用文档/agent交接说明（详细版）" class="internal internal-link alias" data-slug="使用文档/agent交接说明（详细版）">Agent 交接说明</a> 交给维护者。</p>
+<h2 id="先判断属于哪一种情况">先判断属于哪一种情况<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#先判断属于哪一种情况" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>情况</th><th>应做什么</th></tr></thead><tbody><tr><td>只重装 Obsidian，原同步库仍在</td><td>备份后打开原目录，检查本机 Git、认证、插件和自动设置</td></tr><tr><td>全新电脑或库目录已经丢失</td><td>按本指南克隆到新的空目录，再配置本机</td></tr><tr><td>准备用已有本地笔记加入同步</td><td>先备份、暂停自动同步，按详细手册导入；不要直接覆盖或合并目录</td></tr><tr><td>原电脑还有未提交或未推送内容</td><td>先保留并备份原电脑的数据；新电脑克隆只能取得 GitHub 上的内容</td></tr></tbody></table></div>
+<p>不需要再创建仓库，也不需要在新库运行 git init。原设备保留到新设备完成验证。不要把整份旧 .git、认证目录或 Linux .obsidian 直接复制到另一台电脑。</p>
+<p>以下路径是示例。Windows 没有 D 盘时可以使用 C:\Users\你的用户名\Documents\Obsidian-Sync-Git，并统一替换后续命令的路径。Linux 使用当前用户的主目录，不固定为 rlee。</p>
+<p>在同一终端依次操作，每阶段检查成功后再继续。遇到错误不要继续粘贴剩余命令。</p>
+<hr/>
+<h2 id="一新-windows-电脑">一、新 Windows 电脑<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#一新-windows-电脑" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="w1-安装和检查软件">W1. 安装和检查软件<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w1-安装和检查软件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>安装 Obsidian 和 Git for Windows。Git 安装过程中保留第三方程序使用 Git 的 PATH 选项，以及 Git Credential Manager。仅安装 GitHub Desktop 不足以让 Obsidian Git 插件使用 Git。<a href="https://publish.obsidian.md/git-doc/Installation" class="external external-link">插件官方安装说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>安装完成后重新打开 PowerShell，执行：</p>
+<pre><code class="language-powershell">git --version
+where.exe git
+git credential-manager --version
+</code></pre>
+<p>都应正常输出版本或路径。若刚安装 Git，完整退出所有 Obsidian 窗口后重开，让应用获得新的 PATH。</p>
+<h3 id="w2-克隆现有私有仓库">W2. 克隆现有私有仓库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w2-克隆现有私有仓库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>本例使用 D:\Obsidian-Sync-Git。目标目录必须不存在：</p>
+<pre><code class="language-powershell">if (Test-Path -LiteralPath 'D:\Obsidian-Sync-Git') {
+    Write-Host '目录已存在，请停止并检查；不要覆盖。'
+} else {
+    git -c credential.helper= -c credential.helper=manager clone https://github.com/ryanleefm/Obsidian-Sync-Git.git D:\Obsidian-Sync-Git
+}
+</code></pre>
+<p>这里临时指定 GCM 处理这次克隆。跟随浏览器提示登录 ryanleefm；若账户开启 2FA，按网页要求验证。无需复制原电脑的令牌，也不要把令牌写进 URL。</p>
+<p>成功后检查：</p>
+<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git status --short --branch
+git -C D:\Obsidian-Sync-Git remote get-url origin
+</code></pre>
+<p>预期是 main…origin/main、无文件变更，origin 为本指南开头的仓库地址。若前一步提示目录已存在，先判断是否本来就是这个库；不能把该提示当作克隆成功。</p>
+<h3 id="w3-备份新库">W3. 备份新库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w3-备份新库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在首次修改本机设置之前，把新克隆完整备份到库外。已有其他笔记库时，也要另行备份那些原数据。</p>
+<pre><code class="language-powershell">&amp; {
+    $ErrorActionPreference = 'Stop'
+    $newDeviceBackup = 'D:\Obsidian-Sync-Backups\new-windows-' + [guid]::NewGuid().ToString('N')
+    New-Item -ItemType Directory -Path $newDeviceBackup | Out-Null
+    Copy-Item -LiteralPath 'D:\Obsidian-Sync-Git' -Destination $newDeviceBackup -Recurse -Force
+    git -C &quot;$newDeviceBackup\Obsidian-Sync-Git&quot; fsck --full
+    if ($LASTEXITCODE -ne 0) { throw '备份 Git 检查失败' }
+    Write-Host &quot;备份目录：$newDeviceBackup&quot;
+}
+</code></pre>
+<p>此检查核验 Git 对象。对于包含未提交笔记或附件的库，还要检查文件数量和内容或做哈希比对。</p>
+<h3 id="w4-设置本库的-git">W4. 设置本库的 Git<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w4-设置本库的-git" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git config --local user.name ryanleefm
+git -C D:\Obsidian-Sync-Git config --local user.email ryanleefm@gmail.com
+git -C D:\Obsidian-Sync-Git config --local core.autocrlf false
+git -C D:\Obsidian-Sync-Git config --local core.safecrlf warn
+git -C D:\Obsidian-Sync-Git config --local pull.ff only
+git -C D:\Obsidian-Sync-Git config --local push.default simple
+git -C D:\Obsidian-Sync-Git config --local fetch.prune true
+git -C D:\Obsidian-Sync-Git config --local --replace-all credential.https://github.com.helper manager
+</code></pre>
+<p>认证 helper 限定在此库的 GitHub 地址，使用本机 GCM。提交署名是 Git 记录，不等于登录认证。以上命令不修改全局配置。</p>
+<h3 id="w5-打开库并安装插件">W5. 打开库并安装插件<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w5-打开库并安装插件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Obsidian → 管理仓库 → 打开本地仓库，选择 D:\Obsidian-Sync-Git。</li>
+<li>设置 → 第三方插件 → 浏览，搜索 Git，安装并启用。</li>
+<li>按插件页面检查要求的最低 Obsidian 版本；本次原设备使用 Obsidian 1.13.7，插件为 2.41.0/2.41.1，这些是历史记录，不要求新设备强行降级。</li>
+<li>三个自动间隔先设为 0，Pull on startup 先关闭。</li>
+<li>开启 Pull on commit-and-sync 和 Push on commit-and-sync。</li>
+<li>合并方式采用 Merge；有冲突时保留人工处理，不自动选择某一端的内容。</li>
+</ol>
+<p>没有 data.json 时可能只是尚未保存过设置。备份整个 .obsidian 目录，不必手工创建空 JSON。</p>
+<p>接着执行本指南“三、所有新设备都要做的验证”。</p>
+<hr/>
+<h2 id="二新-linux-电脑">二、新 Linux 电脑<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#二新-linux-电脑" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="l1-选择一条安装路径">L1. 选择一条安装路径<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#l1-选择一条安装路径" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>路径</th><th>适用情况</th><th>Git 与认证运行位置</th></tr></thead><tbody><tr><td>A：普通 Linux 安装</td><td>使用系统可访问的 Obsidian，例如 AppImage</td><td>宿主 Git 与宿主 gh</td></tr><tr><td>B：Obsidian Flatpak</td><td>与当前 Zirconium 类似的安装方式</td><td>先验证应用内 Git、gh，优先用应用内工具</td></tr></tbody></table></div>
+<p>只执行其中一条，随后到 L2 继续。bootc 等不可变系统不要直接套用普通系统的包安装命令。本次 Zirconium 的 Flatpak 路径已验证；新机器的运行时内容和权限仍需重新检查。</p>
+<p>插件官方列出了 AppImage 的支持情况及 Flatpak 的访问限制。<a href="https://publish.obsidian.md/git-doc/Installation" class="external external-link">安装兼容说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="路径-a普通-linux">路径 A：普通 Linux<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#路径-a普通-linux" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>安装 Obsidian。</li>
+<li>按发行版安装 Git，再按 <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md" class="external external-link">GitHub CLI Linux 安装说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 安装 gh。</li>
+<li>检查版本并登录：</li>
+</ol>
+<pre><code class="language-bash">git --version
+gh --version
+gh auth login --hostname github.com --git-protocol https --web
+gh auth status --hostname github.com
+</code></pre>
+<p>Git 的发行版安装方式见 <a href="https://git-scm.com/install/linux.html" class="external external-link">Git 官方 Linux 安装页<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>。例如普通 Debian/Ubuntu 可用 sudo apt-get install git，普通 Fedora 可用 sudo dnf install git；gh 的软件源与包名称按其官方页面选择。</p>
+<p>登录 ryanleefm。若询问是否同时配置 Git 认证，选 No：本指南稍后只配置这个仓库的 helper。完成网页授权后回到终端，确认登录流程真正完成。若 gh 提示退回明文凭据存储，先处理本机密钥环；认证文件始终放在笔记库外。</p>
+<p>在当前终端定义：</p>
+<pre><code class="language-bash">vaultGit() { git &quot;$@&quot;; }
+obsidianCredentialHelper='!gh auth git-credential'
+</code></pre>
+<p>然后跳到 L2。</p>
+<h3 id="路径-bflatpak包括类似-zirconium-的电脑">路径 B：Flatpak，包括类似 Zirconium 的电脑<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#路径-bflatpak包括类似-zirconium-的电脑" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>按系统软件商店安装 Flathub 的 Obsidian，应用 ID 为 md.obsidian.Obsidian。若已经配置好 Flathub，也可执行：</p>
+<pre><code class="language-bash">flatpak install flathub md.obsidian.Obsidian
+</code></pre>
+<p>Flatpak 或 Flathub 未配置时先完成发行版的安装步骤。<a href="https://docs.flatpak.org/en/latest/using-flatpak.html" class="external external-link">Flatpak 使用说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>检查应用内工具与权限：</p>
+<pre><code class="language-bash">flatpak info md.obsidian.Obsidian
+flatpak info --show-permissions md.obsidian.Obsidian
+flatpak run --command=git md.obsidian.Obsidian --version
+flatpak run --command=gh md.obsidian.Obsidian --version
+</code></pre>
+<p>Git 或 gh 不存在时先停止。当前 Zirconium 的应用包含这些工具，但不能假定将来的所有 Flatpak 版本都一样；不要在没有验证工具和认证路线时继续。</p>
+<p>登录：</p>
+<pre><code class="language-bash">flatpak run --command=gh md.obsidian.Obsidian auth login --hostname github.com --git-protocol https --web
+flatpak run --command=gh md.obsidian.Obsidian auth status --hostname github.com
+</code></pre>
+<p>仍使用 ryanleefm，认证协议为 HTTPS。如提示是否配置 Git 认证，选 No，之后使用仓库本地 helper。若 gh 提示无法使用系统密钥环并退回明文存储，先处理本机凭据存储，不把认证文件放入笔记库。<a href="https://cli.github.com/manual/gh_auth_login" class="external external-link">gh 登录和存储说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>在当前终端定义：</p>
+<pre><code class="language-bash">vaultGit() { flatpak run --command=git md.obsidian.Obsidian &quot;$@&quot;; }
+obsidianCredentialHelper='!f() { if [ -f /.flatpak-info ]; then gh auth git-credential &quot;$@&quot;; else flatpak run --command=gh md.obsidian.Obsidian auth git-credential &quot;$@&quot;; fi; }; f'
+</code></pre>
+<p>此 helper 在 Flatpak 内调用应用 gh，在宿主调用时转入这个 Obsidian Flatpak。它没有密码或令牌。/.flatpak-info 是运行中的 Flatpak 沙箱元数据文件。<a href="https://github.com/flatpak/flatpak/blob/main/doc/flatpak-metadata.xml" class="external external-link">Flatpak 元数据说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>当前原 Zirconium 机器已有正常工作的 helper，无需因为本指南而改写。新指南使用沙箱标识区分调用位置，避免新宿主恰好装了另一份 gh 时取错登录凭据。</p>
+<h3 id="l2-克隆到当前用户的新目录">L2. 克隆到当前用户的新目录<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#l2-克隆到当前用户的新目录" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>前面选定的 vaultGit 函数和 obsidianCredentialHelper 变量只存在于当前终端；关闭终端后要重新定义相应路径的函数，或使用对应的完整 Git 命令。</p>
+<pre><code class="language-bash">vaultParent=&quot;$HOME/Documents&quot;
+vaultPath=&quot;$vaultParent/Obsidian-Sync-Git&quot;
+</code></pre>
+<p>如果 Documents 在本机有不同路径，在这里替换 vaultParent，后续命令继续使用变量。先确认目的目录不存在：</p>
+<pre><code class="language-bash">if [ -e &quot;$vaultPath&quot; ] || [ -L &quot;$vaultPath&quot; ]; then
+    echo '目录已存在，请停止并检查，不要覆盖。'
+else
+    mkdir -p &quot;$vaultParent&quot; &amp;&amp;
+    vaultGit -c credential.https://github.com.helper= \
+        -c &quot;credential.https://github.com.helper=$obsidianCredentialHelper&quot; \
+        clone https://github.com/ryanleefm/Obsidian-Sync-Git.git &quot;$vaultPath&quot;
+fi
+</code></pre>
+<p>成功后检查：</p>
+<pre><code class="language-bash">vaultGit -C &quot;$vaultPath&quot; status --short --branch
+vaultGit -C &quot;$vaultPath&quot; remote get-url origin
+</code></pre>
+<p>预期 main…origin/main 且没有变更。克隆失败时不继续 L3。</p>
+<p>Flatpak 报目录访问错误时先检查已有权限。如果确实缺少所选目录的访问权限，可以只授权这个目录，再重启应用：</p>
+<pre><code class="language-bash">flatpak override --user --filesystem=&quot;$vaultParent&quot; md.obsidian.Obsidian
+</code></pre>
+<p>这一行只适用于路径 B，并且仅在确认需要时执行。不要通过授予整个主机访问或重置全部权限来猜测修复。<a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html" class="external external-link">Flatpak 文件访问说明<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="l3-备份新库">L3. 备份新库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#l3-备份新库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在配置本地 Git 和安装插件前，关闭新库的 Obsidian 窗口，备份整个新克隆：</p>
+<pre><code class="language-bash">(
+    set -eu
+    mkdir -p &quot;$vaultParent/Obsidian-Sync-Backups&quot;
+    newDeviceBackup=&quot;$(mktemp -d &quot;$vaultParent/Obsidian-Sync-Backups/new-linux-XXXXXXXX&quot;)&quot;
+    tar -czf &quot;$newDeviceBackup/vault.tar.gz&quot; -C &quot;$vaultParent&quot; Obsidian-Sync-Git
+    tar -tzf &quot;$newDeviceBackup/vault.tar.gz&quot;
+    printf '备份目录：%s\n' &quot;$newDeviceBackup&quot;
+)
+</code></pre>
+<p>最后列出压缩包只验证可读性；已有未提交笔记时再做文件数量和哈希核验。已有其他原始库的备份要另外完成。</p>
+<h3 id="l4-配置此库">L4. 配置此库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#l4-配置此库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在同一个终端执行：</p>
+<pre><code class="language-bash">vaultGit -C &quot;$vaultPath&quot; config --local user.name ryanleefm
+vaultGit -C &quot;$vaultPath&quot; config --local user.email ryanleefm@gmail.com
+vaultGit -C &quot;$vaultPath&quot; config --local core.autocrlf false
+vaultGit -C &quot;$vaultPath&quot; config --local core.safecrlf warn
+vaultGit -C &quot;$vaultPath&quot; config --local pull.ff only
+vaultGit -C &quot;$vaultPath&quot; config --local push.default simple
+vaultGit -C &quot;$vaultPath&quot; config --local fetch.prune true
+vaultGit -C &quot;$vaultPath&quot; config --local --replace-all credential.https://github.com.helper ''
+vaultGit -C &quot;$vaultPath&quot; config --local --add credential.https://github.com.helper &quot;$obsidianCredentialHelper&quot;
+</code></pre>
+<p>helper 是调用程序的逻辑，凭据由 gh 管理。不要改成 credential.helper=store，不要把密码写进 Git 配置。</p>
+<h3 id="l5-用-obsidian-打开并配置插件">L5. 用 Obsidian 打开并配置插件<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#l5-用-obsidian-打开并配置插件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>在文件管理器确认新库路径。</li>
+<li>Obsidian → 打开本地仓库，选择该目录。</li>
+<li>安装并启用第三方插件 Git，确认 Obsidian 版本满足插件要求。</li>
+<li>自动间隔全部保持 0，启动拉取保持关闭。</li>
+<li>提交同步时拉取、推送开启；采用 Merge，冲突时人工处理。</li>
+<li>确认中文和附件显示正常，再进入第三部分。</li>
+</ol>
+<p>Flatpak 字体问题可先检查：</p>
+<pre><code class="language-bash">fc-match ':lang=zh-cn'
+flatpak run --command=fc-match md.obsidian.Obsidian 'Noto Sans CJK SC:lang=zh-cn'
+</code></pre>
+<p>不要仅凭宿主匹配正常就认定应用能使用中文字体。当前 Zirconium 的修复使用了应用专用 fonts/obsidian-cjk 目录和 Noto CJK 字体；新电脑只有出现同样问题时才需要参考 <a href="../使用文档/故障排查表" class="internal internal-link alias" data-slug="使用文档/故障排查表">故障排查表</a> 重做检查，不要照搬旧用户名路径。</p>
+<hr/>
+<h2 id="三所有新设备都要做的验证">三、所有新设备都要做的验证<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#三所有新设备都要做的验证" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>登录 GitHub 后确认仓库页面标为 Private，再进行推送测试。如果可见性异常，先停止上传并核对仓库设置。</p>
+<h3 id="1-验证拉取">1. 验证拉取<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#1-验证拉取" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在新设备 Ctrl+P → Git: Pull，确认没有认证错误。打开已知笔记，检查正文、中文和附件。</p>
+<h3 id="2-验证新设备推送">2. 验证新设备推送<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#2-验证新设备推送" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在新设备创建一篇唯一命名的测试笔记，例如 接入测试-设备名称.md，正文写明来源。只放测试内容，不复制私人原库进行测试。</p>
+<p>Ctrl+P → Git: Commit-and-sync，等待完成；在旧设备执行 Git: Pull，确认出现该笔记且内容一致。</p>
+<h3 id="3-验证反向接收">3. 验证反向接收<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#3-验证反向接收" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在旧设备创建另一篇测试笔记并同步。新设备执行 Git: Pull，确认收到。两端顺序执行，不同时编辑同一篇笔记。</p>
+<p>查看状态：Windows 用 git -C 新库路径 status —short —branch；Linux 在前述终端用 vaultGit -C “$vaultPath” status —short —branch。双方工作区应干净，已推送、拉取后能对上预期提交。</p>
+<p>手动双向同步通过后，在库外备份新生成的 .obsidian。它包含新设备的插件和设置，不会进入 Git。</p>
+<h3 id="4-开启并验证自动同步">4. 开启并验证自动同步<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#4-开启并验证自动同步" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>设置 → Git：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>选项</th><th>值</th></tr></thead><tbody><tr><td>Auto commit-and-sync interval (minutes)</td><td>10</td></tr><tr><td>Use separate commit and push intervals</td><td>关闭</td></tr><tr><td>Auto push / Auto pull interval (minutes)</td><td>0</td></tr><tr><td>Pull on startup</td><td>开启</td></tr><tr><td>Pull on commit-and-sync</td><td>开启</td></tr><tr><td>Push on commit-and-sync</td><td>开启</td></tr></tbody></table></div>
+<p>再创建一篇新的自动测试笔记，保持库打开、联网、电脑不休眠，等待约 10～12 分钟。期间不手动提交或推送。检查文件的提交记录，并在另一端拉取确认。</p>
+<p>这一步区分“配置已开启”和“定时任务已实际运行”。以后切换设备前仍建议手动 Commit-and-sync，另一端编辑前先 Pull。</p>
+<h3 id="5-完成接入后">5. 完成接入后<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#5-完成接入后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>正常使用新同步库；保留旧设备与外部备份。</li>
+<li>插件、自动设置、界面、字体需要逐设备配置，因为 .obsidian 被忽略。</li>
+<li>密码、令牌、2FA 恢复码不能写进同步笔记。.gitignore 不能识别正文里的秘密。</li>
+<li>导入旧笔记是单独阶段，先备份并暂停自动任务，按 <a href="../使用文档/用户手册（详细版）" class="internal internal-link alias" data-slug="使用文档/用户手册（详细版）">详细用户手册</a> 操作。</li>
+<li>认证或冲突报错时查看 <a href="../使用文档/故障排查表" class="internal internal-link alias" data-slug="使用文档/故障排查表">故障排查表</a>；需要 agent 时提供 <a href="../使用文档/agent交接说明（详细版）" class="internal internal-link alias" data-slug="使用文档/agent交接说明（详细版）">交接说明</a>，以及经过脱敏的错误和状态输出。</li>
+</ul></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar" data-sidebar-mode="fit"></div><footer class data-quartz-plugin="footer" data-quartz-component="Footer"><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.1.0</a> © 2026</p><ul><li><a href="https://ryanleefm.github.io/">Blog</a></li><li><a href="https://github.com/ryanleefm">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-b151bd49.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-6f848dab.js" type="module" data-persist="true"></script></html>
