@@ -6,65 +6,65 @@
       <description>最近的10条笔记 on Ryan · 学习笔记</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>用户手册（简略版）</title>
-    <link>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%EF%BC%88%E7%AE%80%E7%95%A5%E7%89%88%EF%BC%89</link>
-    <guid>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%EF%BC%88%E7%AE%80%E7%95%A5%E7%89%88%EF%BC%89</guid>
-    <description><![CDATA[ Obsidian Git 同步用户手册（简略版） 记录日期：2026-10-02。完整操作见 详细版，新设备安装见 新电脑接入指南，遇到错误查 故障排查表。 打开正确的库 系统同步库Zirconium/home/rlee/Documents/Obsidian-Sync-GitWindowsD:\020_Projects\Obsidian-Sync-Git 远端：GitHub 私有仓库，分支 main。Windows 原笔记尚未导入；旧库不是当前同步库。 每次使用 打开库，等启动拉取完成；必要时 Ctrl+P → Git: Pull。 编辑笔记，保持应用打开，定时任务约每 10 分钟运行。 切换... ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
-  </item><item>
     <title>用户手册（详细版）</title>
     <link>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89</link>
     <guid>https://ryanleefm.github.io/notes/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89</guid>
     <description><![CDATA[ Obsidian Git 同步用户手册（详细版） 记录日期：2026-10-02，Asia/Shanghai。适用于本次已配置的 Windows 与 Zirconium 笔记库。版本和验证状态是记录时的快照，后续升级应重新检查。 快速操作见 用户手册（简略版），错误处理见 故障排查表，维护交接见 Agent 交接说明。 1. ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>小红书第三章总结</title>
     <link>https://ryanleefm.github.io/notes/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93</link>
     <guid>https://ryanleefm.github.io/notes/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93</guid>
     <description><![CDATA[ Chapter 3 Pseudodifferential Operators on Heisenberg Manifolds §9 Standard Pseudodifferential Operators 定义：（象征）函数空间 S^m(U)\subset C^\infty(U\times\mathbb{R}^n) 理解：在 K\subset\subset U 上，相对变化率仅随 |\xi| 改变，且对于边际情况，即最小的 S^m，在 \xi 方向上处处按照 \xi^{-1} 倍率缩小，就能让相对变化率（至高可以）不变。 S^{\pm\infty}(U) 定义：象征函数 q\in S^m(U... ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>未命名</title>
     <link>https://ryanleefm.github.io/notes/%E6%9C%AA%E5%91%BD%E5%90%8D</link>
     <guid>https://ryanleefm.github.io/notes/%E6%9C%AA%E5%91%BD%E5%90%8D</guid>
     <description><![CDATA[ 对于共轭运算的形象化：共轭运算是在给定空间各项伸缩率（折叠度）后，计算一个算子在这一给定折叠度上的“真实”作用。对吗，就好像有一块画布，它是弹性的，但是在一个方向比例收缩，另一方向以距离平方收缩，但是（至少在原点处）机器是要把画布撑开来测量画面的变化数据的P（f \circ delta），并且读取到的数据也要记录在撑开后的画布上，然后在撤去撑开装置，让画布回缩 非各向同性的坐标伸缩，恰好是 CC 几何中的等比例伸缩. ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>本福特定律</title>
     <link>https://ryanleefm.github.io/notes/%E6%9C%AC%E7%A6%8F%E7%89%B9%E5%AE%9A%E5%BE%8B</link>
     <guid>https://ryanleefm.github.io/notes/%E6%9C%AC%E7%A6%8F%E7%89%B9%E5%AE%9A%E5%BE%8B</guid>
     <description><![CDATA[ 引例 1：本福特定律 在本福特定律中 P(\text{首位数字}=k-1)=\log_{10}(\frac{k}{k-1})，那么 P(\text{首位数字}\leq k-1)=\log_{10}(k)，在换用新的对数坐标 l=\log_{10}(k) 后，P(\text{首位数字}\leq k-1)=l 变成了线性概率。进而 l 变化1引起的概率 P 变化的绝对值是1，对应原本数字按比例 (10)^\delta 变大后、概率变化的绝对值是 \delta。 引例 2：十二平均律 同理，在十二平均律中，\text{音阶（听感音高，以标准音为第 0 音阶）}=12\log_{2}(\xi/440\... ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>一个黑心资本家如何发现 Hörmander 象征类的自然尺度</title>
     <link>https://ryanleefm.github.io/notes/%E7%90%86%E8%A7%A3hormander%E8%B1%A1%E5%BE%81%E7%B1%BB/%E4%B8%80%E4%B8%AA%E9%BB%91%E5%BF%83%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%A6%82%E4%BD%95%E5%8F%91%E7%8E%B0-h%C3%B6rmander-%E8%B1%A1%E5%BE%81%E7%B1%BB%E7%9A%84%E8%87%AA%E7%84%B6%E5%B0%BA%E5%BA%A6</link>
     <guid>https://ryanleefm.github.io/notes/%E7%90%86%E8%A7%A3hormander%E8%B1%A1%E5%BE%81%E7%B1%BB/%E4%B8%80%E4%B8%AA%E9%BB%91%E5%BF%83%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%A6%82%E4%BD%95%E5%8F%91%E7%8E%B0-h%C3%B6rmander-%E8%B1%A1%E5%BE%81%E7%B1%BB%E7%9A%84%E8%87%AA%E7%84%B6%E5%B0%BA%E5%BA%A6</guid>
     <description><![CDATA[ 一、越来越松弛的员工与等效绩效日 假设你是一家上市公司的老板。某天，主管兴冲冲地拿来一份公司未来的市值预测，声称按照这个趋势发展，公司迟早能做大做强。 你看了一眼，却发现了一个严重的问题：照这个趋势发展，员工只会越来越松弛！ 比如，公司市值按照线性函数增长，每天增加10万元。市值只有10万元时，一天要赚10万元；等市值达到100万元时，一天还是只需赚10万元。员工的相对 KPI 直接降到了原来的十分之一！ 你又研究了平方函数、立方函数，结果发现，无论哪个单项式，员工的相对 KPI 都会按照时间的倒数 t^{-1} 下降。而对数增长下甚至会下降得更快。只有指数增长，才能让员工始终保持相同的相对 ... ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>近期学习心得</title>
     <link>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</link>
     <guid>https://ryanleefm.github.io/notes/%E8%BF%91%E6%9C%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97</guid>
     <description><![CDATA[ 一、算子分次六步 ① 依据给定算子的 次椭圆性，从其（主项）中读取 水平向量场（最重要、也最难）。 ② 上一步读取的水平向量场不唯一，但是其张成的 水平分布、切触结构 却是唯一的； 在此水平分布上允许的运动路径叫做 水平路径。 ③ 对于任意两点 p 和 q，其间水平路径的最短长度，叫做这两点间的 CC距离 \textcolor{#065279}{d_{CC}(p,q)}。 ④ 观察发现，存在一个特殊的空间变换 \textcolor{#065279}{\delta_t:\mathbb{R}^3\rightarrow\mathbb{R}^3} （实际上是根据参数 t 进行整体的 各向异性伸缩），满... ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>1772年拉格朗日化非线性一阶PDE为线性</title>
     <link>https://ryanleefm.github.io/notes/1772%E5%B9%B4%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8C%96%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%B8%80%E9%98%B6pde%E4%B8%BA%E7%BA%BF%E6%80%A7.canvas</link>
     <guid>https://ryanleefm.github.io/notes/1772%E5%B9%B4%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8C%96%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%B8%80%E9%98%B6pde%E4%B8%BA%E7%BA%BF%E6%80%A7.canvas</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>1779年拉格朗日解线性一阶PDE</title>
     <link>https://ryanleefm.github.io/notes/1779%E5%B9%B4%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%B8%80%E9%98%B6pde.canvas</link>
     <guid>https://ryanleefm.github.io/notes/1779%E5%B9%B4%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%B8%80%E9%98%B6pde.canvas</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item><item>
     <title>ACE6AD9CE797ADE48E80E596B1E98688E6A19E%8B</title>
     <link>https://ryanleefm.github.io/notes/ace6ad9ce797ade48e80e596b1e98688e6a19e-percent8b.canvas</link>
     <guid>https://ryanleefm.github.io/notes/ace6ad9ce797ade48e80e596b1e98688e6a19e-percent8b.canvas</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Thu, 12 Nov 2026 04:32:27 GMT</pubDate>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
+  </item><item>
+    <title>ACE6AD9CE797ADE48EB1E9869BE9BE88E6A19EE58C95E788</title>
+    <link>https://ryanleefm.github.io/notes/ace6ad9ce797ade48eb1e9869be9be88e6a19ee58c95e788.canvas</link>
+    <guid>https://ryanleefm.github.io/notes/ace6ad9ce797ade48eb1e9869be9be88e6a19ee58c95e788.canvas</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 12 Nov 2026 05:48:24 GMT</pubDate>
   </item>
     </channel>
   </rss>
