@@ -44,7 +44,7 @@
 
 
 
-<div class="table-container"><table><thead><tr><th>项目</th><th>当前值</th></tr></thead><tbody><tr><td>GitHub 私有仓库</td><td><a href="https://github.com/ryanleefm/Obsidian-Sync-Git" class="external external-link">ryanleefm/Obsidian-Sync-Git<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>分支</td><td>main</td></tr><tr><td>Zirconium 同步库</td><td>/home/rlee/Documents/Obsidian-Sync-Git</td></tr><tr><td>Windows 同步库</td><td>D:\Obsidian-Sync-Git</td></tr><tr><td>Zirconium 原先空库</td><td>/home/rlee/Documents/Obsidian Vault，已保留</td></tr><tr><td>Linux 外部备份</td><td>/home/rlee/Documents/Obsidian-Sync-Backups</td></tr><tr><td>Windows 外部备份</td><td>D:\Obsidian-Sync-Backups</td></tr><tr><td>Windows 原笔记库</td><td>路径尚未提供，仍是待导入的数据源</td></tr></tbody></table></div>
+<div class="table-container"><table><thead><tr><th>项目</th><th>当前值</th></tr></thead><tbody><tr><td>GitHub 私有仓库</td><td><a href="https://github.com/ryanleefm/Obsidian-Sync-Git" class="external external-link">ryanleefm/Obsidian-Sync-Git<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>分支</td><td>main</td></tr><tr><td>Zirconium 同步库</td><td>/home/rlee/Documents/Obsidian-Sync-Git</td></tr><tr><td>Windows 同步库</td><td>D:\020_Projects\Obsidian-Sync-Git</td></tr><tr><td>Zirconium 原先空库</td><td>/home/rlee/Documents/Obsidian Vault，已保留</td></tr><tr><td>Linux 外部备份</td><td>/home/rlee/Documents/Obsidian-Sync-Backups</td></tr><tr><td>Windows 外部备份</td><td>D:\Obsidian-Sync-Backups</td></tr><tr><td>Windows 原笔记库</td><td>路径尚未提供，仍是待导入的数据源</td></tr></tbody></table></div>
 <p>日常工作应打开对应系统上的同步库。旧 Windows 库不会因为新库配置完成而自动加入同步。Windows 原笔记尚未导入，原库备份是否完成尚未确认。</p>
 <p>本方案通过 Git 和 GitHub 私有仓库同步文件。界面布局、插件和字体等设备设置保留在各自电脑上。</p>
 <h2 id="2-已完成什么">2. 已完成什么<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#2-已完成什么" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
@@ -132,8 +132,8 @@
 <p>本地编辑可以继续。离线期间无法拉取或推送，自动任务可能报网络错误。恢复网络后先检查状态，再执行 Commit-and-sync；两端都离线修改过同一文件时可能需要人工合并。</p>
 <h2 id="5-怎样确认同步成功">5. 怎样确认同步成功<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#5-怎样确认同步成功" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
 <p>Windows PowerShell：</p>
-<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git status --short --branch
-git -C D:\Obsidian-Sync-Git log -1 --oneline
+<pre><code class="language-powershell">git -C D:\020_Projects\Obsidian-Sync-Git status --short --branch
+git -C D:\020_Projects\Obsidian-Sync-Git log -1 --oneline
 </code></pre>
 <p>Zirconium 终端：</p>
 <pre><code class="language-bash">git -C /home/rlee/Documents/Obsidian-Sync-Git status --short --branch
@@ -193,7 +193,7 @@ git -C /home/rlee/Documents/Obsidian-Sync-Git log -1 --oneline
     $ErrorActionPreference = 'Stop'
     $vaultBackup = 'D:\Obsidian-Sync-Backups\manual-' + [guid]::NewGuid().ToString('N')
     New-Item -ItemType Directory -Path $vaultBackup | Out-Null
-    Copy-Item -LiteralPath 'D:\Obsidian-Sync-Git' -Destination $vaultBackup -Recurse -Force
+    Copy-Item -LiteralPath 'D:\020_Projects\Obsidian-Sync-Git' -Destination $vaultBackup -Recurse -Force
     git -C &quot;$vaultBackup\Obsidian-Sync-Git&quot; fsck --full
     if ($LASTEXITCODE -ne 0) { throw '备份 Git 完整性检查失败' }
     Write-Host &quot;备份目录：$vaultBackup&quot;

@@ -43,17 +43,17 @@ git credential-manager --version
 </code></pre>
 <p>都应正常输出版本或路径。若刚安装 Git，完整退出所有 Obsidian 窗口后重开，让应用获得新的 PATH。</p>
 <h3 id="w2-克隆现有私有仓库">W2. 克隆现有私有仓库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w2-克隆现有私有仓库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
-<p>本例使用 D:\Obsidian-Sync-Git。目标目录必须不存在：</p>
-<pre><code class="language-powershell">if (Test-Path -LiteralPath 'D:\Obsidian-Sync-Git') {
+<p>本例使用 D:\020_Projects\Obsidian-Sync-Git。目标目录必须不存在：</p>
+<pre><code class="language-powershell">if (Test-Path -LiteralPath 'D:\020_Projects\Obsidian-Sync-Git') {
     Write-Host '目录已存在，请停止并检查；不要覆盖。'
 } else {
-    git -c credential.helper= -c credential.helper=manager clone https://github.com/ryanleefm/Obsidian-Sync-Git.git D:\Obsidian-Sync-Git
+    git -c credential.helper= -c credential.helper=manager clone https://github.com/ryanleefm/Obsidian-Sync-Git.git D:\020_Projects\Obsidian-Sync-Git
 }
 </code></pre>
 <p>这里临时指定 GCM 处理这次克隆。跟随浏览器提示登录 ryanleefm；若账户开启 2FA，按网页要求验证。无需复制原电脑的令牌，也不要把令牌写进 URL。</p>
 <p>成功后检查：</p>
-<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git status --short --branch
-git -C D:\Obsidian-Sync-Git remote get-url origin
+<pre><code class="language-powershell">git -C D:\020_Projects\Obsidian-Sync-Git status --short --branch
+git -C D:\020_Projects\Obsidian-Sync-Git remote get-url origin
 </code></pre>
 <p>预期是 main…origin/main、无文件变更，origin 为本指南开头的仓库地址。若前一步提示目录已存在，先判断是否本来就是这个库；不能把该提示当作克隆成功。</p>
 <h3 id="w3-备份新库">W3. 备份新库<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w3-备份新库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
@@ -62,7 +62,7 @@ git -C D:\Obsidian-Sync-Git remote get-url origin
     $ErrorActionPreference = 'Stop'
     $newDeviceBackup = 'D:\Obsidian-Sync-Backups\new-windows-' + [guid]::NewGuid().ToString('N')
     New-Item -ItemType Directory -Path $newDeviceBackup | Out-Null
-    Copy-Item -LiteralPath 'D:\Obsidian-Sync-Git' -Destination $newDeviceBackup -Recurse -Force
+    Copy-Item -LiteralPath 'D:\020_Projects\Obsidian-Sync-Git' -Destination $newDeviceBackup -Recurse -Force
     git -C &quot;$newDeviceBackup\Obsidian-Sync-Git&quot; fsck --full
     if ($LASTEXITCODE -ne 0) { throw '备份 Git 检查失败' }
     Write-Host &quot;备份目录：$newDeviceBackup&quot;
@@ -70,19 +70,19 @@ git -C D:\Obsidian-Sync-Git remote get-url origin
 </code></pre>
 <p>此检查核验 Git 对象。对于包含未提交笔记或附件的库，还要检查文件数量和内容或做哈希比对。</p>
 <h3 id="w4-设置本库的-git">W4. 设置本库的 Git<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w4-设置本库的-git" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
-<pre><code class="language-powershell">git -C D:\Obsidian-Sync-Git config --local user.name ryanleefm
-git -C D:\Obsidian-Sync-Git config --local user.email ryanleefm@gmail.com
-git -C D:\Obsidian-Sync-Git config --local core.autocrlf false
-git -C D:\Obsidian-Sync-Git config --local core.safecrlf warn
-git -C D:\Obsidian-Sync-Git config --local pull.ff only
-git -C D:\Obsidian-Sync-Git config --local push.default simple
-git -C D:\Obsidian-Sync-Git config --local fetch.prune true
-git -C D:\Obsidian-Sync-Git config --local --replace-all credential.https://github.com.helper manager
+<pre><code class="language-powershell">git -C D:\020_Projects\Obsidian-Sync-Git config --local user.name ryanleefm
+git -C D:\020_Projects\Obsidian-Sync-Git config --local user.email ryanleefm@gmail.com
+git -C D:\020_Projects\Obsidian-Sync-Git config --local core.autocrlf false
+git -C D:\020_Projects\Obsidian-Sync-Git config --local core.safecrlf warn
+git -C D:\020_Projects\Obsidian-Sync-Git config --local pull.ff only
+git -C D:\020_Projects\Obsidian-Sync-Git config --local push.default simple
+git -C D:\020_Projects\Obsidian-Sync-Git config --local fetch.prune true
+git -C D:\020_Projects\Obsidian-Sync-Git config --local --replace-all credential.https://github.com.helper manager
 </code></pre>
 <p>认证 helper 限定在此库的 GitHub 地址，使用本机 GCM。提交署名是 Git 记录，不等于登录认证。以上命令不修改全局配置。</p>
 <h3 id="w5-打开库并安装插件">W5. 打开库并安装插件<a role="anchor" aria-hidden tabindex="-1" data-no-popover href="#w5-打开库并安装插件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
 <ol>
-<li>Obsidian → 管理仓库 → 打开本地仓库，选择 D:\Obsidian-Sync-Git。</li>
+<li>Obsidian → 管理仓库 → 打开本地仓库，选择 D:\020_Projects\Obsidian-Sync-Git。</li>
 <li>设置 → 第三方插件 → 浏览，搜索 Git，安装并启用。</li>
 <li>按插件页面检查要求的最低 Obsidian 版本；本次原设备使用 Obsidian 1.13.7，插件为 2.41.0/2.41.1，这些是历史记录，不要求新设备强行降级。</li>
 <li>三个自动间隔先设为 0，Pull on startup 先关闭。</li>
