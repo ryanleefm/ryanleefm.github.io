@@ -1,7 +1,10 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heisenberg 局部水平几何 · 膜片水平曲线 v35</title><style>html,body{margin:0;padding:0;background:#edf2f6;min-width:0;}body{padding:8px;width:100%;max-width:none;box-sizing:border-box;}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heisenberg Local Horizontal Geometry · Membrane Curves v35</title><style>html,body{margin:0;padding:0;background:#edf2f6;min-width:0;}body{padding:8px;width:100%;max-width:none;box-sizing:border-box;}
 #hgStandalone{height:calc(100dvh - 16px);min-height:440px;display:flex;flex-direction:column;width:100%;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#253444;background:#f9fbfd;border:1px solid #dae2e9;border-radius:14px;overflow:hidden;font-size:13px}
 #hgStandalone *{box-sizing:border-box}
 #hgStandalone .hg-head{padding:14px 16px;background:white;border-bottom:1px solid #e0e6eb;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+#hgStandalone .hg-header-actions{margin-left:auto;justify-content:flex-end}
+#hgStandalone #hgLanguage{min-width:76px;font-weight:600}
+#hgStandalone button:focus-visible{outline:2px solid #415d77;outline-offset:2px}
 #hgStandalone .hg-head strong{font-size:15px}
 #hgStandalone .hg-head small{font-size:11px;color:#72808e}
 #hgStandalone .hg-layout{display:flex;flex:1;min-height:0;min-width:0}
@@ -120,196 +123,196 @@
 #hgStandalone .hg-curve-info .hg-curve-meta{margin-top:6px}
 </style></head><body><div id="hgStandalone" data-app-block-stream-enter="" >
   <div class="hg-head">
-    <div><strong>Heisenberg · 水平流网络与水平曲线</strong>
-      <div><small>水平流网络 · 水平回路 · 膜片贴合的仿 geodesic 螺旋折线</small></div>
+    <div><strong>Heisenberg · Horizontal Flow Networks and Curves</strong>
+      <div><small>Horizontal flow networks · Horizontal loops · Membrane-fitted geodesic-like spiral polylines</small></div>
     </div>
-    <div class="hg-header-actions"><button id="hgReset" type="button">重置视角</button><button id="hgDownload" class="hg-download" data-app-block-stream-enter="">下载完整 HTML</button></div>
+    <div class="hg-header-actions"><button id="hgReset" type="button">Reset view</button><button id="hgDownload" class="hg-download" data-app-block-stream-enter="">Download full HTML</button><button id="hgLanguage" type="button" lang="zh-CN" aria-label="Switch to Chinese">中文</button></div>
   </div>
   <div class="hg-layout" data-app-block-stream-enter="">
     <aside class="hg-side"><div class="hg-top-controls">
-<label>几何观察方式</label>
+<label>Geometry view</label>
 <div class="hg-visual-grid" id="hgViewGrid">
-<button class="hg-visual-btn" data-view="overview" type="button">全局概览<small>默认全部不透明、最高浓度</small></button>
-<button class="hg-visual-btn" data-view="local" type="button">局部邻接<small>选择参考点，突出真实邻居</small></button>
-<button class="hg-visual-btn" data-view="loop" type="button">水平回路<small>四段水平运动，观察竖直偏移</small></button>
-<button class="hg-visual-btn active" data-view="curve" type="button">水平曲线<small>两种贴合膜片的折线构造</small></button>
+<button class="hg-visual-btn" data-view="overview" type="button">Overview<small>All cells opaque, full color intensity</small></button>
+<button class="hg-visual-btn" data-view="local" type="button">Local adjacency<small>Choose a reference cell to highlight its neighbors</small></button>
+<button class="hg-visual-btn" data-view="loop" type="button">Horizontal loop<small>Four horizontal steps reveal vertical displacement</small></button>
+<button class="hg-visual-btn active" data-view="curve" type="button">Horizontal curves<small>Two membrane-fitted polyline constructions</small></button>
 </div>
 <div class="hg-curve-group" hidden="" id="hgCurveGroup">
-<div class="hg-curve-title">Horizontal curve · 水平曲线</div>
-<label for="hgCurvePreset">仿 geodesic 曲线对象</label>
+<div class="hg-curve-title">Horizontal curve</div>
+<label for="hgCurvePreset">Geodesic-like curve</label>
 <select class="hg-curve-mode" id="hgCurvePreset">
-<option selected="" value="base">标准逆时针回路：O → (0,0,2)</option>
-<option value="ccwQuarter">逆时针转角：O → (1,1,1)</option>
-<option value="ccwThreeQuarter">逆时针三段弧：O → (0,1,2)</option>
-<option value="ccwDouble">逆时针双圈螺旋：O → (0,0,4)</option>
-<option value="cwQuarter">顺时针转角：O → (1,1,-1)</option>
-<option value="cwThreeQuarter">顺时针三段弧：O → (1,0,-2)</option>
-<option value="cwFull">顺时针完整回路：O → (0,0,-2)</option>
-<option value="custom">自定义两点：鼠标选起点与终点</option>
+<option selected="" value="base">Standard counterclockwise loop · O → (0,0,2)</option>
+<option value="ccwQuarter">Counterclockwise corner · O → (1,1,1)</option>
+<option value="ccwThreeQuarter">Counterclockwise three-step arc · O → (0,1,2)</option>
+<option value="ccwDouble">Counterclockwise double spiral · O → (0,0,4)</option>
+<option value="cwQuarter">Clockwise corner · O → (1,1,-1)</option>
+<option value="cwThreeQuarter">Clockwise three-step arc · O → (1,0,-2)</option>
+<option value="cwFull">Clockwise full loop · O → (0,0,-2)</option>
+<option value="custom">Custom endpoints · Click to select start and end</option>
 </select>
 <div hidden="" id="hgCurveCustomRow">
-<div class="tiny">在画布上左键点击膜片：先选起点，再选终点；再次点击会重新从起点开始。右键菜单仍可单独调透明度。</div>
+<div class="tiny">Left-click membranes to select the start, then the end. The next click starts a new selection. Use the right-click menu to adjust individual opacity.</div>
 <div class="hg-curve-buttons" style="margin-top:6px">
-<button id="hgCurveCustomReset" type="button">重置两点</button>
-<button id="hgCurveCustomSwap" type="button">交换起终点</button>
+<button id="hgCurveCustomReset" type="button">Reset endpoints</button>
+<button id="hgCurveCustomSwap" type="button">Swap endpoints</button>
 </div>
-<div class="tiny" id="hgCurveCustomInfo">起点：未选择；终点：未选择。</div>
+<div class="tiny" id="hgCurveCustomInfo">Start and end awaiting selection.</div>
 </div>
-<label for="hgCurveKind">展示样式</label>
+<label for="hgCurveKind">Display style</label>
 <select class="hg-curve-mode" id="hgCurveKind">
-<option selected="" value="chord">圆弧弦折线（贴合膜片表面）</option>
-<option value="square">XY 水平流折线（经过单元中心）</option>
+<option selected="" value="chord">Arc-chord polyline (membrane-fitted)</option>
+<option value="square">XY horizontal-flow polyline (cell centers)</option>
 </select>
 <div id="hgCurveHeightRow">
-<label>z 轴目标高度 Δz <span id="hgCurveHeightValue">0.90</span></label>
+<label>Target z height Δz <span id="hgCurveHeightValue">0.90</span></label>
 <input id="hgCurveHeight" max="2.50" min="0.09" step="0.01" type="range" value="0.90"/>
-<div class="tiny" id="hgCurveHeightHint">最低值随铁环边长变化：h²，即铁环 (0,0,2) 的中心高度</div>
+<div class="tiny" id="hgCurveHeightHint">Minimum varies with ring side length · h², the center height of ring (0,0,2)</div>
 </div>
 <div id="hgCurveSegmentsRow">
-<label>水平弦总分段数 <span id="hgCurveSegmentsValue">24</span></label>
+<label>Total horizontal chord segments <span id="hgCurveSegmentsValue">24</span></label>
 <input id="hgCurveSegments" max="64" min="4" step="1" type="range" value="24"/>
 </div>
 <div hidden="" id="hgCurveLoopsRow">
-<label id="hgCurveLoopsLabel">回路数 <span id="hgCurveLoopsValue">1</span></label>
+<label id="hgCurveLoopsLabel">Loop count <span id="hgCurveLoopsValue">1</span></label>
 <input id="hgCurveLoops" max="16" min="1" step="1" type="range" value="1"/>
 </div>
 <div id="hgCurveHeadingRow">
-<label>初始水平朝向 <span id="hgCurveHeadingValue">0°</span></label>
+<label>Initial horizontal heading <span id="hgCurveHeadingValue">0°</span></label>
 <input id="hgCurveHeading" max="330" min="0" step="30" type="range" value="0"/>
 </div>
-<label>路径展示进度 <span id="hgCurveProgressValue">100%</span></label>
+<label>Path progress <span id="hgCurveProgressValue">100%</span></label>
 <input id="hgCurveProgress" max="100" min="0" step="1" type="range" value="100"/>
 <div class="hg-curve-buttons">
-<button id="hgCurvePlay" type="button">▶ 播放行进</button>
-<button id="hgCurveFull" type="button">显示全程</button>
+<button id="hgCurvePlay" type="button">▶ Play</button>
+<button id="hgCurveFull" type="button">Show full path</button>
 </div>
-<label>背景薄膜透明度 <span id="hgCurveAlphaValue">0.04</span></label>
+<label>Background membrane opacity <span id="hgCurveAlphaValue">0.04</span></label>
 <input id="hgCurveAlpha" max="0.80" min="0" step="0.01" type="range" value="0.04"/>
 <div id="hgCurveCompareRow">
-<label class="hg-curve-check"><input checked="" id="hgCurveCompare" type="checkbox"/>折线模式下同时显示灰色测地线参照</label>
+<label class="hg-curve-check"><input checked="" id="hgCurveCompare" type="checkbox"/>Show a gray geodesic reference in polyline mode</label>
 </div>
-<label class="hg-curve-check"><input checked="" id="hgCurveXray" type="checkbox"/>曲线始终置于前景（便于查看；关闭后按真实三维遮挡）</label>
+<label class="hg-curve-check"><input checked="" id="hgCurveXray" type="checkbox"/>Keep the curve in front for visibility (disable for 3D occlusion)</label>
 <div id="hgCurveVectorRow">
-<label class="hg-curve-check"><input checked="" id="hgCurveVector" type="checkbox"/>在行进点显示水平切向量</label>
+<label class="hg-curve-check"><input checked="" id="hgCurveVector" type="checkbox"/>Show the horizontal tangent at the moving point</label>
 </div>
-<details class="hg-curve-info"><summary>路径构造说明（展开查看）</summary><div class="hg-curve-meta" id="hgCurveMeta"></div></details>
-<div class="hg-curve-note">路径始终贴合相应膜片；膜片缝隙与竖向分离仅改变显示，不改变路径形态。跨膜连接沿用 FPC 视觉过渡。</div>
+<details class="hg-curve-info"><summary>Path construction details</summary><div class="hg-curve-meta" id="hgCurveMeta"></div></details>
+<div class="hg-curve-note">The path follows its membranes. Membrane gaps and vertical separation affect the display while preserving path shape. FPC transitions connect separated membranes.</div>
 </div>
 </div><div class="hg-quick" id="hgModeQuick">
-<div class="hg-quick-heading">当前模式 · 默认外观</div>
+<div class="hg-quick-heading">Current mode · Appearance</div>
 <div hidden="" id="hgAppearanceOverview">
-<label>全部单元不透明度 <span id="hgOverviewOpacityValue">1.00</span></label>
+<label>All-cell opacity <span id="hgOverviewOpacityValue">1.00</span></label>
 <input id="hgOverviewOpacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<label>全部单元颜色浓度 <span id="hgOverviewTintValue">1.00</span></label>
+<label>All-cell color intensity <span id="hgOverviewTintValue">1.00</span></label>
 <input id="hgOverviewTint" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<div class="hg-explain">全局概览使用统一参数；默认全部不透明、颜色饱和、铁框边线显示。</div>
+<div class="hg-explain">Overview uses uniform settings. All cells start opaque with full color intensity and visible ring edges.</div>
 </div>
 <div hidden="" id="hgAppearanceCurve">
-<div class="hg-quick-pill">起终膜片 1.00 · 途经膜片 0.90</div>
-<label>途经中间膜片不透明度 <span id="hgCurveMidOpacityValue">0.90</span></label>
+<div class="hg-quick-pill">Endpoint membranes 1.00 · Intermediate membranes 0.90</div>
+<label>Intermediate membrane opacity <span id="hgCurveMidOpacityValue">0.90</span></label>
 <input id="hgCurveMidOpacity" max="1" min="0" step="0.01" type="range" value="0.90"/>
-<label>其他膜片颜色浓度 <span id="hgCurveBgTintValue">0.04</span></label>
+<label>Other membrane color intensity <span id="hgCurveBgTintValue">0.04</span></label>
 <input id="hgCurveBgTint" max="1" min="0" step="0.01" type="range" value="0.04"/>
-<div class="hg-explain">路径膜片统一采用参考单元颜色浓度；其余膜片统一最淡。背景不透明度由上方的“背景薄膜透明度”控制。</div>
+<div class="hg-explain">Path membranes use the reference-cell color intensity. Other membranes use the lightest tint. Adjust their opacity with the background membrane slider above.</div>
 </div>
 <div hidden="" id="hgAppearanceLocal">
-<div class="hg-explain">保持距离 1–4 原有的独立颜色浓度和透明度；与水平曲线、全局概览互不覆盖。</div>
-<button id="hgOpenDistance" type="button">调整邻接分层参数</button>
+<div class="hg-explain">Distances 1–4 retain independent color intensity and opacity settings, saved separately from curve and overview settings.</div>
+<button id="hgOpenDistance" type="button">Adjust adjacency layers</button>
 </div>
 <div hidden="" id="hgAppearanceLoop">
-<div class="hg-explain">水平回路使用局部邻接的分层显示参数，演示轨迹由下方的“参考单元与回路”控制。</div>
+<div class="hg-explain">Horizontal loops use local-adjacency layer settings. Control the demonstration under Reference cell and horizontal loop below.</div>
 </div>
-</div><details class="hg-panel" id="hgGeometryPanel" open=""><summary>网格与空间布局</summary><div class="hg-panel-inner"><label>观察模式</label><select id="hgMode">
-<option value="network">水平流生成网络</option>
-<option value="single">单个开口铁环</option>
-</select><label>邻接网络深度 <span data-app-block-stream-enter="" id="hgDepthValue">1</span></label><input data-app-block-stream-enter="" id="hgDepth" max="4" min="1" step="1" type="range" value="3"/><label data-app-block-stream-enter="">铁环边长 <span id="hgLengthValue">0.30</span></label><input data-app-block-stream-enter="" id="hgLength" max="0.70" min="0.30" step="0.05" type="range" value="0.30"/><label data-app-block-stream-enter="">水平邻边缝隙比例 <span id="hgGapValue">40.0%</span></label><input data-app-block-stream-enter="" id="hgGap" max="1.00" min="0" step="0.005" type="range" value="0.00"/><div class="hg-explain">水平缝隙最高为边长的 100%；属于左平移后的单元间距，不会拉伸单个铁环的真实水平边。</div><label>竖向分离（显示辅助） <span id="hgZGapValue">0.00</span></label><input id="hgZGap" max="3.5" min="0" step="0.01" type="range" value="0.0"/><div class="hg-explain">按每个铁环实际中心高度拉开，深度 1 同样有效；只改变屏幕展示，不修改真实水平边几何。</div><label data-app-block-stream-enter="">竖向显示倍率 <span id="hgZValue">0.50</span></label><input data-app-block-stream-enter="" id="hgZ" max="2" min="0.2" step="0.1" type="range" value="1.0"/></div></details><details class="hg-panel" id="hgReferencePanel" open=""><summary>参考单元与水平回路</summary><div class="hg-panel-inner"><div class="hg-group">
-<label>局部参考与回路设置</label>
+</div><details class="hg-panel" id="hgGeometryPanel" open=""><summary>Grid and spatial layout</summary><div class="hg-panel-inner"><label>Network mode</label><select id="hgMode">
+<option value="network">Horizontal-flow network</option>
+<option value="single">Single open ring</option>
+</select><label>Adjacency network depth <span data-app-block-stream-enter="" id="hgDepthValue">1</span></label><input data-app-block-stream-enter="" id="hgDepth" max="4" min="1" step="1" type="range" value="3"/><label data-app-block-stream-enter="">Ring side length <span id="hgLengthValue">0.30</span></label><input data-app-block-stream-enter="" id="hgLength" max="0.70" min="0.30" step="0.05" type="range" value="0.30"/><label data-app-block-stream-enter="">Horizontal edge gap ratio <span id="hgGapValue">40.0%</span></label><input data-app-block-stream-enter="" id="hgGap" max="1.00" min="0" step="0.005" type="range" value="0.00"/><div class="hg-explain">The horizontal gap ranges up to 100% of the side length. Left translation spaces the cells while preserving each horizontal ring edge.</div><label>Vertical separation (display aid) <span id="hgZGapValue">0.00</span></label><input id="hgZGap" max="3.5" min="0" step="0.01" type="range" value="0.0"/><div class="hg-explain">Separation follows each ring’s actual center height and also works at depth 1. It adjusts the display while preserving horizontal-edge geometry.</div><label data-app-block-stream-enter="">Vertical display scale <span id="hgZValue">0.50</span></label><input data-app-block-stream-enter="" id="hgZ" max="2" min="0.2" step="0.1" type="range" value="1.0"/></div></details><details class="hg-panel" id="hgReferencePanel" open=""><summary>Reference cell and horizontal loop</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>Local reference and loop settings</label>
 <div class="hg-legend">
-<span><i class="seed"></i>参考铁环</span>
-<span><i class="near"></i>局部邻居</span>
-<span><i class="rest"></i>其余网络</span>
-<span><i class="route"></i>演示路径</span>
+<span><i class="seed"></i>Reference ring</span>
+<span><i class="near"></i>Local neighbors</span>
+<span><i class="rest"></i>Remaining network</span>
+<span><i class="route"></i>Demo path</span>
 </div>
 <div id="hgRadiusRow">
-<label>局部邻接半径 <span id="hgRadiusValue">1</span></label>
+<label>Local adjacency radius <span id="hgRadiusValue">1</span></label>
 <input id="hgRadius" max="4" min="1" step="1" type="range" value="1"/>
 </div>
 <div hidden="" id="hgStepRow">
-<label>水平回路演示 <span id="hgStepValue">4 / 4</span></label>
+<label>Horizontal loop demonstration <span id="hgStepValue">4 / 4</span></label>
 <input id="hgStep" max="4" min="0" step="1" type="range" value="4"/>
-<div class="hg-explain">四段依次是 Y− → X+ → Y+ → X−。最后返回相同 XY，却上升 Δz = h²；虚线竖段只是测量标记，并非水平路径。</div>
+<div class="hg-explain">The four steps follow Y− → X+ → Y+ → X−. They return to the same XY position with a rise of Δz = h². The dashed vertical line marks the measured displacement.</div>
 </div>
 <div class="hg-actions">
-<button id="hgSeed">选择中央参考铁环</button>
+<button id="hgSeed">Select the central reference ring</button>
 </div>
-<div class="hg-explain" id="hgFocusHelp">左键点击膜片选择局部参考；右键点击单元可隐藏、设为半透明或恢复。隐藏单元通过左侧列表恢复。拖拽旋转。</div>
-</div></div></details><details class="hg-panel" id="hgFpcPanel" open=""><summary>FPC 柔性连接</summary><div class="hg-panel-inner"><label class="hg-check"><input checked="" id="hgShowLinks" type="checkbox"/>显示 FPC 多股邻接线路</label><div class="hg-visual-grid" id="hgFpcStyleGrid">
-<button class="hg-visual-btn active" data-fpc="curve" type="button">切向柔性连接<small>直接从边框出发，沿膜片方向平滑连接</small></button>
-<button class="hg-visual-btn" data-fpc="straight" type="button">直线排线<small>整边等宽，直接连接</small></button>
-</div><label>FPC 切向柔化程度 <span id="hgBendValue">0.50</span></label><input id="hgBend" max="1" min="0" step="0.02" type="range" value="0.50"/><div class="hg-explain">0 为直线；数值增大时，仅使用两侧膜片的外伸方向来确定曲线端点切线。没有可见的长直段，也不会人为制造 S 形弯曲。</div><label>FPC 线路透明度 <span id="hgLinkOpacityValue">1.00</span></label><input id="hgLinkOpacity" max="1" min="0" step="0.05" type="range" value="1.00"/></div></details><details class="hg-panel" id="hgWirePanel"><summary>铁环边框</summary><div class="hg-panel-inner"><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowWire" type="checkbox"/>显示铁环边框（总开关）</label><div class="hg-wire-distance-panel">
-<div class="hg-explain" style="margin-top:5px">按当前参考单元的图距离，分别控制各层铁环边框：</div>
+<div class="hg-explain" id="hgFocusHelp">Left-click a membrane to select the local reference. Right-click a cell to hide it, make it translucent, or restore it. Restore hidden cells from the sidebar list. Drag to rotate.</div>
+</div></div></details><details class="hg-panel" id="hgFpcPanel" open=""><summary>FPC flexible connections</summary><div class="hg-panel-inner"><label class="hg-check"><input checked="" id="hgShowLinks" type="checkbox"/>Show FPC multi-strand adjacency links</label><div class="hg-visual-grid" id="hgFpcStyleGrid">
+<button class="hg-visual-btn active" data-fpc="curve" type="button">Tangential flexible links<small>Smooth links from ring edges along membrane directions</small></button>
+<button class="hg-visual-btn" data-fpc="straight" type="button">Straight ribbon links<small>Direct, full-edge connections of uniform width</small></button>
+</div><label>FPC tangential smoothing <span id="hgBendValue">0.50</span></label><input id="hgBend" max="1" min="0" step="0.02" type="range" value="0.50"/><div class="hg-explain">At 0 the links are straight. Higher values set endpoint tangents from the outward directions of the two membranes, producing smooth connections without extended straight sections or artificial S-bends.</div><label>FPC link opacity <span id="hgLinkOpacityValue">1.00</span></label><input id="hgLinkOpacity" max="1" min="0" step="0.05" type="range" value="1.00"/></div></details><details class="hg-panel" id="hgWirePanel"><summary>Ring edges</summary><div class="hg-panel-inner"><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowWire" type="checkbox"/>Show ring edges (master switch)</label><div class="hg-wire-distance-panel">
+<div class="hg-explain" style="margin-top:5px">Control ring edges by graph distance from the current reference cell.</div>
 <div class="hg-wire-distance-grid">
-<label class="hg-wire-check"><input id="hgWireD0" type="checkbox"/>参考单元（0）</label>
-<label class="hg-wire-check"><input id="hgWireD1" type="checkbox"/>图距离 1</label>
-<label class="hg-wire-check"><input id="hgWireD2" type="checkbox"/>图距离 2</label>
-<label class="hg-wire-check"><input id="hgWireD3" type="checkbox"/>图距离 3</label>
-<label class="hg-wire-check"><input id="hgWireD4" type="checkbox"/>图距离 4</label>
+<label class="hg-wire-check"><input id="hgWireD0" type="checkbox"/>Reference cell (0)</label>
+<label class="hg-wire-check"><input id="hgWireD1" type="checkbox"/>Graph distance 1</label>
+<label class="hg-wire-check"><input id="hgWireD2" type="checkbox"/>Graph distance 2</label>
+<label class="hg-wire-check"><input id="hgWireD3" type="checkbox"/>Graph distance 3</label>
+<label class="hg-wire-check"><input id="hgWireD4" type="checkbox"/>Graph distance 4</label>
 </div>
-<div class="hg-explain" style="margin-top:4px">局部邻接与全局概览各自保存边框开关；曲线模式默认隐藏边框（但允许单独开启）。</div>
-</div></div></details><details class="hg-panel" id="hgDistancePanel"><summary>局部邻接分层外观</summary><div class="hg-panel-inner"><div class="hg-group">
-<label>其余单元不透明度 <span id="hgAlphaValue">0.18</span></label>
+<div class="hg-explain" style="margin-top:4px">Local adjacency and overview save their edge visibility independently. Curve mode starts with hidden edges, which can be enabled individually.</div>
+</div></div></details><details class="hg-panel" id="hgDistancePanel"><summary>Local adjacency layer appearance</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>Other-cell opacity <span id="hgAlphaValue">0.18</span></label>
 <input id="hgAlpha" max="1" min="0" step="0.02" type="range" value="0.18"/>
-<div class="hg-explain" id="hgOtherCount">正在计算局部半径外的单元数……</div>
-<div class="hg-explain">仅控制当前局部半径之外的膜片与边框。0 为完全隐藏，1 为不透明。</div>
-<label>参考单元不透明度 <span id="hgSeedOpacityValue">1.00</span></label>
+<div class="hg-explain" id="hgOtherCount">Counting cells outside the local radius…</div>
+<div class="hg-explain">Controls membranes and edges outside the current local radius. 0 hides them completely, and 1 makes them opaque.</div>
+<label>Reference-cell opacity <span id="hgSeedOpacityValue">1.00</span></label>
 <input id="hgSeedOpacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<label>图距离 1 不透明度 <span id="hgNear1OpacityValue">1.00</span></label>
+<label>Graph distance 1 opacity <span id="hgNear1OpacityValue">1.00</span></label>
 <input id="hgNear1Opacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<label>图距离 2 不透明度 <span id="hgNear2OpacityValue">1.00</span></label>
+<label>Graph distance 2 opacity <span id="hgNear2OpacityValue">1.00</span></label>
 <input id="hgNear2Opacity" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<label>图距离 3 不透明度 <span id="hgNear3OpacityValue">0.35</span></label>
+<label>Graph distance 3 opacity <span id="hgNear3OpacityValue">0.35</span></label>
 <input id="hgNear3Opacity" max="1" min="0" step="0.01" type="range" value="0.35"/>
-<label>图距离 4 不透明度 <span id="hgNear4OpacityValue">0.04</span></label>
+<label>Graph distance 4 opacity <span id="hgNear4OpacityValue">0.04</span></label>
 <input id="hgNear4Opacity" max="1" min="0" step="0.01" type="range" value="0.04"/>
-<div class="hg-explain">不透明度与颜色浓度分离：1.00 的膜片应遮挡后方边框；每组滑块同时控制膜片与铁环边框。</div>
-<label>参考单元颜色浓度 <span id="hgSeedTintValue">1.00</span></label>
+<div class="hg-explain">Opacity and color intensity have independent controls. At opacity 1.00, membranes occlude edges behind them. Each slider controls both membranes and ring edges.</div>
+<label>Reference-cell color intensity <span id="hgSeedTintValue">1.00</span></label>
 <input id="hgSeedTint" max="1" min="0" step="0.01" type="range" value="1.00"/>
-<label>图距离 1 颜色浓度 <span id="hgNear1TintValue">0.90</span></label>
+<label>Graph distance 1 color intensity <span id="hgNear1TintValue">0.90</span></label>
 <input id="hgNear1Tint" max="1" min="0" step="0.01" type="range" value="0.90"/>
-<label>图距离 2 颜色浓度 <span id="hgNear2TintValue">0.50</span></label>
+<label>Graph distance 2 color intensity <span id="hgNear2TintValue">0.50</span></label>
 <input id="hgNear2Tint" max="1" min="0" step="0.01" type="range" value="0.50"/>
-<label>图距离 3 颜色浓度 <span id="hgNear3TintValue">0.20</span></label>
+<label>Graph distance 3 color intensity <span id="hgNear3TintValue">0.20</span></label>
 <input id="hgNear3Tint" max="1" min="0" step="0.01" type="range" value="0.20"/>
-<label>图距离 4 颜色浓度 <span id="hgNear4TintValue">0.04</span></label>
+<label>Graph distance 4 color intensity <span id="hgNear4TintValue">0.04</span></label>
 <input id="hgNear4Tint" max="1" min="0" step="0.01" type="range" value="0.04"/>
-<div class="hg-explain" id="hgDistanceCount">正在计算各层受控单元数……</div>
-<div class="hg-explain">调整“距离 4 颜色浓度”将自动展开网络深度与局部半径至 4，使这一滑块一定有可见对象。</div>
-<div class="hg-explain">颜色浓度不改变透明度：越低越接近白色；上方滑块才决定膜片和边框透明度。各层可独立调整。</div>
-</div></div></details><details class="hg-panel" id="hgSurfacePanel"><summary>膜面与渲染特效</summary><div class="hg-panel-inner"><label>膜面立体明暗 <span id="hgLightValue">0.85</span></label><input id="hgLight" max="1.5" min="0" step="0.05" type="range" value="0.85"/><label class="hg-check"><input checked="" id="hgGlow" type="checkbox"/>高亮铁环柔光描边</label><label>描边发光强度 <span id="hgGlowStrengthValue">0.45</span></label><input id="hgGlowStrength" max="1" min="0" step="0.05" type="range" value="0.45"/><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowGap" type="checkbox"/>显示断口高度标记</label></div></details><details class="hg-panel" id="hgOverridePanel"><summary>单元单独覆盖</summary><div class="hg-panel-inner"><div class="hg-group">
-<label>逐单元覆盖设置</label>
-<div class="hg-explain">隐藏一个单元时，将一并隐藏由该单元在生成树中派生的全部后代；恢复该单元会重新显示后代（其他单独隐藏设置仍保留）。半透明化只影响选中的单元。</div>
-<div class="hg-explain" id="hgOverrideSummary">无单独调整的单元</div>
+<div class="hg-explain" id="hgDistanceCount">Counting cells in each layer…</div>
+<div class="hg-explain">Adjusting Graph distance 4 color intensity automatically expands network depth and local radius to 4 so the affected cells are visible.</div>
+<div class="hg-explain">Lower color intensity moves the tint toward white. Use the opacity sliders above to control membrane and edge transparency. Each layer is independently adjustable.</div>
+</div></div></details><details class="hg-panel" id="hgSurfacePanel"><summary>Membrane shading and effects</summary><div class="hg-panel-inner"><label>Membrane shading <span id="hgLightValue">0.85</span></label><input id="hgLight" max="1.5" min="0" step="0.05" type="range" value="0.85"/><label class="hg-check"><input checked="" id="hgGlow" type="checkbox"/>Soft glow on highlighted rings</label><label>Edge glow strength <span id="hgGlowStrengthValue">0.45</span></label><input id="hgGlowStrength" max="1" min="0" step="0.05" type="range" value="0.45"/><label class="hg-check" data-app-block-stream-enter=""><input checked="" id="hgShowGap" type="checkbox"/>Show opening-height markers</label></div></details><details class="hg-panel" id="hgOverridePanel"><summary>Individual cell overrides</summary><div class="hg-panel-inner"><div class="hg-group">
+<label>Per-cell override settings</label>
+<div class="hg-explain">Hiding a cell also hides all its descendants in the generation tree. Restoring it reveals descendants according to their individual settings. Translucency applies to the selected cell.</div>
+<div class="hg-explain" id="hgOverrideSummary">No individual cell overrides</div>
 <div class="hg-override-list" id="hgOverrideList"></div>
-<div class="hg-actions"><button id="hgClearOverrides" type="button">恢复所有单元</button></div>
-</div></div></details><details class="hg-panel" id="hgHelpPanel"><summary>模型说明</summary><div class="hg-panel-inner"><div class="hg-explain">说明：开口铁环的四条实边是严格水平流线；膜片贴合折线是视觉示意路径，其表面插值不宣称严格满足水平条件。FPC 用来连接视觉分离的相邻膜片，不计入数学曲线。单元隐藏沿生成树向后代传播；生成树不等于完整邻接图。</div></div></details></aside>
+<div class="hg-actions"><button id="hgClearOverrides" type="button">Restore all cells</button></div>
+</div></div></details><details class="hg-panel" id="hgHelpPanel"><summary>About the model</summary><div class="hg-panel-inner"><div class="hg-explain">The four solid edges of each open ring are strictly horizontal flow lines. Membrane-fitted polylines are visual illustrations whose surface interpolation may depart from strict horizontality. FPC links visually connect separated neighboring membranes and are excluded from the mathematical curve. Cell hiding propagates to descendants along the generation tree, which represents a subset of the full adjacency graph.</div></div></details></aside>
     <div class="hg-stage" data-app-block-stream-enter="">
       <canvas id="hgCanvas" width="692" height="619"></canvas>
-      <div class="hg-readout" id="hgReadout">参考铁环 (0, 0, 0) · 局部邻接半径 1</div>
-      <div class="hg-context-menu" id="hgUnitMenu" hidden role="menu" aria-label="单元操作菜单">
-        <div class="hg-menu-title" id="hgMenuTitle">单元</div>
+      <div class="hg-readout" id="hgReadout">Reference ring (0, 0, 0) · Local adjacency radius 1</div>
+      <div class="hg-context-menu" id="hgUnitMenu" hidden role="menu" aria-label="Cell actions">
+        <div class="hg-menu-title" id="hgMenuTitle">Cell</div>
         <div class="hg-menu-actions">
-          <button type="button" data-unit-action="hide">隐藏此单元及生成后代</button>
-          <button type="button" data-unit-action="semi">半透明 0.35</button>
-          <button type="button" data-unit-action="restore">恢复默认</button>
+          <button type="button" data-unit-action="hide">Hide cell and generated descendants</button>
+          <button type="button" data-unit-action="semi">Translucent 0.35</button>
+          <button type="button" data-unit-action="restore">Restore defaults</button>
         </div>
-        <label>此单元不透明度 <span id="hgMenuOpacityValue">1.00</span></label>
+        <label>This cell’s opacity <span id="hgMenuOpacityValue">1.00</span></label>
         <input id="hgMenuOpacity" type="range" min="0" max="1" step="0.05" value="1">
-        <div class="hg-explain">单元透明度为 0 时，生成树上的全部后代也会隐藏；恢复后按各自设置显示。</div>
+        <div class="hg-explain">At cell opacity 0, all generation-tree descendants are also hidden. Restoring the cell reveals them according to their own settings.</div>
       </div>
-      <div class="hg-hint">水平曲线自定义模式：依次点击起点、终点 · 拖拽旋转 · 滚轮缩放 · 右键管理单元</div>
+      <div class="hg-hint">Custom curves · Click start, then end · Drag to rotate · Scroll to zoom · Right-click to manage cells</div>
     </div>
   </div>
-  <div id="hgStatus" class="hg-status" data-app-block-stream-enter="">正在校验水平边、原始共边匹配和邻边间隙…</div>
+  <div id="hgStatus" class="hg-status" data-app-block-stream-enter="">Checking horizontal edges, shared-edge matching, and neighboring gaps…</div>
 </div><script id="hgStandaloneScript">
 (()=>{
 "use strict";
@@ -317,6 +320,579 @@ const root=document.getElementById("hgStandalone");
 if(!root || root.dataset.ready==="1")return;
 root.dataset.ready="1";
 const $=id=>root.querySelector("#"+id);
+
+let language='en';
+const t=(english,chinese)=>language==='zh-CN'?chinese:english;
+const staticTranslations=[
+  [
+    "Heisenberg Local Horizontal Geometry · Membrane Curves v35",
+    "Heisenberg 局部水平几何 · 膜片水平曲线 v35"
+  ],
+  [
+    "Heisenberg · Horizontal Flow Networks and Curves",
+    "Heisenberg · 水平流网络与水平曲线"
+  ],
+  [
+    "Horizontal flow networks · Horizontal loops · Membrane-fitted geodesic-like spiral polylines",
+    "水平流网络 · 水平回路 · 膜片贴合的仿 geodesic 螺旋折线"
+  ],
+  [
+    "Reset view",
+    "重置视角"
+  ],
+  [
+    "Download full HTML",
+    "下载完整 HTML"
+  ],
+  [
+    "Geometry view",
+    "几何观察方式"
+  ],
+  [
+    "Overview",
+    "全局概览"
+  ],
+  [
+    "All cells opaque, full color intensity",
+    "默认全部不透明、最高浓度"
+  ],
+  [
+    "Local adjacency",
+    "局部邻接"
+  ],
+  [
+    "Choose a reference cell to highlight its neighbors",
+    "选择参考点，突出真实邻居"
+  ],
+  [
+    "Horizontal loop",
+    "水平回路"
+  ],
+  [
+    "Four horizontal steps reveal vertical displacement",
+    "四段水平运动，观察竖直偏移"
+  ],
+  [
+    "Horizontal curves",
+    "水平曲线"
+  ],
+  [
+    "Two membrane-fitted polyline constructions",
+    "两种贴合膜片的折线构造"
+  ],
+  [
+    "Horizontal curve",
+    "Horizontal curve · 水平曲线"
+  ],
+  [
+    "Geodesic-like curve",
+    "仿 geodesic 曲线对象"
+  ],
+  [
+    "Standard counterclockwise loop · O → (0,0,2)",
+    "标准逆时针回路：O → (0,0,2)"
+  ],
+  [
+    "Counterclockwise corner · O → (1,1,1)",
+    "逆时针转角：O → (1,1,1)"
+  ],
+  [
+    "Counterclockwise three-step arc · O → (0,1,2)",
+    "逆时针三段弧：O → (0,1,2)"
+  ],
+  [
+    "Counterclockwise double spiral · O → (0,0,4)",
+    "逆时针双圈螺旋：O → (0,0,4)"
+  ],
+  [
+    "Clockwise corner · O → (1,1,-1)",
+    "顺时针转角：O → (1,1,-1)"
+  ],
+  [
+    "Clockwise three-step arc · O → (1,0,-2)",
+    "顺时针三段弧：O → (1,0,-2)"
+  ],
+  [
+    "Clockwise full loop · O → (0,0,-2)",
+    "顺时针完整回路：O → (0,0,-2)"
+  ],
+  [
+    "Custom endpoints · Click to select start and end",
+    "自定义两点：鼠标选起点与终点"
+  ],
+  [
+    "Left-click membranes to select the start, then the end. The next click starts a new selection. Use the right-click menu to adjust individual opacity.",
+    "在画布上左键点击膜片：先选起点，再选终点；再次点击会重新从起点开始。右键菜单仍可单独调透明度。"
+  ],
+  [
+    "Reset endpoints",
+    "重置两点"
+  ],
+  [
+    "Swap endpoints",
+    "交换起终点"
+  ],
+  [
+    "Start and end awaiting selection.",
+    "起点：未选择；终点：未选择。"
+  ],
+  [
+    "Display style",
+    "展示样式"
+  ],
+  [
+    "Arc-chord polyline (membrane-fitted)",
+    "圆弧弦折线（贴合膜片表面）"
+  ],
+  [
+    "XY horizontal-flow polyline (cell centers)",
+    "XY 水平流折线（经过单元中心）"
+  ],
+  [
+    "Target z height Δz",
+    "z 轴目标高度 Δz"
+  ],
+  [
+    "Minimum varies with ring side length · h², the center height of ring (0,0,2)",
+    "最低值随铁环边长变化：h²，即铁环 (0,0,2) 的中心高度"
+  ],
+  [
+    "Total horizontal chord segments",
+    "水平弦总分段数"
+  ],
+  [
+    "Loop count",
+    "回路数"
+  ],
+  [
+    "Initial horizontal heading",
+    "初始水平朝向"
+  ],
+  [
+    "Path progress",
+    "路径展示进度"
+  ],
+  [
+    "▶ Play",
+    "▶ 播放行进"
+  ],
+  [
+    "Show full path",
+    "显示全程"
+  ],
+  [
+    "Background membrane opacity",
+    "背景薄膜透明度"
+  ],
+  [
+    "Show a gray geodesic reference in polyline mode",
+    "折线模式下同时显示灰色测地线参照"
+  ],
+  [
+    "Keep the curve in front for visibility (disable for 3D occlusion)",
+    "曲线始终置于前景（便于查看；关闭后按真实三维遮挡）"
+  ],
+  [
+    "Show the horizontal tangent at the moving point",
+    "在行进点显示水平切向量"
+  ],
+  [
+    "Path construction details",
+    "路径构造说明（展开查看）"
+  ],
+  [
+    "The path follows its membranes. Membrane gaps and vertical separation affect the display while preserving path shape. FPC transitions connect separated membranes.",
+    "路径始终贴合相应膜片；膜片缝隙与竖向分离仅改变显示，不改变路径形态。跨膜连接沿用 FPC 视觉过渡。"
+  ],
+  [
+    "Current mode · Appearance",
+    "当前模式 · 默认外观"
+  ],
+  [
+    "All-cell opacity",
+    "全部单元不透明度"
+  ],
+  [
+    "All-cell color intensity",
+    "全部单元颜色浓度"
+  ],
+  [
+    "Overview uses uniform settings. All cells start opaque with full color intensity and visible ring edges.",
+    "全局概览使用统一参数；默认全部不透明、颜色饱和、铁框边线显示。"
+  ],
+  [
+    "Endpoint membranes 1.00 · Intermediate membranes 0.90",
+    "起终膜片 1.00 · 途经膜片 0.90"
+  ],
+  [
+    "Intermediate membrane opacity",
+    "途经中间膜片不透明度"
+  ],
+  [
+    "Other membrane color intensity",
+    "其他膜片颜色浓度"
+  ],
+  [
+    "Path membranes use the reference-cell color intensity. Other membranes use the lightest tint. Adjust their opacity with the background membrane slider above.",
+    "路径膜片统一采用参考单元颜色浓度；其余膜片统一最淡。背景不透明度由上方的“背景薄膜透明度”控制。"
+  ],
+  [
+    "Distances 1–4 retain independent color intensity and opacity settings, saved separately from curve and overview settings.",
+    "保持距离 1–4 原有的独立颜色浓度和透明度；与水平曲线、全局概览互不覆盖。"
+  ],
+  [
+    "Adjust adjacency layers",
+    "调整邻接分层参数"
+  ],
+  [
+    "Horizontal loops use local-adjacency layer settings. Control the demonstration under Reference cell and horizontal loop below.",
+    "水平回路使用局部邻接的分层显示参数，演示轨迹由下方的“参考单元与回路”控制。"
+  ],
+  [
+    "Grid and spatial layout",
+    "网格与空间布局"
+  ],
+  [
+    "Network mode",
+    "观察模式"
+  ],
+  [
+    "Horizontal-flow network",
+    "水平流生成网络"
+  ],
+  [
+    "Single open ring",
+    "单个开口铁环"
+  ],
+  [
+    "Adjacency network depth",
+    "邻接网络深度"
+  ],
+  [
+    "Ring side length",
+    "铁环边长"
+  ],
+  [
+    "Horizontal edge gap ratio",
+    "水平邻边缝隙比例"
+  ],
+  [
+    "The horizontal gap ranges up to 100% of the side length. Left translation spaces the cells while preserving each horizontal ring edge.",
+    "水平缝隙最高为边长的 100%；属于左平移后的单元间距，不会拉伸单个铁环的真实水平边。"
+  ],
+  [
+    "Vertical separation (display aid)",
+    "竖向分离（显示辅助）"
+  ],
+  [
+    "Separation follows each ring’s actual center height and also works at depth 1. It adjusts the display while preserving horizontal-edge geometry.",
+    "按每个铁环实际中心高度拉开，深度 1 同样有效；只改变屏幕展示，不修改真实水平边几何。"
+  ],
+  [
+    "Vertical display scale",
+    "竖向显示倍率"
+  ],
+  [
+    "Reference cell and horizontal loop",
+    "参考单元与水平回路"
+  ],
+  [
+    "Local reference and loop settings",
+    "局部参考与回路设置"
+  ],
+  [
+    "Reference ring",
+    "参考铁环"
+  ],
+  [
+    "Local neighbors",
+    "局部邻居"
+  ],
+  [
+    "Remaining network",
+    "其余网络"
+  ],
+  [
+    "Demo path",
+    "演示路径"
+  ],
+  [
+    "Local adjacency radius",
+    "局部邻接半径"
+  ],
+  [
+    "Horizontal loop demonstration",
+    "水平回路演示"
+  ],
+  [
+    "The four steps follow Y− → X+ → Y+ → X−. They return to the same XY position with a rise of Δz = h². The dashed vertical line marks the measured displacement.",
+    "四段依次是 Y− → X+ → Y+ → X−。最后返回相同 XY，却上升 Δz = h²；虚线竖段只是测量标记，并非水平路径。"
+  ],
+  [
+    "Select the central reference ring",
+    "选择中央参考铁环"
+  ],
+  [
+    "Left-click a membrane to select the local reference. Right-click a cell to hide it, make it translucent, or restore it. Restore hidden cells from the sidebar list. Drag to rotate.",
+    "左键点击膜片选择局部参考；右键点击单元可隐藏、设为半透明或恢复。隐藏单元通过左侧列表恢复。拖拽旋转。"
+  ],
+  [
+    "FPC flexible connections",
+    "FPC 柔性连接"
+  ],
+  [
+    "Show FPC multi-strand adjacency links",
+    "显示 FPC 多股邻接线路"
+  ],
+  [
+    "Tangential flexible links",
+    "切向柔性连接"
+  ],
+  [
+    "Smooth links from ring edges along membrane directions",
+    "直接从边框出发，沿膜片方向平滑连接"
+  ],
+  [
+    "Straight ribbon links",
+    "直线排线"
+  ],
+  [
+    "Direct, full-edge connections of uniform width",
+    "整边等宽，直接连接"
+  ],
+  [
+    "FPC tangential smoothing",
+    "FPC 切向柔化程度"
+  ],
+  [
+    "At 0 the links are straight. Higher values set endpoint tangents from the outward directions of the two membranes, producing smooth connections without extended straight sections or artificial S-bends.",
+    "0 为直线；数值增大时，仅使用两侧膜片的外伸方向来确定曲线端点切线。没有可见的长直段，也不会人为制造 S 形弯曲。"
+  ],
+  [
+    "FPC link opacity",
+    "FPC 线路透明度"
+  ],
+  [
+    "Ring edges",
+    "铁环边框"
+  ],
+  [
+    "Show ring edges (master switch)",
+    "显示铁环边框（总开关）"
+  ],
+  [
+    "Control ring edges by graph distance from the current reference cell.",
+    "按当前参考单元的图距离，分别控制各层铁环边框："
+  ],
+  [
+    "Reference cell (0)",
+    "参考单元（0）"
+  ],
+  [
+    "Graph distance 1",
+    "图距离 1"
+  ],
+  [
+    "Graph distance 2",
+    "图距离 2"
+  ],
+  [
+    "Graph distance 3",
+    "图距离 3"
+  ],
+  [
+    "Graph distance 4",
+    "图距离 4"
+  ],
+  [
+    "Local adjacency and overview save their edge visibility independently. Curve mode starts with hidden edges, which can be enabled individually.",
+    "局部邻接与全局概览各自保存边框开关；曲线模式默认隐藏边框（但允许单独开启）。"
+  ],
+  [
+    "Local adjacency layer appearance",
+    "局部邻接分层外观"
+  ],
+  [
+    "Other-cell opacity",
+    "其余单元不透明度"
+  ],
+  [
+    "Counting cells outside the local radius…",
+    "正在计算局部半径外的单元数……"
+  ],
+  [
+    "Controls membranes and edges outside the current local radius. 0 hides them completely, and 1 makes them opaque.",
+    "仅控制当前局部半径之外的膜片与边框。0 为完全隐藏，1 为不透明。"
+  ],
+  [
+    "Reference-cell opacity",
+    "参考单元不透明度"
+  ],
+  [
+    "Graph distance 1 opacity",
+    "图距离 1 不透明度"
+  ],
+  [
+    "Graph distance 2 opacity",
+    "图距离 2 不透明度"
+  ],
+  [
+    "Graph distance 3 opacity",
+    "图距离 3 不透明度"
+  ],
+  [
+    "Graph distance 4 opacity",
+    "图距离 4 不透明度"
+  ],
+  [
+    "Opacity and color intensity have independent controls. At opacity 1.00, membranes occlude edges behind them. Each slider controls both membranes and ring edges.",
+    "不透明度与颜色浓度分离：1.00 的膜片应遮挡后方边框；每组滑块同时控制膜片与铁环边框。"
+  ],
+  [
+    "Reference-cell color intensity",
+    "参考单元颜色浓度"
+  ],
+  [
+    "Graph distance 1 color intensity",
+    "图距离 1 颜色浓度"
+  ],
+  [
+    "Graph distance 2 color intensity",
+    "图距离 2 颜色浓度"
+  ],
+  [
+    "Graph distance 3 color intensity",
+    "图距离 3 颜色浓度"
+  ],
+  [
+    "Graph distance 4 color intensity",
+    "图距离 4 颜色浓度"
+  ],
+  [
+    "Counting cells in each layer…",
+    "正在计算各层受控单元数……"
+  ],
+  [
+    "Adjusting Graph distance 4 color intensity automatically expands network depth and local radius to 4 so the affected cells are visible.",
+    "调整“距离 4 颜色浓度”将自动展开网络深度与局部半径至 4，使这一滑块一定有可见对象。"
+  ],
+  [
+    "Lower color intensity moves the tint toward white. Use the opacity sliders above to control membrane and edge transparency. Each layer is independently adjustable.",
+    "颜色浓度不改变透明度：越低越接近白色；上方滑块才决定膜片和边框透明度。各层可独立调整。"
+  ],
+  [
+    "Membrane shading and effects",
+    "膜面与渲染特效"
+  ],
+  [
+    "Membrane shading",
+    "膜面立体明暗"
+  ],
+  [
+    "Soft glow on highlighted rings",
+    "高亮铁环柔光描边"
+  ],
+  [
+    "Edge glow strength",
+    "描边发光强度"
+  ],
+  [
+    "Show opening-height markers",
+    "显示断口高度标记"
+  ],
+  [
+    "Individual cell overrides",
+    "单元单独覆盖"
+  ],
+  [
+    "Per-cell override settings",
+    "逐单元覆盖设置"
+  ],
+  [
+    "Hiding a cell also hides all its descendants in the generation tree. Restoring it reveals descendants according to their individual settings. Translucency applies to the selected cell.",
+    "隐藏一个单元时，将一并隐藏由该单元在生成树中派生的全部后代；恢复该单元会重新显示后代（其他单独隐藏设置仍保留）。半透明化只影响选中的单元。"
+  ],
+  [
+    "No individual cell overrides",
+    "无单独调整的单元"
+  ],
+  [
+    "Restore all cells",
+    "恢复所有单元"
+  ],
+  [
+    "About the model",
+    "模型说明"
+  ],
+  [
+    "The four solid edges of each open ring are strictly horizontal flow lines. Membrane-fitted polylines are visual illustrations whose surface interpolation may depart from strict horizontality. FPC links visually connect separated neighboring membranes and are excluded from the mathematical curve. Cell hiding propagates to descendants along the generation tree, which represents a subset of the full adjacency graph.",
+    "说明：开口铁环的四条实边是严格水平流线；膜片贴合折线是视觉示意路径，其表面插值不宣称严格满足水平条件。FPC 用来连接视觉分离的相邻膜片，不计入数学曲线。单元隐藏沿生成树向后代传播；生成树不等于完整邻接图。"
+  ],
+  [
+    "Reference ring (0, 0, 0) · Local adjacency radius 1",
+    "参考铁环 (0, 0, 0) · 局部邻接半径 1"
+  ],
+  [
+    "Cell",
+    "单元"
+  ],
+  [
+    "Hide cell and generated descendants",
+    "隐藏此单元及生成后代"
+  ],
+  [
+    "Translucent 0.35",
+    "半透明 0.35"
+  ],
+  [
+    "Restore defaults",
+    "恢复默认"
+  ],
+  [
+    "This cell’s opacity",
+    "此单元不透明度"
+  ],
+  [
+    "At cell opacity 0, all generation-tree descendants are also hidden. Restoring the cell reveals them according to their own settings.",
+    "单元透明度为 0 时，生成树上的全部后代也会隐藏；恢复后按各自设置显示。"
+  ],
+  [
+    "Custom curves · Click start, then end · Drag to rotate · Scroll to zoom · Right-click to manage cells",
+    "水平曲线自定义模式：依次点击起点、终点 · 拖拽旋转 · 滚轮缩放 · 右键管理单元"
+  ],
+  [
+    "Checking horizontal edges, shared-edge matching, and neighboring gaps…",
+    "正在校验水平边、原始共边匹配和邻边间隙…"
+  ]
+];
+const staticMessages=new Map();
+for(const pair of staticTranslations){
+  staticMessages.set(pair[0],pair);
+  staticMessages.set(pair[1],pair);
+}
+function translateStatic(element,locale){
+  const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);
+  let node;
+  while((node=walker.nextNode())){
+    if(node.parentElement.closest('script,style'))continue;
+    const text=node.textContent.trim();
+    const pair=staticMessages.get(text);
+    if(pair)node.textContent=node.textContent.replace(text,pair[locale==='zh-CN'?1:0]);
+  }
+}
+function setLanguage(locale){
+  language=locale;
+  document.documentElement.lang=language;
+  translateStatic(document.documentElement,language);
+  const button=$('hgLanguage');
+  button.textContent=t('中文','English');
+  button.lang=t('zh-CN','en');
+  button.setAttribute('aria-label',t('Switch to Chinese','切换到英文'));
+  $('hgUnitMenu').setAttribute('aria-label',t('Cell actions','单元操作菜单'));
+  build();
+  $('hgCurvePlay').textContent=curvePlaying?t('Ⅱ Pause','Ⅱ 暂停'):t('▶ Play','▶ 播放行进');
+  if(menuKey)$('hgMenuTitle').textContent=t('Ring (','铁环 (')+menuKey+')';
+}
 const canvas=$("hgCanvas"),ctx=canvas.getContext("2d");
 const X=(p,t)=>[p[0]+t,p[1],p[2]-p[1]*t/2];
 const Y=(p,t)=>[p[0],p[1]+t,p[2]+p[0]*t/2];
@@ -343,14 +919,14 @@ const pathNames=["Y−","X+","Y+","X−"];
   let customCurveStartKey='0,0,0',customCurveEndKey='0,0,2',customCurvePickTarget='start';
   let effectiveDepthUsed=1;
   const curvePresets={
-    base:{label:'标准逆时针回路 · O → (0,0,2)',dirs:['X+','Y+','X-','Y-'],note:'原有基准路径；两种展示样式均保留。'},
-    ccwQuarter:{label:'逆时针转角 · O → (1,1,1)',dirs:['X+','Y+'],note:'由两段水平流组成的凸向转角路径。'},
-    ccwThreeQuarter:{label:'逆时针三段弧 · O → (0,1,2)',dirs:['X+','Y+','X-'],note:'连续左转的三段路径，保持同一弯曲方向。'},
-    ccwDouble:{label:'逆时针双圈螺旋 · O → (0,0,4)',dirs:['X+','Y+','X-','Y-','X+','Y+','X-','Y-'],note:'将标准回路连续重复两次，形成双层螺旋。'},
-    cwQuarter:{label:'顺时针转角 · O → (1,1,-1)',dirs:['Y+','X+'],note:'由两段水平流组成的反向凸向转角路径。'},
-    cwThreeQuarter:{label:'顺时针三段弧 · O → (1,0,-2)',dirs:['Y+','X+','Y-'],note:'连续右转的三段路径，保持同一弯曲方向。'},
-    cwFull:{label:'顺时针完整回路 · O → (0,0,-2)',dirs:['Y+','X+','Y-','X-'],note:'与标准回路方向相反的完整闭合 XY 回路。'},
-    custom:{label:'自定义两点膜片贴合折线',dirs:[],note:'鼠标选择起点和终点后，自动在当前网络中寻找连接折线。'}
+    base:{get label(){return t('Standard counterclockwise loop · O → (0,0,2)','标准逆时针回路 · O → (0,0,2)');},dirs:['X+','Y+','X-','Y-'],get note(){return t('Original reference path, available in both display styles.','原有基准路径；两种展示样式均保留。');}},
+    ccwQuarter:{get label(){return t('Counterclockwise corner · O → (1,1,1)','逆时针转角 · O → (1,1,1)');},dirs:['X+','Y+'],get note(){return t('A convex corner formed by two horizontal flows.','由两段水平流组成的凸向转角路径。');}},
+    ccwThreeQuarter:{get label(){return t('Counterclockwise three-step arc · O → (0,1,2)','逆时针三段弧 · O → (0,1,2)');},dirs:['X+','Y+','X-'],get note(){return t('Three consecutive left turns with consistent curvature.','连续左转的三段路径，保持同一弯曲方向。');}},
+    ccwDouble:{get label(){return t('Counterclockwise double spiral · O → (0,0,4)','逆时针双圈螺旋 · O → (0,0,4)');},dirs:['X+','Y+','X-','Y-','X+','Y+','X-','Y-'],get note(){return t('Two consecutive reference loops form a two-level spiral.','将标准回路连续重复两次，形成双层螺旋。');}},
+    cwQuarter:{get label(){return t('Clockwise corner · O → (1,1,-1)','顺时针转角 · O → (1,1,-1)');},dirs:['Y+','X+'],get note(){return t('A reverse convex corner formed by two horizontal flows.','由两段水平流组成的反向凸向转角路径。');}},
+    cwThreeQuarter:{get label(){return t('Clockwise three-step arc · O → (1,0,-2)','顺时针三段弧 · O → (1,0,-2)');},dirs:['Y+','X+','Y-'],get note(){return t('Three consecutive right turns with consistent curvature.','连续右转的三段路径，保持同一弯曲方向。');}},
+    cwFull:{get label(){return t('Clockwise full loop · O → (0,0,-2)','顺时针完整回路 · O → (0,0,-2)');},dirs:['Y+','X+','Y-','X-'],get note(){return t('A complete closed XY loop in the opposite direction to the reference loop.','与标准回路方向相反的完整闭合 XY 回路。');}},
+    custom:{get label(){return t('Custom two-point membrane-fitted polyline','自定义两点膜片贴合折线');},dirs:[],get note(){return t('Select start and end points to find a connecting polyline in the current network.','鼠标选择起点和终点后，自动在当前网络中寻找连接折线。');}}
   };
   let cells=[],connections=[],h=.3,gapRatio=.00,zGapRatio=0.0;
 let mode="network",alpha=.18,seedOpacity=1,near1Opacity=1,near2Opacity=1,near3Opacity=.35,near4Opacity=.04,seedTint=1,near1Tint=.90,near2Tint=.50,near3Tint=.20,near4Tint=.04,zView=.5,lightStrength=.85,showWire=true,showLinks=true,showGap=true;
@@ -565,16 +1141,16 @@ function findShortestStatePath(startState,endState,depth){
 function customCurveSequence(baseDepth){
   const startState=keyToState(customCurveStartKey),endState=keyToState(customCurveEndKey);
   if(stateKey(startState)===stateKey(endState)){
-    return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'起点与终点相同。',states:[startState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
+    return {id:'custom',label:t(`Custom endpoints · Cell (${customCurveStartKey}) → (${customCurveEndKey})`,`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`),note:t('Start and end coincide.','起点与终点相同。'),states:[startState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
   }
   const maxDepth=Math.max(baseDepth+4,8);
   for(let d=Math.max(1,baseDepth); d<=maxDepth; d++){
     const found=findShortestStatePath(startState,endState,d);
     if(found){
-      return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'根据鼠标选取的两个单元中心，自动在当前网络中寻找最短步数折线。',states:found.states,dirs:found.dirs,planar:found.planar,startState,endState,effectiveDepth:d};
+      return {id:'custom',label:t(`Custom endpoints · Cell (${customCurveStartKey}) → (${customCurveEndKey})`,`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`),note:t('Find the fewest-step polyline between the two selected cell centers in the current network.','根据鼠标选取的两个单元中心，自动在当前网络中寻找最短步数折线。'),states:found.states,dirs:found.dirs,planar:found.planar,startState,endState,effectiveDepth:d};
     }
   }
-  return {id:'custom',label:`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`,note:'当前深度范围内尚未找到连接折线。',states:[startState,endState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
+  return {id:'custom',label:t(`Custom endpoints · Cell (${customCurveStartKey}) → (${customCurveEndKey})`,`自定义两点 · 单元 (${customCurveStartKey}) → (${customCurveEndKey})`),note:t('No connecting polyline found within the current depth.','当前深度范围内尚未找到连接折线。'),states:[startState,endState],dirs:[],planar:[[0,0]],startState,endState,effectiveDepth:baseDepth};
 }
 function currentAttachedSequence(baseDepth=1){
   return curvePreset==='custom' ? customCurveSequence(baseDepth) : curvePresetSequence(curvePreset);
@@ -717,13 +1293,13 @@ function roundedPlanarPath(sequence,step=h,arcSegments=10){
  function stopCurveAnimation(){
    if(curveAnimFrame)cancelAnimationFrame(curveAnimFrame);
    curveAnimFrame=0;curvePlaying=false;
-   const b=$('hgCurvePlay');if(b)b.textContent='▶ 播放行进';
+   const b=$('hgCurvePlay');if(b)b.textContent=t('▶ Play','▶ 播放行进');
  }
  function curveStatusText(info){
-   const style=curveKind==='chord'?'膜片贴合圆弧弦折线':'XY 水平流中心折线';
-   return `${info.label} · ${style} · ${info.dirs.length} 段 · `+
-     `终点单元 (${info.endState.join(',')}) · 终点高度 z = ${info.z.toFixed(3)} · `+
-     (curveKind==='chord'?(curvePreset==='base'?'圆弦多边形贴合膜片':'转角采用同向外凸切向圆弧'):'折点经过各单元中心');
+   const style=curveKind==='chord'?t('Membrane-fitted arc-chord polyline','膜片贴合圆弧弦折线'):t('XY horizontal-flow center polyline','XY 水平流中心折线');
+   return `${info.label} · ${style} · `+t(`${info.dirs.length} segments · `,`${info.dirs.length} 段 · `)+
+     t(`End cell (${info.endState.join(',')}) · End height z = ${info.z.toFixed(3)} · `,`终点单元 (${info.endState.join(',')}) · 终点高度 z = ${info.z.toFixed(3)} · `)+
+     (curveKind==='chord'?(curvePreset==='base'?t('Arc-chord polygon follows membranes','圆弦多边形贴合膜片'):t('Corners use consistently outward-convex tangent arcs','转角采用同向外凸切向圆弧')):t('Vertices pass through cell centers','折点经过各单元中心'));
  }
  
 function membraneCenter(cell){
@@ -1108,25 +1684,34 @@ function build(){
    $('hgCurveHeightRow').hidden=true;
    $('hgCurveSegmentsRow').hidden=!(curvePreset==='base'&&curveKind==='chord');
    $('hgCurveLoopsRow').hidden=true;
-   $('hgCurveLoopsLabel').firstChild.textContent='回路数 ';
+   $('hgCurveLoopsLabel').firstChild.textContent=t('Loop count ','回路数 ');
    $('hgCurveHeadingRow').hidden=true;
    $('hgCurveCompareRow').hidden=true;
    curveCompare=false;
    $('hgCurveVectorRow').hidden=true;
    $('hgCurveHeightValue').textContent=curveTargetZ.toFixed(2);
-   $('hgCurveHeightHint').textContent=`最低值 h² = ${(h*h).toFixed(3)}，即铁环 (0,0,2) 的中心高度`;
-   $('hgCurveSegmentsRow').querySelector('label').firstChild.textContent='圆弧弦总分段数 ';
+   $('hgCurveHeightHint').textContent=t(`Minimum h² = ${(h*h).toFixed(3)}, the center height of ring (0,0,2)`,`最低值 h² = ${(h*h).toFixed(3)}，即铁环 (0,0,2) 的中心高度`);
+   $('hgCurveSegmentsRow').querySelector('label').firstChild.textContent=t('Total arc-chord segments ','圆弧弦总分段数 ');
    $('hgCurveSegmentsValue').textContent=String(curveSegments);
    $('hgCurveLoopsValue').textContent=String(curveLoops);
    $('hgCurveHeadingValue').textContent=curveHeading+'°';
    $('hgCurveProgressValue').textContent=Math.round(curveProgress*100)+'%';
    $('hgCurveAlphaValue').textContent=curveAlpha.toFixed(2);
-   $('hgCurveMeta').textContent=`${curveInfo.label}；方向序列：${curveInfo.dirs.join(' → ')}。`+
+   $('hgCurveMeta').textContent=t(
+     `${curveInfo.label}. Direction sequence · ${curveInfo.dirs.join(' → ')}. `+
+     'Both styles share the same geodesic-like object, with identical start, end, and cell sequence. '+
+     'The arc-chord style uses outward-convex transitions on membrane surfaces. '+
+     'The XY horizontal-flow style retains vertices at cell centers. '+
+     'Path cells use the reference-cell color intensity, with opacity 1 at the endpoints and 0.90 along the path. '+
+     'Other membranes use a light tint and low opacity. Local adjacency layer settings remain independent.',
+     `${curveInfo.label}；方向序列：${curveInfo.dirs.join(' → ')}。`+
      `两种展示样式共用同一条仿 geodesic 对象（相同起点、终点和单元序列）：圆弧弦样式采用膜片表面上的同向外凸过渡，`+
-     `XY 水平流样式保留单元中心折点；曲线途经单元统一采用参考单元颜色浓度，起点与终点不透明度为 1，中途为 0.90；其余膜片统一使用淡色、低不透明度，不影响局部邻接模式的分层参数。`;
+     `XY 水平流样式保留单元中心折点；曲线途经单元统一采用参考单元颜色浓度，起点与终点不透明度为 1，中途为 0.90；其余膜片统一使用淡色、低不透明度，不影响局部邻接模式的分层参数。`);
    const customSelectionReadout=$('hgCurveCustomInfo');
    if(customSelectionReadout){
-     customSelectionReadout.textContent=`起点：(${customCurveStartKey})；终点：(${customCurveEndKey})；下一次点击设置${customCurvePickTarget==='start'?'起点':'终点'}。`;
+     customSelectionReadout.textContent=t(
+       `Start (${customCurveStartKey}) · End (${customCurveEndKey}) · Next click sets the ${customCurvePickTarget==='start'?'start':'end'}.`,
+       `起点：(${customCurveStartKey})；终点：(${customCurveEndKey})；下一次点击设置${customCurvePickTarget==='start'?'起点':'终点'}。`);
    }
   $('hgDepthValue').textContent=String(depth);
   $('hgLengthValue').textContent=h.toFixed(2);
@@ -1221,11 +1806,13 @@ function build(){
     }
   }
   const distanceCounts=[0,1,2,3,4].map(d=>nw.states.filter(st=>focusDistances.get(st.join(','))===d).length);
-  $('hgDistanceCount').textContent=`图距离 0–4：${distanceCounts.join(' / ')} 个单元。当前生效半径 ${focusRadius}，超出半径的颜色浓度不参与着色。`;
+  $('hgDistanceCount').textContent=t(
+    `Cells at graph distances 0–4 · ${distanceCounts.join(' / ')}. Active radius ${focusRadius}. Color intensity settings beyond this radius are inactive.`,
+    `图距离 0–4：${distanceCounts.join(' / ')} 个单元。当前生效半径 ${focusRadius}，超出半径的颜色浓度不参与着色。`);
   const outsideCount=nw.states.filter(st=>(focusDistances.get(st.join(','))??Infinity)>focusRadius).length;
   $('hgOtherCount').textContent=viewMode==='overview'
-    ? `全局概览：全部 ${nw.states.length} 个单元受此滑块控制`
-    : `当前局部半径外：${outsideCount} 个单元${outsideCount===0?'（此时没有可调整对象）':''}`;
+    ? t(`Overview · This slider controls all ${nw.states.length} cells`,`全局概览：全部 ${nw.states.length} 个单元受此滑块控制`)
+    : t(`Outside local radius · ${outsideCount} cells${outsideCount===0?' (no cells to adjust)':''}`,`当前局部半径外：${outsideCount} 个单元${outsideCount===0?'（此时没有可调整对象）':''}`);
   $('hgAlpha').disabled=viewMode!=='overview' && outsideCount===0;
   updateOverrideList(liveKeys);
   const byKey=new Map();
@@ -1256,34 +1843,43 @@ function build(){
   const adjacencyCount=[...focusDistances.values()].filter(d=>d>0&&d<=focusRadius).length;
   const readout=$('hgReadout');
   if(viewMode==='overview'){
-    readout.innerHTML='<b>全局概览</b><div class="tiny">统一参考色 · 颜色浓度与不透明度均可独立控制</div>';
+    readout.innerHTML=t('<b>Overview</b><div class="tiny">Uniform reference color · Independent color intensity and opacity controls</div>','<b>全局概览</b><div class="tiny">统一参考色 · 颜色浓度与不透明度均可独立控制</div>');
   }else if(viewMode==='local'){
-    readout.innerHTML=`<b>参考铁环 (${selected.join(', ')})</b><div class="tiny">图距离 ≤ ${focusRadius} · 可见 ${adjacencyCount} 个邻接单元 · 点击可切换参考点</div>`;
+    readout.innerHTML=t(
+      `<b>Reference ring (${selected.join(', ')})</b><div class="tiny">Graph distance ≤ ${focusRadius} · ${adjacencyCount} adjacent cells visible · Click to change reference</div>`,
+      `<b>参考铁环 (${selected.join(', ')})</b><div class="tiny">图距离 ≤ ${focusRadius} · 可见 ${adjacencyCount} 个邻接单元 · 点击可切换参考点</div>`);
    }else if(viewMode==='curve'){
      const pathName=curveInfo.label;
-     const styleName=curveKind==='chord'?'圆弧弦折线（膜片贴合）':'XY 水平流折线（单元中心）';
+     const styleName=curveKind==='chord'?t('Arc-chord polyline (membrane-fitted)','圆弧弦折线（膜片贴合）'):t('XY horizontal-flow polyline (cell centers)','XY 水平流折线（单元中心）');
      const startStateText=(curveInfo.startState||[0,0,0]).join(',');
      readout.innerHTML=`<b>${pathName}</b> · <span class="hg-curve-readout">(${startStateText}) → (${curveInfo.endState.join(',')})</span>`+
-       `<div class="tiny">${styleName} · 方向序列：${curveInfo.dirs.length?curveInfo.dirs.join(' → '):'（零段）'} · 已展示 ${Math.round(curveProgress*100)}%</div>`;
+       t(`<div class="tiny">${styleName} · Directions · ${curveInfo.dirs.length?curveInfo.dirs.join(' → '):'(zero segments)'} · Shown ${Math.round(curveProgress*100)}%</div>`,
+         `<div class="tiny">${styleName} · 方向序列：${curveInfo.dirs.length?curveInfo.dirs.join(' → '):'（零段）'} · 已展示 ${Math.round(curveProgress*100)}%</div>`);
    }else{
-     const label=demoStep===0?'回路起点':`第 ${demoStep} 段：${pathNames[demoStep-1]}`;
-    readout.innerHTML=`<b>参考铁环 (${selected.join(', ')})</b><div>${label} · ${demoStep} / 4</div><div class="tiny">四步完成后，终点与起点 XY 相同；完整回路 Δz = h² = ${(h*h).toFixed(4)}</div>`;
+     const label=demoStep===0?t('Loop start','回路起点'):t(`Step ${demoStep} · ${pathNames[demoStep-1]}`,`第 ${demoStep} 段：${pathNames[demoStep-1]}`);
+    readout.innerHTML=t(
+      `<b>Reference ring (${selected.join(', ')})</b><div>${label} · ${demoStep} / 4</div><div class="tiny">After four steps, the endpoints share XY coordinates. Full loop Δz = h² = ${(h*h).toFixed(4)}</div>`,
+      `<b>参考铁环 (${selected.join(', ')})</b><div>${label} · ${demoStep} / 4</div><div class="tiny">四步完成后，终点与起点 XY 相同；完整回路 Δz = h² = ${(h*h).toFixed(4)}</div>`);
   }
    const curveExtraStatus=viewMode==='curve'
-     ? ` · 起点单元 (${(curveInfo.startState||[0,0,0]).join(',')}) · 目标单元 (${curveInfo.endState.join(',')}) · 目标高度 z=${curveInfo.z.toFixed(4)}`
-     : ` · 单回路竖直位移 Δz=h²=${(h*h).toFixed(4)}`;
+     ? t(` · Start cell (${(curveInfo.startState||[0,0,0]).join(',')}) · Target cell (${curveInfo.endState.join(',')}) · Target height z=${curveInfo.z.toFixed(4)}`,
+         ` · 起点单元 (${(curveInfo.startState||[0,0,0]).join(',')}) · 目标单元 (${curveInfo.endState.join(',')}) · 目标高度 z=${curveInfo.z.toFixed(4)}`)
+     : t(` · Vertical displacement per loop Δz=h²=${(h*h).toFixed(4)}`,` · 单回路竖直位移 Δz=h²=${(h*h).toFixed(4)}`);
    status.textContent=(viewMode==='curve'?curveStatusText(curveInfo)+' · ': '')+
-     (mode==='single'?'单个单元':('邻接深度 '+requestedDepth+(effectiveDepthUsed>requestedDepth?` → 自动扩展 ${effectiveDepthUsed}`:'')))+
-    ` · 膜片 ${cells.length} · 水平边 ${report.edgeCount} · 双边邻接 ${report.neighbors} 对`+
-    ` · 参考 ${focusKey} · 邻接半径 ${focusRadius}`+
+     (mode==='single'?t('Single cell','单个单元'):(t('Adjacency depth ','邻接深度 ')+requestedDepth+(effectiveDepthUsed>requestedDepth?t(` → Auto-expanded to ${effectiveDepthUsed}`,` → 自动扩展 ${effectiveDepthUsed}`):'')))+
+    t(` · Membranes ${cells.length} · Horizontal edges ${report.edgeCount} · Shared-edge neighbors ${report.neighbors} pairs`,` · 膜片 ${cells.length} · 水平边 ${report.edgeCount} · 双边邻接 ${report.neighbors} 对`)+
+    t(` · Reference ${focusKey} · Adjacency radius ${focusRadius}`,` · 参考 ${focusKey} · 邻接半径 ${focusRadius}`)+
     curveExtraStatus+
-    ` · XY 微缝 ${(report.expected).toFixed(5)} · 竖向显示分离 ×${zGapRatio.toFixed(2)}`+
-    ` · 单独设置 ${unitOverrides.size} 项 · 实际隐藏 ${cells.filter(c=>opacityForKey(c.state.join(','))===0).length} 个`+
-    ` · ${report.ok?'几何验证通过':'几何验证未通过'}（最大误差 ${report.residual.toExponential(2)}）`;
-  status.title=`四条水平边切向残差 ${report.horizontal.toExponential(4)}
+    t(` · XY gap ${(report.expected).toFixed(5)} · Vertical display separation ×${zGapRatio.toFixed(2)}`,` · XY 微缝 ${(report.expected).toFixed(5)} · 竖向显示分离 ×${zGapRatio.toFixed(2)}`)+
+    t(` · Individual overrides ${unitOverrides.size} · Hidden cells ${cells.filter(c=>opacityForKey(c.state.join(','))===0).length}`,` · 单独设置 ${unitOverrides.size} 项 · 实际隐藏 ${cells.filter(c=>opacityForKey(c.state.join(','))===0).length} 个`)+
+    t(` · ${report.ok?'Geometry verified':'Geometry verification failed'} (max error ${report.residual.toExponential(2)})`,` · ${report.ok?'几何验证通过':'几何验证未通过'}（最大误差 ${report.residual.toExponential(2)}）`);
+  status.title=t(`Horizontal-edge tangent residual ${report.horizontal.toExponential(4)}
+Original shared-edge matching ${report.join.toExponential(4)}
+Northwest corner height-difference error ${report.holonomy.toExponential(4)}
+Translated gap error ${report.gapErr.toExponential(4)}`,`四条水平边切向残差 ${report.horizontal.toExponential(4)}
 原始共边匹配 ${report.join.toExponential(4)}
 西北角高度差误差 ${report.holonomy.toExponential(4)}
-平移后间隙误差 ${report.gapErr.toExponential(4)}`;
+平移后间隙误差 ${report.gapErr.toExponential(4)}`);
   paint();
 }
 function fitCanvas(){
@@ -1458,12 +2054,12 @@ function updateOverrideList(liveKeys=null){
   const container=$('hgOverrideList'),summary=$('hgOverrideSummary');
   container.replaceChildren();
   const all=[...unitOverrides.entries()].filter(([key])=>!liveKeys||liveKeys.has(key));
-  summary.textContent=all.length?`已设置 ${all.length} 个单元；隐藏会沿生成树传播到后代`:'无单独调整的单元';
+  summary.textContent=all.length?t(`${all.length} cell overrides. Hiding propagates to generation-tree descendants.`,`已设置 ${all.length} 个单元；隐藏会沿生成树传播到后代`):t('No individual cell overrides','无单独调整的单元');
   for(const [key,opacity] of all){
     const entry=document.createElement('div');entry.className='hg-override-item';
     const label=document.createElement('span');
-    label.textContent=`(${key}) · ${opacity===0?'隐藏整个生成分支':opacity.toFixed(2)}`;
-    const btn=document.createElement('button');btn.type='button';btn.textContent='恢复';
+    label.textContent=`(${key}) · ${opacity===0?t('Entire generated branch hidden','隐藏整个生成分支'):opacity.toFixed(2)}`;
+    const btn=document.createElement('button');btn.type='button';btn.textContent=t('Restore','恢复');
     btn.addEventListener('click',()=>{unitOverrides.delete(key);closeUnitMenu();build();});
     entry.append(label,btn);container.appendChild(entry);
   }
@@ -1991,10 +2587,10 @@ function paint(){
        ctx.save();ctx.globalAlpha=1;ctx.font='600 12px system-ui';ctx.strokeStyle='#ffffff';ctx.lineWidth=3;
        const s=project(start),e=project(finish);
        const startState=attached.sequence?(attached.sequence.startState||attached.sequence.states[0]):[0,0,0];
-       ctx.strokeText(`单元 (${startState.join(',')})`,s.x-18,s.y+18);ctx.fillStyle='#31576a';ctx.fillText(`单元 (${startState.join(',')})`,s.x-18,s.y+18);
+       ctx.strokeText(t(`Cell (${startState.join(',')})`,`单元 (${startState.join(',')})`),s.x-18,s.y+18);ctx.fillStyle='#31576a';ctx.fillText(t(`Cell (${startState.join(',')})`,`单元 (${startState.join(',')})`),s.x-18,s.y+18);
        const endState=attached.sequence?(attached.sequence.endState||attached.sequence.states[attached.sequence.states.length-1]):[0,0,2*curveLoops];
-       ctx.strokeText(`单元 (${endState.join(',')})`,e.x+10,e.y-9);
-       ctx.fillStyle='#9c5746';ctx.fillText(`单元 (${endState.join(',')})`,e.x+10,e.y-9);
+       ctx.strokeText(t(`Cell (${endState.join(',')})`,`单元 (${endState.join(',')})`),e.x+10,e.y-9);
+       ctx.fillStyle='#9c5746';ctx.fillText(t(`Cell (${endState.join(',')})`,`单元 (${endState.join(',')})`),e.x+10,e.y-9);
        ctx.restore();
        // XY inset remains the theoretical square/chord projection.
        const miniSize=166,miniX=w-miniSize-16,miniY=13,planar=curveInfo.path;
@@ -2014,8 +2610,8 @@ function paint(){
        ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
        ctx.fillStyle='#d58736';ctx.beginPath();ctx.arc(nowPt.x,nowPt.y,4.3,0,2*Math.PI);ctx.fill();
        ctx.font='600 11px system-ui';ctx.fillStyle='#486273';
-       ctx.fillText(xyClosed?'XY 投影 · 闭合回路':'XY 投影 · 开放路径',miniX+9,miniY+16);ctx.font='11px system-ui';
-       ctx.fillText(curveKind==='square'?'折点经过单元中心':(curvePreset==='base'?'圆弦多边形贴合膜片':'同向外凸圆弧贴合膜片'),miniX+9,miniY+miniSize-10);
+       ctx.fillText(xyClosed?t('XY projection · Closed loop','XY 投影 · 闭合回路'):t('XY projection · Open path','XY 投影 · 开放路径'),miniX+9,miniY+16);ctx.font='11px system-ui';
+       ctx.fillText(curveKind==='square'?t('Vertices at cell centers','折点经过单元中心'):(curvePreset==='base'?t('Membrane-fitted chord polygon','圆弦多边形贴合膜片'):t('Membrane-fitted convex arcs','同向外凸圆弧贴合膜片')),miniX+9,miniY+miniSize-10);
        ctx.restore();
      }else{
      const info=curveInfo;
@@ -2136,10 +2732,10 @@ function paint(){
        const s=project(start),e=project(displayEnd),te=project(trueEnd);
        ctx.lineWidth=3;ctx.strokeStyle='#ffffff';ctx.fillStyle='#31576a';
        ctx.strokeText('O',s.x-18,s.y+18);ctx.fillText('O',s.x-18,s.y+18);
-       ctx.fillStyle='#9c5746';ctx.strokeText(`显示端点`,e.x+9,e.y-9);ctx.fillText(`显示端点`,e.x+9,e.y-9);
+       ctx.fillStyle='#9c5746';ctx.strokeText(t('Display endpoint','显示端点'),e.x+9,e.y-9);ctx.fillText(t('Display endpoint','显示端点'),e.x+9,e.y-9);
        if(zGapRatio>0&&info.loops>1){
-         ctx.fillStyle='#a65d48';ctx.strokeText(`真实 Δz=${info.z.toFixed(2)}`,te.x+9,te.y+14);
-         ctx.fillText(`真实 Δz=${info.z.toFixed(2)}`,te.x+9,te.y+14);
+         ctx.fillStyle='#a65d48';ctx.strokeText(t(`Actual Δz=${info.z.toFixed(2)}`,`真实 Δz=${info.z.toFixed(2)}`),te.x+9,te.y+14);
+         ctx.fillText(t(`Actual Δz=${info.z.toFixed(2)}`,`真实 Δz=${info.z.toFixed(2)}`),te.x+9,te.y+14);
        }else{
          ctx.fillStyle='#9c5746';ctx.strokeText(`(0,0,${info.z.toFixed(2)})`,e.x+9,e.y-9);
          ctx.fillText(`(0,0,${info.z.toFixed(2)})`,e.x+9,e.y-9);
@@ -2159,7 +2755,7 @@ function paint(){
        ctx.beginPath();for(let i=0;i<planar.length;i++){const q=mp(planar[i]);if(i===0)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);}
        ctx.closePath();ctx.fillStyle='#e3ab6130';ctx.fill();ctx.strokeStyle='#d9893f';ctx.lineWidth=2.35;ctx.stroke();
        ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
-       ctx.font='600 11px system-ui';ctx.fillStyle='#486273';ctx.fillText('膜片单圈 XY 投影',miniX+9,miniY+16);
+       ctx.font='600 11px system-ui';ctx.fillStyle='#486273';ctx.fillText(t('Membrane loop XY projection','膜片单圈 XY 投影'),miniX+9,miniY+16);
        ctx.font='11px system-ui';ctx.fillText(`${info.loops} × h² = Δz ${info.z.toFixed(2)}`,miniX+9,miniY+miniSize-10);
        ctx.restore();
        if(curveVector&&activeIsHorizontal&&activeDirection&&curveProgress>.001&&curveProgress<.999){
@@ -2299,7 +2895,7 @@ function paint(){
      ctx.fillStyle='#327a94';ctx.beginPath();ctx.arc(cross.x,cross.y,3.6,0,2*Math.PI);ctx.fill();
      ctx.fillStyle='#d58736';ctx.beginPath();ctx.arc(nowPt.x,nowPt.y,4.3,0,2*Math.PI);ctx.fill();
      ctx.font='600 11px system-ui';ctx.fillStyle='#486273';
-     ctx.fillText('XY 投影 · 有向面积',miniX+9,miniY+16);
+     ctx.fillText(t('XY projection · Signed area','XY 投影 · 有向面积'),miniX+9,miniY+16);
      ctx.font='11px system-ui';
      ctx.fillText(`∮ (xdy−ydx)/2 = ${curveTargetZ.toFixed(2)}`,miniX+9,miniY+miniSize-10);
      ctx.restore();
@@ -2393,6 +2989,12 @@ function download(){
   const doc=document.documentElement.cloneNode(true);
   const widget=doc.querySelector("#hgStandalone");
   widget.removeAttribute("data-ready");
+  // Export a standalone bilingual page with the same English default.
+  translateStatic(doc,'en');
+  doc.lang='en';
+  doc.querySelector('#hgLanguage').textContent='中文';
+  doc.querySelector('#hgLanguage').lang='zh-CN';
+  doc.querySelector('#hgLanguage').setAttribute('aria-label','Switch to Chinese');
   const html="<!doctype html>\n"+doc.outerHTML;
   const uri=URL.createObjectURL(new Blob([html],{type:"text/html;charset=utf-8"}));
   const a=document.createElement("a");
@@ -2401,6 +3003,7 @@ function download(){
   document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(uri),3000);
 }
+$('hgLanguage').addEventListener('click',()=>setLanguage(language==='en'?'zh-CN':'en'));
 $('hgDownload').addEventListener('click',download);
 $('hgReset').addEventListener('click',()=>{az=-.83;el=.57;zoom=1;paint();});
 $('hgLinkOpacity').addEventListener('input',()=>{
@@ -2473,7 +3076,7 @@ $('hgNear4Tint').addEventListener('input',()=>{
    if(initial>=100){initial=0;$('hgCurveProgress').value='0';build();}
    let startTime=null;
    const duration=6500*(1-initial/100);
-   curvePlaying=true;$('hgCurvePlay').textContent='Ⅱ 暂停';
+   curvePlaying=true;$('hgCurvePlay').textContent=t('Ⅱ Pause','Ⅱ 暂停');
    function frame(now){
      if(!curvePlaying||viewMode!=='curve')return;
      if(startTime===null)startTime=now;
@@ -2524,7 +3127,7 @@ function pickCell(x,y){
 function openUnitMenu(key,x,y){
   menuKey=key;
   const menu=$('hgUnitMenu');menu.hidden=false;
-  $('hgMenuTitle').textContent=`铁环 (${key})`;
+  $('hgMenuTitle').textContent=t(`Ring (${key})`,`铁环 (${key})`);
   const value=opacityForKey(key);
   $('hgMenuOpacity').value=String(value);
   $('hgMenuOpacityValue').textContent=value.toFixed(2);
@@ -2606,6 +3209,6 @@ if(typeof ResizeObserver!=="undefined"){
 syncWireControlsFromMode();
 $('hgLinkOpacity').value=String(linkOpacityByMode[viewMode]);
 $('hgShowWire').checked=showWireByMode[viewMode];
-build();
+setLanguage('en');
 })();
 </script></body></html>
